@@ -6,20 +6,21 @@ Author: Squaregentleman
 Modifier: Oreo
 Date: Tue Aug 10 08:24:30 UTC 2021
 cron: 25 21 * * *
-new Env('Ğ¡Ã×¸Ä²½');
+
+const $ = new Env("å°ç±³æ”¹æ­¥");
 ------------
-»·¾³±äÁ¿ËµÃ÷
-ÔÚÅäÖÃÎÄ¼şÀïÃæÌí¼Ó
-export MI_USER: ÕËºÅ      ½öÖ§³ÖÊÖ»úºÅ£¬¶àÕËºÅÓÃ # ·Ö¸ô
-export MI_PWD: ÃÜÂë       ¶àÕËºÅÓÃ # ·Ö¸ô£¬ÇÒÓëÕËºÅÒ»Ò»¶ÔÓ¦
-export STEP: ²½Êı         ¿Õ»ò²»ÌîÔòÎª 18000-25000 Ö®¼äËæ»ú£¬×Ô¶¨ÒåÊ¾Àı: 18763 »ò 19000-24000
-PMODE: ÍÆËÍÄ£Ê½ || PKEY: ¾ßÌåÍÆËÍ¸ñÊ½ÌîĞ´£¨²»´ø [TG: ]£¬ÇëÓÃ¾ßÌåµÄÖµ´úÌæ)
-  wx                [Server ½´: skey]
-  nwx               [ĞÂ Server ½´: skey]
+ç¯å¢ƒå˜é‡è¯´æ˜
+åœ¨é…ç½®æ–‡ä»¶é‡Œé¢æ·»åŠ 
+export MI_USER: è´¦å·      ä»…æ”¯æŒæ‰‹æœºå·ï¼Œå¤šè´¦å·ç”¨ # åˆ†éš”
+export MI_PWD: å¯†ç        å¤šè´¦å·ç”¨ # åˆ†éš”ï¼Œä¸”ä¸è´¦å·ä¸€ä¸€å¯¹åº”
+export STEP: æ­¥æ•°         ç©ºæˆ–ä¸å¡«åˆ™ä¸º 18000-25000 ä¹‹é—´éšæœºï¼Œè‡ªå®šä¹‰ç¤ºä¾‹: 18763 æˆ– 19000-24000
+PMODE: æ¨é€æ¨¡å¼ || PKEY: å…·ä½“æ¨é€æ ¼å¼å¡«å†™ï¼ˆä¸å¸¦ [TG: ]ï¼Œè¯·ç”¨å…·ä½“çš„å€¼ä»£æ›¿)
+  wx                [Server é…±: skey]
+  nwx               [æ–° Server é…±: skey]
   tg                [TG: tg_bot_token@user_id]
-  qwx               [ÆóÒµÎ¢ĞÅ: touser-corpid-corpsecret-agentid ÆäÖĞ touser ¿ÉÌî @all£¬agenid ²»ÌîÄ¬ÈÏÎª 1000002]
+  qwx               [ä¼ä¸šå¾®ä¿¡: touser-corpid-corpsecret-agentid å…¶ä¸­ touser å¯å¡« @allï¼Œagenid ä¸å¡«é»˜è®¤ä¸º 1000002]
   pp                [PushPlus: push_plus_token]
-  off               [¹Ø±ÕÍÆËÍ]
+  off               [å…³é—­æ¨é€]
 
 '''
 
@@ -31,14 +32,14 @@ headers = {
         }
  
 
-# »ñÈ¡µÇÂ¼ code
+# è·å–ç™»å½• code
 def get_code(location):
     code_pattern = re.compile("(?<=access=).*?(?=&)")
     code = code_pattern.findall(location)[0]
     return code
 
 
-# µÇÂ¼
+# ç™»å½•
 def login(_user, password):
     url1 = "https://api-user.huami.com/registrations/+86" + _user + "/tokens"
     _headers = {
@@ -57,7 +58,7 @@ def login(_user, password):
         code = get_code(location)
     except:
         return 0, 0
-    # print("access_code»ñÈ¡³É¹¦£¡")
+    # print("access_codeè·å–æˆåŠŸï¼")
     # print(code)
 
     url2 = "https://account.huami.com/v2/client/login"
@@ -73,30 +74,30 @@ def login(_user, password):
     }
     r2 = requests.post(url2, data=data2, headers=_headers).json()
     login_token = r2["token_info"]["login_token"]
-    # print("login_token»ñÈ¡³É¹¦£¡")
+    # print("login_tokenè·å–æˆåŠŸï¼")
     # print(login_token)
     userid = r2["token_info"]["user_id"]
-    # print("userid»ñÈ¡³É¹¦£¡")
+    # print("useridè·å–æˆåŠŸï¼")
     # print(userid)
 
     return login_token, userid
 
 
-# Ö÷º¯Êı
+# ä¸»å‡½æ•°
 def main(_user, _passwd, _step):
     _user = str(_user)
     password = str(_passwd)
     _step = str(_step)
     if _user == '' or password == '':
-        print("ÓÃ»§Ãû»òÃÜÂë²»ÄÜÎª¿Õ£¡")
-        return "user and passwd not empty£¡"
+        print("ç”¨æˆ·åæˆ–å¯†ç ä¸èƒ½ä¸ºç©ºï¼")
+        return "user and passwd not emptyï¼"
 
     if _step == '':
-        print("ÒÑÉèÖÃÎªËæ»ú²½Êı£¨18000-25000£©")
+        print("å·²è®¾ç½®ä¸ºéšæœºæ­¥æ•°ï¼ˆ18000-25000ï¼‰")
         _step = str(random.randint(93200, 98000))
     login_token, userid = login(_user, password)
     if login_token == 0:
-        print("µÇÂ½Ê§°Ü£¡")
+        print("ç™»é™†å¤±è´¥ï¼")
         return "login fail!"
 
     t = get_time()
@@ -122,12 +123,12 @@ def main(_user, _passwd, _step):
 
     response = requests.post(url, data=data, headers=head).json()
     # print(response)
-    result = f"{_user[:3]}****{_user[-4:]}: [{now}] ĞŞ¸Ä²½Êı£¨{_step}£©" + response['message']
+    result = f"{_user[:3]}****{_user[-4:]}: [{now}] ä¿®æ”¹æ­¥æ•°ï¼ˆ{_step}ï¼‰" + response['message']
     print(result)
     return result
 
  
-# »ñÈ¡Ê±¼ä´Á
+# è·å–æ—¶é—´æˆ³
 def get_time():
     url = 'http://api.m.taobao.com/rest/api3.do?api=mtop.common.getTimestamp'
     response = requests.get(url,headers=headers).json()
@@ -135,24 +136,24 @@ def get_time():
     return t
 
   
-# »ñÈ¡app_token
+# è·å–app_token
 def get_app_token(login_token):
     url = f"https://account-cn.huami.com/v1/client/app_tokens?app_name=com.xiaomi.hm.health&dn=api-user.huami.com%2Capi-mifit.huami.com%2Capp-analytics.huami.com&login_token={login_token}"
     response = requests.get(url,headers=headers).json()
     app_token = response['token_info']['app_token']
-    # print("app_token»ñÈ¡³É¹¦£¡")
+    # print("app_tokenè·å–æˆåŠŸï¼")
     # print(app_token)
     return app_token
 
 
-# ÍÆËÍ server ½´
+# æ¨é€ server é…±
 def push_wx(_sckey, desp=""):
     if _sckey == '':
-        print("[×¢Òâ] Î´Ìá¹©sckey£¬²»½øĞĞÍÆËÍ£¡")
+        print("[æ³¨æ„] æœªæä¾›sckeyï¼Œä¸è¿›è¡Œæ¨é€ï¼")
     else:
         server_url = f"https://sc.ftqq.com/{_sckey}.send"
         params = {
-            "text": 'Ğ¡Ã×ÔË¶¯ ²½ÊıĞŞ¸Ä',
+            "text": 'å°ç±³è¿åŠ¨ æ­¥æ•°ä¿®æ”¹',
             "desp": desp
         }
 
@@ -160,19 +161,19 @@ def push_wx(_sckey, desp=""):
         json_data = response.json()
 
         if json_data['errno'] == 0:
-            print(f"[{now}] ÍÆËÍ³É¹¦¡£")
+            print(f"[{now}] æ¨é€æˆåŠŸã€‚")
         else:
-            print(f"[{now}] ÍÆËÍÊ§°Ü£º{json_data['errno']}({json_data['errmsg']})")
+            print(f"[{now}] æ¨é€å¤±è´¥ï¼š{json_data['errno']}({json_data['errmsg']})")
 
 
-# ÍÆËÍĞÂ server ½´
+# æ¨é€æ–° server é…±
 def push_server(_sckey, desp=""):
     if _sckey == '':
-        print("[×¢Òâ] Î´Ìá¹©sckey£¬²»½øĞĞÎ¢ĞÅÍÆËÍ£¡")
+        print("[æ³¨æ„] æœªæä¾›sckeyï¼Œä¸è¿›è¡Œå¾®ä¿¡æ¨é€ï¼")
     else:
         server_url = f"https://sctapi.ftqq.com/{_sckey}.send"
         params = {
-            "title": 'Ğ¡Ã×ÔË¶¯ ²½ÊıĞŞ¸Ä',
+            "title": 'å°ç±³è¿åŠ¨ æ­¥æ•°ä¿®æ”¹',
             "desp": desp
         }
 
@@ -180,20 +181,20 @@ def push_server(_sckey, desp=""):
         json_data = response.json()
 
         if json_data['code'] == 0:
-            print(f"[{now}] ÍÆËÍ³É¹¦¡£")
+            print(f"[{now}] æ¨é€æˆåŠŸã€‚")
         else:
-            print(f"[{now}] ÍÆËÍÊ§°Ü£º{json_data['code']}({json_data['message']})")
+            print(f"[{now}] æ¨é€å¤±è´¥ï¼š{json_data['code']}({json_data['message']})")
 
 
-# ÍÆËÍÏûÏ¢µ½ pushplus
+# æ¨é€æ¶ˆæ¯åˆ° pushplus
 def push_pushplus(token, content=""):
     if token == '':
-        print("[×¢Òâ] Î´Ìá¹©token£¬²»½øĞĞpushplusÍÆËÍ£¡")
+        print("[æ³¨æ„] æœªæä¾›tokenï¼Œä¸è¿›è¡Œpushplusæ¨é€ï¼")
     else:
         server_url = "http://www.pushplus.plus/send"
         params = {
             "token": token,
-            "title": 'Ğ¡Ã×ÔË¶¯ ²½ÊıĞŞ¸Ä',
+            "title": 'å°ç±³è¿åŠ¨ æ­¥æ•°ä¿®æ”¹',
             "content": content
         }
 
@@ -201,21 +202,21 @@ def push_pushplus(token, content=""):
         json_data = response.json()
 
         if json_data['code'] == 200:
-            print(f"[{now}] ÍÆËÍ³É¹¦¡£")
+            print(f"[{now}] æ¨é€æˆåŠŸã€‚")
         else:
-            print(f"[{now}] ÍÆËÍÊ§°Ü£º{json_data['code']}({json_data['message']})")
+            print(f"[{now}] æ¨é€å¤±è´¥ï¼š{json_data['code']}({json_data['message']})")
 
 
-# ÍÆËÍÏûÏ¢µ½ TG
+# æ¨é€æ¶ˆæ¯åˆ° TG
 def push_tg(token, chat_id, desp=""):
     if token == '':
-        print("[×¢Òâ] Î´Ìá¹©token£¬²»½øĞĞtgÍÆËÍ£¡")
+        print("[æ³¨æ„] æœªæä¾›tokenï¼Œä¸è¿›è¡Œtgæ¨é€ï¼")
     elif chat_id == '':
-        print("[×¢Òâ] Î´Ìá¹©chat_id£¬²»½øĞĞtgÍÆËÍ£¡")
+        print("[æ³¨æ„] æœªæä¾›chat_idï¼Œä¸è¿›è¡Œtgæ¨é€ï¼")
     else:
         server_url = f"https://api.telegram.org/bot{token}/sendmessage"
         params = {
-            "text": 'Ğ¡Ã×ÔË¶¯ ²½ÊıĞŞ¸Ä\n\n' + desp,
+            "text": 'å°ç±³è¿åŠ¨ æ­¥æ•°ä¿®æ”¹\n\n' + desp,
             "chat_id": chat_id
         }
 
@@ -223,12 +224,12 @@ def push_tg(token, chat_id, desp=""):
         json_data = response.json()
 
         if json_data['ok']:
-            print(f"[{now}] ÍÆËÍ³É¹¦¡£")
+            print(f"[{now}] æ¨é€æˆåŠŸã€‚")
         else:
-            print(f"[{now}] ÍÆËÍÊ§°Ü£º{json_data['error_code']}({json_data['description']})")
+            print(f"[{now}] æ¨é€å¤±è´¥ï¼š{json_data['error_code']}({json_data['description']})")
 
 
-# ÆóÒµÎ¢ĞÅÍÆËÍ
+# ä¼ä¸šå¾®ä¿¡æ¨é€
 def wxpush(msg, usr, corpid, corpsecret, agentid=1000002):
     base_url = 'https://qyapi.weixin.qq.com/cgi-bin/gettoken?'
     req_url = 'https://qyapi.weixin.qq.com/cgi-bin/message/send?access_token='
@@ -239,7 +240,7 @@ def wxpush(msg, usr, corpid, corpsecret, agentid=1000002):
     if agentid == 0:
         agentid = 1000002
 
-    # »ñÈ¡ access_token£¬Ã¿´ÎµÄ access_token ¶¼²»Ò»Ñù£¬ËùÒÔĞèÒªÔËĞĞÒ»´ÎÇëÇóÒ»´Î
+    # è·å– access_tokenï¼Œæ¯æ¬¡çš„ access_token éƒ½ä¸ä¸€æ ·ï¼Œæ‰€ä»¥éœ€è¦è¿è¡Œä¸€æ¬¡è¯·æ±‚ä¸€æ¬¡
     def get_access_token(_base_url, _corpid, _corpsecret):
         urls = _base_url + 'corpid=' + _corpid + '&corpsecret=' + _corpsecret
         resp = requests.get(urls).json()
@@ -252,9 +253,9 @@ def wxpush(msg, usr, corpid, corpsecret, agentid=1000002):
         res = requests.post(url=req_urls, data=data)
         ret = res.json()
         if ret["errcode"] == 0:
-            print(f"[{now}] ÆóÒµÎ¢ĞÅÍÆËÍ³É¹¦")
+            print(f"[{now}] ä¼ä¸šå¾®ä¿¡æ¨é€æˆåŠŸ")
         else:
-            print(f"[{now}] ÍÆËÍÊ§°Ü£º{ret['errcode']} ´íÎóĞÅÏ¢£º{ret['errmsg']}")
+            print(f"[{now}] æ¨é€å¤±è´¥ï¼š{ret['errcode']} é”™è¯¯ä¿¡æ¯ï¼š{ret['errmsg']}")
 
     def get_message(_msg, _usr):
         data = {
@@ -277,9 +278,9 @@ def wxpush(msg, usr, corpid, corpsecret, agentid=1000002):
     msg = msg
     usr = usr
     if corpid == '':
-        print("[×¢Òâ] Î´Ìá¹©corpid£¬²»½øĞĞÆóÒµÎ¢ĞÅÍÆËÍ£¡")
+        print("[æ³¨æ„] æœªæä¾›corpidï¼Œä¸è¿›è¡Œä¼ä¸šå¾®ä¿¡æ¨é€ï¼")
     elif corpsecret == '':
-        print("[×¢Òâ] Î´Ìá¹©corpsecret£¬²»½øĞĞÆóÒµÎ¢ĞÅÍÆËÍ£¡")
+        print("[æ³¨æ„] æœªæä¾›corpsecretï¼Œä¸è¿›è¡Œä¼ä¸šå¾®ä¿¡æ¨é€ï¼")
     else:
         send_message(msg, usr)
 
@@ -290,25 +291,25 @@ if __name__ ==  "__main__":
     if Pm == 'wx' or Pm == 'nwx':
         _sckey = os.environ.get('PKEY')
         if _sckey == '':
-            print('Î´Ìá¹© sckey£¬²»½øĞĞÍÆËÍ£¡')
+            print('æœªæä¾› sckeyï¼Œä¸è¿›è¡Œæ¨é€ï¼')
     elif Pm == 'tg':
         token = os.environ.get('PKEY')
         sl = token.split('@')
         if len(sl) != 2:
-            print('tg ÍÆËÍ²ÎÊıÓĞÎó£¡')
+            print('tg æ¨é€å‚æ•°æœ‰è¯¯ï¼')
     elif Pm == 'qwx':
         token = os.environ.get('PKEY')
         sl = token.split('-')
         if len(sl) < 3:
-            print('ÆóÒµÎ¢ĞÅÍÆËÍ²ÎÊıÓĞÎó£¡')
+            print('ä¼ä¸šå¾®ä¿¡æ¨é€å‚æ•°æœ‰è¯¯ï¼')
     elif Pm == 'pp':
         token = os.environ.get('PKEY')
         if token == '':
-            print('Î´Ìá¹© pushplus token£¬²»½øĞĞÍÆËÍ£¡')
+            print('æœªæä¾› pushplus tokenï¼Œä¸è¿›è¡Œæ¨é€ï¼')
     elif Pm == 'off':
-        print('²»ÍÆËÍ')
+        print('ä¸æ¨é€')
     else:
-        print('ÍÆËÍÑ¡ÏîÓĞÎó£¡')
+        print('æ¨é€é€‰é¡¹æœ‰è¯¯ï¼')
         exit(0)
 
     user = os.environ.get('MI_USER')
@@ -328,7 +329,7 @@ if __name__ ==  "__main__":
         for line in range(0,len(user_list)):
             if len(step_array) == 2:
                 step = str(random.randint(int(step_array[0]),int(step_array[1])))
-                print(f"ÒÑÉèÖÃÎªËæ»ú²½Êı£¨{step_array[0]}-{step_array[1]}£©")
+                print(f"å·²è®¾ç½®ä¸ºéšæœºæ­¥æ•°ï¼ˆ{step_array[0]}-{step_array[1]}ï¼‰")
             elif str(step) == '':
                 step = ''
             push += main(user_list[line], passwd_list[line], step) + '\n'
@@ -348,4 +349,4 @@ if __name__ ==  "__main__":
         elif Pm == 'off':
             pass
     else:
-        print('ÓÃ»§ÃûºÍÃÜÂëÊıÁ¿²»¶Ô')
+        print('ç”¨æˆ·åå’Œå¯†ç æ•°é‡ä¸å¯¹')
