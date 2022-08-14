@@ -1,14 +1,14 @@
 /*
-Ğ¡³ÌĞò:ÂŞ¼¼·ÛË¿¾ãÀÖ²¿
-±äÁ¿luojihd
-×¥°ü¸ñÊ½ÎªÇëÇóÍ·ÀïµÄAuthorization=XXXX
+å°ç¨‹åº:ç½—æŠ€ç²‰ä¸ä¿±ä¹éƒ¨
+å˜é‡luojihd
+æŠ“åŒ…æ ¼å¼ä¸ºè¯·æ±‚å¤´é‡Œçš„Authorization=XXXX
 cron: 15 23 12 * * *
 */
-const $ = new Env('ÂŞ¼¼');
+const $ = new Env('ç½—æŠ€ç²‰ä¸ä¿±ä¹éƒ¨');
 var crypto = require("crypto");
 
 let status;
-status = (status = ($.getval("luojistatus") || "1") ) > 1 ? `${status}` : ""; // ÕËºÅÀ©Õ¹×Ö·û
+status = (status = ($.getval("luojistatus") || "1") ) > 1 ? `${status}` : ""; // è´¦å·æ‰©å±•å­—ç¬¦
 let luojihdArr = [],luojicount = ''
 const notify = $.isNode() ? require('./sendNotify') : '';
 let luojihd= $.isNode() ? (process.env.luojihd ? process.env.luojihd : "") : ($.getdata('luojihd') ? $.getdata('luojihd') : "")
@@ -29,7 +29,7 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
           for (let i = 2; i <= luojicount; i++) {
             luojihdArr.push($.getdata(`luojihd${i}`))
             }
-    console.log(`------------- ¹²${luojihdArr.length}¸öÕËºÅ-------------\n`)
+    console.log(`------------- å…±${luojihdArr.length}ä¸ªè´¦å·-------------\n`)
       for (let i = 0; i < luojihdArr.length; i++) {
         if (luojihdArr[i]) {
           luojihd = luojihdArr[i];
@@ -40,7 +40,7 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
       }else  {
           if (process.env.luojihd && process.env.luojihd.indexOf('\n') > -1) {
             luojihdArr = process.env.luojihd.split('\n');
-            console.log(`ÄúÑ¡ÔñµÄÊÇÓÃ"»»ĞĞ"¸ô¿ª\n`)
+            console.log(`æ‚¨é€‰æ‹©çš„æ˜¯ç”¨"æ¢è¡Œ"éš”å¼€\n`)
         } else {
             luojihds = [process.env.luojihd]
         };
@@ -49,14 +49,14 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
             luojihdArr.push(luojihds[item])
         }
     })
-          console.log(`¹²${luojihdArr.length}¸öcookie`)
+          console.log(`å…±${luojihdArr.length}ä¸ªcookie`)
 	        for (let k = 0; k < luojihdArr.length; k++) {
                 $.message = ""
                 luojihd = luojihdArr[k]
                 $.index = k + 1;
  
-          console.log(`\n¿ªÊ¼¡¾ÂŞ¼¼${$.index}¡¿`)
-allMessage +=`\n¿ªÊ¼¡¾ÂŞ¼¼${$.index}¡¿`
+          console.log(`\nå¼€å§‹ã€ç½—æŠ€${$.index}ã€‘`)
+allMessage +=`\nå¼€å§‹ã€ç½—æŠ€${$.index}ã€‘`
 await sign()
 
 await socialComment()
@@ -89,16 +89,16 @@ $.post(luoji(`api/services/app/socialVideoOverLog/AddLog?SocialId=${SocialId}`),
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
             if(data.success == true){
-           console.log('ÊÓÆµ:'+data.success)
-           allMessage +=`\n¿´ÊÓÆµ³É¹¦`}
+           console.log('è§†é¢‘:'+data.success)
+           allMessage +=`\nçœ‹è§†é¢‘æˆåŠŸ`}
             else
-            console.log('ÊÓÆµ:'+data.success)
-            allMessage +='ÊÓÆµ:'+data.success
+            console.log('è§†é¢‘:'+data.success)
+            allMessage +='è§†é¢‘:'+data.success
           }
         
       } catch (e) {
@@ -117,7 +117,7 @@ $.post(luoji(`api/services/app/socialComment/GetGetSocialCommentList`,body), asy
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
@@ -139,16 +139,16 @@ $.post(luoji(`api/services/app/socialComment/AddSocialComment `,body), async (er
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
             if(data.success == true){
-           console.log('ÆÀÂÛÊÓÆµ:'+data.success)
-           allMessage +=`\nÆÀÂÛ³É¹¦`}
+           console.log('è¯„è®ºè§†é¢‘:'+data.success)
+           allMessage +=`\nè¯„è®ºæˆåŠŸ`}
             else
             console.log(`${JSON.stringify(data)}`)
-             allMessage +=`\nÆÀÂÛ:${data}`
+             allMessage +=`\nè¯„è®º:${data}`
           }
         
       } catch (e) {
@@ -170,16 +170,16 @@ $.post(luoji(`api/services/app/socialComment/AddSocialComment`,body), async (err
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
             if(data.success == true){
-           console.log('ÆÀÂÛ:'+data.success)
-           allMessage +=`\nÆÀÂÛ³É¹¦`}
+           console.log('è¯„è®º:'+data.success)
+           allMessage +=`\nè¯„è®ºæˆåŠŸ`}
             else
              console.log(`${JSON.stringify(data)}`)
-             allMessage +=`\nÆÀÂÛ:${data}`
+             allMessage +=`\nè¯„è®º:${data}`
           }
         
       } catch (e) {
@@ -198,16 +198,16 @@ $.post(luoji(`api/services/app/signIn/ContinuitySignIn`,''), async (err, resp, d
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
             if(data.success == true){
-            console.log('Ç©µ½:'+data.result)
-           allMessage +=`\nÇ©µ½:${data.result}`}
+            console.log('ç­¾åˆ°:'+data.result)
+           allMessage +=`\nç­¾åˆ°:${data.result}`}
             else
-            console.log('Ç©µ½:Çë²»ÒªÖØ¸´Ç©µ½')
-             allMessage +=`\nÇ©µ½:Çë²»ÒªÖØ¸´Ç©µ½`
+            console.log('ç­¾åˆ°:è¯·ä¸è¦é‡å¤ç­¾åˆ°')
+             allMessage +=`\nç­¾åˆ°:è¯·ä¸è¦é‡å¤ç­¾åˆ°`
         
           }
         
@@ -228,17 +228,17 @@ $.post(luoji(`api/services/app/crmAccount/GetLGFanBuyerCenter`), async (err, res
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
             if(data.success == true){
-           console.log('\n×Ü»ı·Ö:'+data.result.integral)
-           console.log('\n½ñÈÕ»ı·Ö:'+data.result.scouNumber)
-           allMessage +='\n×Ü»ı·Ö:'+data.result.integral+'\n½ñÈÕ»ı·Ö:'+data.result.scouNumber}
+           console.log('\næ€»ç§¯åˆ†:'+data.result.integral)
+           console.log('\nä»Šæ—¥ç§¯åˆ†:'+data.result.scouNumber)
+           allMessage +='\næ€»ç§¯åˆ†:'+data.result.integral+'\nä»Šæ—¥ç§¯åˆ†:'+data.result.scouNumber}
             else
              console.log(`${JSON.stringify(data)}`)
-             allMessage +=`\n¸öÈËĞÅÏ¢»ñÈ¡Ê§°Ü:${data}`
+             allMessage +=`\nä¸ªäººä¿¡æ¯è·å–å¤±è´¥:${data}`
           }
         
       } catch (e) {
@@ -299,7 +299,7 @@ function safeGet(data) {
     }
   } catch (e) {
     console.log(e);
-    console.log(`·şÎñÆ÷·ÃÎÊÊı¾İÎª¿Õ£¬Çë¼ì²é×ÔÉíÉè±¸ÍøÂçÇé¿ö`);
+    console.log(`æœåŠ¡å™¨è®¿é—®æ•°æ®ä¸ºç©ºï¼Œè¯·æ£€æŸ¥è‡ªèº«è®¾å¤‡ç½‘ç»œæƒ…å†µ`);
     return false;
   }
 }
@@ -309,7 +309,7 @@ function jsonParse(str) {
       return JSON.parse(str);
     } catch (e) {
       console.log(e);
-      $.msg($.name, '', 'ÇëÎğËæÒâÔÚBoxJsÊäÈë¿òĞŞ¸ÄÄÚÈİ\n½¨ÒéÍ¨¹ı½Å±¾È¥»ñÈ¡cookie')
+      $.msg($.name, '', 'è¯·å‹¿éšæ„åœ¨BoxJsè¾“å…¥æ¡†ä¿®æ”¹å†…å®¹\nå»ºè®®é€šè¿‡è„šæœ¬å»è·å–cookie')
       return [];
     }
   }
