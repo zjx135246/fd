@@ -1,21 +1,21 @@
 /*
-APP:±Ø¿´Ğ¡Ëµ
-±äÁ¿ Èç
+APP:å¿…çœ‹å°è¯´
+å˜é‡ å¦‚
 bkxshd='sessionid=6e52cab4cefa43c193f3a466b0c33111'
-×¥°üµãÎÒµÄ ¹Ø¼ü×Ö info
-²é¿´ÇëÇóÍ·COOKIEÀïµÄ Ö»ĞèÒªsessionid=XXXXXXÕâÒ»¶Î
-¶àÕËºÅÓÃ°¬ÌØ¸ô¿ª@
-ÌáÏÖ±äÁ¿Îªwithdraws
-withdraws='' 1Îª1Ôª 2Îª5Ôª 3Îª10Ôª 4Îª30Ôª 5Îª50Ôª 6Îª100Ôª
-Ã¿Ìì¶î¶ÈÊÇÃ¿ÌìË¢ĞÂµÄ10µã°É 
-½¨ÒéÒ»Ìì±ğÅÜ¶àÁË ÅÂºÚ 
+æŠ“åŒ…ç‚¹æˆ‘çš„ å…³é”®å­— info
+æŸ¥çœ‹è¯·æ±‚å¤´COOKIEé‡Œçš„ åªéœ€è¦sessionid=XXXXXXè¿™ä¸€æ®µ
+å¤šè´¦å·ç”¨è‰¾ç‰¹éš”å¼€@
+æç°å˜é‡ä¸ºwithdraws
+withdraws='' 1ä¸º1å…ƒ 2ä¸º5å…ƒ 3ä¸º10å…ƒ 4ä¸º30å…ƒ 5ä¸º50å…ƒ 6ä¸º100å…ƒ
+æ¯å¤©é¢åº¦æ˜¯æ¯å¤©åˆ·æ–°çš„10ç‚¹å§ 
+å»ºè®®ä¸€å¤©åˆ«è·‘å¤šäº† æ€•é»‘ 
 cron: 40 59 9 * * *
 */
 
-const $ = new Env('±Ø¿´Ğ¡Ëµ');
+const $ = new Env('å¿…çœ‹å°è¯´-æç°');
 var crypto = require("crypto");
 let status;
-status = (status = ($.getval("bkxsstatus") || "1") ) > 1 ? `${status}` : ""; // ÕËºÅÀ©Õ¹×Ö·û
+status = (status = ($.getval("bkxsstatus") || "1") ) > 1 ? `${status}` : ""; // è´¦å·æ‰©å±•å­—ç¬¦
 let bkxshdArr = [],bkxscount = ''
 const notify = $.isNode() ? require('./sendNotify') : '';
 let bkxshd= $.isNode() ? (process.env.bkxshd ? process.env.bkxshd : "") : ($.getdata('bkxshd') ? $.getdata('bkxshd') : "")
@@ -36,7 +36,7 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
           for (let i = 2; i <= bkxscount; i++) {
             bkxshdArr.push($.getdata(`bkxshd${i}`))
             }
-    console.log(`------------- ¹²${bkxshdArr.length}¸öÕËºÅ-------------\n`)
+    console.log(`------------- å…±${bkxshdArr.length}ä¸ªè´¦å·-------------\n`)
       for (let i = 0; i < bkxshdArr.length; i++) {
         if (bkxshdArr[i]) {
           bkxshd = bkxshdArr[i];
@@ -47,7 +47,7 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
       }else  {
           if (process.env.bkxshd && process.env.bkxshd.indexOf('@') > -1) {
             bkxshdArr = process.env.bkxshd.split('@');
-            console.log(`ÄúÑ¡ÔñµÄÊÇÓÃ"@"¸ô¿ª\n`)
+            console.log(`æ‚¨é€‰æ‹©çš„æ˜¯ç”¨"@"éš”å¼€\n`)
         } else {
             bkxshds = [process.env.bkxshd]
         };
@@ -56,15 +56,15 @@ var timestamp = Math.round(new Date().getTime()/1000).toString();
             bkxshdArr.push(bkxshds[item])
         }
     })
-          console.log(`¹²${bkxshdArr.length}¸öcookie`)
+          console.log(`å…±${bkxshdArr.length}ä¸ªcookie`)
  for (let n = 0; n < 200;n++) {
 	        for (let k = 0; k < bkxshdArr.length; k++) {
                 $.message = ""
                 bkxshd = bkxshdArr[k]
                 $.index = k + 1;
  
-          console.log(`\n¿ªÊ¼¡¾±Ø¿´Ğ¡Ëµ${$.index}¡¿`)
-//allMessage +=`\n¿ªÊ¼¡¾±Ø¿´Ğ¡Ëµ${$.index}¡¿`
+          console.log(`\nå¼€å§‹ã€å¿…çœ‹å°è¯´${$.index}ã€‘`)
+//allMessage +=`\nå¼€å§‹ã€å¿…çœ‹å°è¯´${$.index}ã€‘`
           
 await withdraw(withdraws)
 //await info()
@@ -73,7 +73,7 @@ await withdraw(withdraws)
 //await list()
 
 }
- //console.log(`\nÑÓÊ±`)
+ //console.log(`\nå»¶æ—¶`)
 await $.wait(50)
          }
       }
@@ -92,7 +92,7 @@ $.post(bkxs(`api/task/v1/wallet/user/info`,'encrypted_param=DVf%2Frs12MOEFrDOSEP
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
@@ -125,7 +125,7 @@ $.post(bkxs(`task_api/task/list`,'sign=75F761FEACAA604E19A0F4FEFABE556E&time=165
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
@@ -166,12 +166,12 @@ $.post(bkxs(`task_api/task/getServiceAreaTaskList`,'chapterCoinRate=10&readChapt
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
              if(data.code==100){
-               console.log('\nµğÃ«£º'+data.data.userInfoBO.clientInfo.user.nickname+"\n")  
+               console.log('\nå¼æ¯›ï¼š'+data.data.userInfoBO.clientInfo.user.nickname+"\n")  
               taskVOS = data.data.taskVOS
               for(let i=0;i<taskVOS.length;i++){
                  isFinish = taskVOS[i].isFinish
@@ -208,12 +208,12 @@ $.post(bkxs(`task_api/task/getChapterTaskList`,'time=1654363108019&sign=c57423f4
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
              if(data.code==100){
-               console.log('\nµğÃ«£º'+data.data.userInfoBO.clientInfo.user.nickname+"\n")  
+               console.log('\nå¼æ¯›ï¼š'+data.data.userInfoBO.clientInfo.user.nickname+"\n")  
               taskVOS = data.data.taskVOS
               for(let i=0;i<taskVOS.length;i++){
                  isFinish = taskVOS[i].isFinish
@@ -249,12 +249,12 @@ $.post(bkxs(`task_api/task/finish`,`time=${timestamp}&sign=${sign}&taskId=${task
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
              if(data.code==100){
-               console.log('\nTask£º'+data.msg + ' rewardNum£º'+data.data.rewardNum+"\n")  
+               console.log('\nTaskï¼š'+data.msg + ' rewardNumï¼š'+data.data.rewardNum+"\n")  
               
               
              
@@ -281,12 +281,12 @@ $.post(bkxs(`task_api/task/v1/withdraw/submit`,`itemId=${itemId}&platform=0&sign
       try {
         if (err) {
           console.log(`${JSON.stringify(err)}`)
-          console.log(`${$.name} APIÇëÇóÊ§°Ü£¬Çë¼ì²éÍøÂ·ÖØÊÔ`)
+          console.log(`${$.name} APIè¯·æ±‚å¤±è´¥ï¼Œè¯·æ£€æŸ¥ç½‘è·¯é‡è¯•`)
         }// else {
           if (safeGet(data)) {
             data = JSON.parse(data);
              if(data.code==100){
-               console.log('\nWithdraw£º'+data.msg+"\n")  
+               console.log('\nWithdrawï¼š'+data.msg+"\n")  
               
               
              
@@ -356,7 +356,7 @@ function safeGet(data) {
     }
   } catch (e) {
     console.log(e);
-    console.log(`¾©¶«·şÎñÆ÷·ÃÎÊÊı¾İÎª¿Õ£¬Çë¼ì²é×ÔÉíÉè±¸ÍøÂçÇé¿ö`);
+    console.log(`äº¬ä¸œæœåŠ¡å™¨è®¿é—®æ•°æ®ä¸ºç©ºï¼Œè¯·æ£€æŸ¥è‡ªèº«è®¾å¤‡ç½‘ç»œæƒ…å†µ`);
     return false;
   }
 }
@@ -366,7 +366,7 @@ function jsonParse(str) {
       return JSON.parse(str);
     } catch (e) {
       console.log(e);
-      $.msg($.name, '', 'ÇëÎğËæÒâÔÚBoxJsÊäÈë¿òĞŞ¸ÄÄÚÈİ\n½¨ÒéÍ¨¹ı½Å±¾È¥»ñÈ¡cookie')
+      $.msg($.name, '', 'è¯·å‹¿éšæ„åœ¨BoxJsè¾“å…¥æ¡†ä¿®æ”¹å†…å®¹\nå»ºè®®é€šè¿‡è„šæœ¬å»è·å–cookie')
       return [];
     }
   }
