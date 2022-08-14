@@ -1,36 +1,36 @@
 /*
-½ñÈÕÍ·Ìõ¼«ËÙ°æ
-IOS/°²×¿: ½ñÈÕÍ·Ìõ¼«ËÙ°æ     //xzfÖ»ÁôÁË1¡¢·ÖÏí2¡¢¶ÁÊé3¡¢Å©³¡
-ÑûÇëÂë£º CYET6KHK
-ÀÏÓÃ»§Ã¿Ìì¼¸Ã«£¬ĞÂÓÃ»§¿ÉÄÜÊÕÒæ¸ßµã
-ÆÕÍ¨°æ¶¨Ê±£º 1-59/15 6-23 * * *
-¼¤½ø°æ¶¨Ê±£º 1-59/5 * * * *
-¶àÓÃ»§ÅÜµÄÊ±¼ä»á¾ÃÒ»µã£¬×Ô¼º¿´×Å¸Ä¶¨Ê±°É
-export jrttjsbHeader='cookieÈ«²¿'
-export jrttjsbUA=''         // ×Ô¶¨ÒåUA£º×½°üÄÃµ½×Ô¼ºµÄUA£¬Ìîµ½±äÁ¿jrttjsbUAÀï£¬²»ÌîÄ¬ÈÏÓÃ°²×¿UA
-export jrttjsbReadNum='10' //×Ô¶¨ÒåÃ¿´ÎÔËĞĞÔÄ¶ÁÎÄÕÂµÄÊıÁ¿£ºÌîµ½±äÁ¿jrttjsbReadNum£¬²»ÌîÄ¬ÈÏ10Æª
-export jrttjsbFarm='1'     //Å©³¡ºÍÖÖÊ÷ÈÎÎñ£ºÄ¬ÈÏ×ö£¬±äÁ¿jrttjsbFarmÌîÎª 1 ×ö 0 ²»×ö
-¸ĞĞ»Ô­×÷ÕßÌá¹©µÄ½Å±¾ https://raw.githubusercontent.com/leafxcy/JavaScript/main/jrttjsb.js
-½Å±¾¼æÈİ: QuantumultX, Surge, Loon, JSBox, Node.js
+ä»Šæ—¥å¤´æ¡æé€Ÿç‰ˆ
+IOS/å®‰å“: ä»Šæ—¥å¤´æ¡æé€Ÿç‰ˆ     //xzfåªç•™äº†1ã€åˆ†äº«2ã€è¯»ä¹¦3ã€å†œåœº
+é‚€è¯·ç ï¼š CYET6KHK
+è€ç”¨æˆ·æ¯å¤©å‡ æ¯›ï¼Œæ–°ç”¨æˆ·å¯èƒ½æ”¶ç›Šé«˜ç‚¹
+æ™®é€šç‰ˆå®šæ—¶ï¼š 1-59/15 6-23 * * *
+æ¿€è¿›ç‰ˆå®šæ—¶ï¼š 1-59/5 * * * *
+å¤šç”¨æˆ·è·‘çš„æ—¶é—´ä¼šä¹…ä¸€ç‚¹ï¼Œè‡ªå·±çœ‹ç€æ”¹å®šæ—¶å§
+export jrttjsbHeader='cookieå…¨éƒ¨'
+export jrttjsbUA=''         // è‡ªå®šä¹‰UAï¼šæ‰åŒ…æ‹¿åˆ°è‡ªå·±çš„UAï¼Œå¡«åˆ°å˜é‡jrttjsbUAé‡Œï¼Œä¸å¡«é»˜è®¤ç”¨å®‰å“UA
+export jrttjsbReadNum='10' //è‡ªå®šä¹‰æ¯æ¬¡è¿è¡Œé˜…è¯»æ–‡ç« çš„æ•°é‡ï¼šå¡«åˆ°å˜é‡jrttjsbReadNumï¼Œä¸å¡«é»˜è®¤10ç¯‡
+export jrttjsbFarm='1'     //å†œåœºå’Œç§æ ‘ä»»åŠ¡ï¼šé»˜è®¤åšï¼Œå˜é‡jrttjsbFarmå¡«ä¸º 1 åš 0 ä¸åš
+æ„Ÿè°¢åŸä½œè€…æä¾›çš„è„šæœ¬ https://raw.githubusercontent.com/leafxcy/JavaScript/main/jrttjsb.js
+è„šæœ¬å…¼å®¹: QuantumultX, Surge, Loon, JSBox, Node.js
 ============Quantumultx===============
 [task_local]
-#½ñÈÕÍ·Ìõ¼«ËÙ°æ
-1-59/15 6-23 * * * https://github.com/JDWXX/ql_all/blob/master/qt/aqc/jrttjsb.js, tag=½ñÈÕÍ·Ìõ¼«ËÙ°æ, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxcfd.png, enabled=true
+#ä»Šæ—¥å¤´æ¡æé€Ÿç‰ˆ
+1-59/15 6-23 * * * https://github.com/JDWXX/ql_all/blob/master/qt/aqc/jrttjsb.js, tag=ä»Šæ—¥å¤´æ¡æé€Ÿç‰ˆ, img-url=https://raw.githubusercontent.com/58xinian/icon/master/jxcfd.png, enabled=true
 ================Loon==============
 [Script]
-cron "1-59/15 6-23 * * *" script-path=https://github.com/JDWXX/ql_all/blob/master/qt/aqc/jrttjsb.js,tag=½ñÈÕÍ·Ìõ¼«ËÙ°æ
+cron "1-59/15 6-23 * * *" script-path=https://github.com/JDWXX/ql_all/blob/master/qt/aqc/jrttjsb.js,tag=ä»Šæ—¥å¤´æ¡æé€Ÿç‰ˆ
 ===============Surge=================
-½ñÈÕÍ·Ìõ¼«ËÙ°æ = type=cron,cronexp="1-59/15 6-23 * * *",wake-system=1,timeout=3600,script-path=https://github.com/JDWXX/ql_all/blob/master/qt/aqc/jrttjsb.js
-============Ğ¡»ğ¼ı=========
-½ñÈÕÍ·Ìõ¼«ËÙ°æ = type=cron,script-path=https://github.com/JDWXX/ql_all/blob/master/qt/aqc/jrttjsb.js, cronexpr="1-59/15 6-23 * * *", timeout=3600, enable=true
+ä»Šæ—¥å¤´æ¡æé€Ÿç‰ˆ = type=cron,cronexp="1-59/15 6-23 * * *",wake-system=1,timeout=3600,script-path=https://github.com/JDWXX/ql_all/blob/master/qt/aqc/jrttjsb.js
+============å°ç«ç®­=========
+ä»Šæ—¥å¤´æ¡æé€Ÿç‰ˆ = type=cron,script-path=https://github.com/JDWXX/ql_all/blob/master/qt/aqc/jrttjsb.js, cronexpr="1-59/15 6-23 * * *", timeout=3600, enable=true
 cron: 26 1/32 8,11,18-23 * * *
 */
-const $ = new Env('½ñÈÕÍ·Ìõ¼«ËÙ°æ');
-const notifyFlag = 1; //0Îª¹Ø±ÕÍ¨Öª£¬1Îª´ò¿ªÍ¨Öª,Ä¬ÈÏÎª1
+const $ = new Env("ä»Šæ—¥å¤´æ¡æé€Ÿç‰ˆg");
+const notifyFlag = 1; //0ä¸ºå…³é—­é€šçŸ¥ï¼Œ1ä¸ºæ‰“å¼€é€šçŸ¥,é»˜è®¤ä¸º1
 const logDebug = 0
 //const notify = $.isNode() ? require('./sendNotify') : '';
 let notifyStr = ''
-let rndtime = "" //ºÁÃë
+let rndtime = "" //æ¯«ç§’
 let httpResult //global buffer
 let host = 'i.snssdk.com'
 let hostname = 'https://' + host
@@ -59,7 +59,7 @@ let adIdList = [26, 181, 186, 187, 188, 189, 190, 195, 210, 214, 216, 225, 308, 
     }
     else
     {
-        //await showUpdateMsg()//xzfÔËĞĞÍ¨Öª
+        //await showUpdateMsg()//xzfè¿è¡Œé€šçŸ¥
 
         if(!(await checkEnv())) {
             return
@@ -75,13 +75,13 @@ let adIdList = [26, 181, 186, 187, 188, 189, 190, 195, 210, 214, 216, 225, 308, 
     .finally(() => $.done())
 
 function showUpdateMsg() {
-    console.log('\n2021.12.15 9:30 ¸üĞÂ£ºÔö¼ÓÍÆËÍ½±Àø£¬ĞŞ¸´Ò»¸öUAµÄbug£¬¸ü¸ÄÄ¬ÈÏUAÎª°²×¿\n')
+    console.log('\n2021.12.15 9:30 æ›´æ–°ï¼šå¢åŠ æ¨é€å¥–åŠ±ï¼Œä¿®å¤ä¸€ä¸ªUAçš„bugï¼Œæ›´æ”¹é»˜è®¤UAä¸ºå®‰å“\n')
 }
 
-//Í¨Öª
+//é€šçŸ¥
 async function showmsg() {
 
-    notifyBody = $.name + "ÔËĞĞÍ¨Öª\n\n" + notifyStr
+    notifyBody = $.name + "è¿è¡Œé€šçŸ¥\n\n" + notifyStr
 
     if (notifyFlag != 1) {
         console.log(notifyBody);
@@ -102,11 +102,11 @@ async function GetRewrite() {
                 userHeader = userHeader + '@' + userCK
                 $.setdata(userHeader, 'jrttjsbHeader');
                 ckList = userHeader.split('@')
-                $.msg($.name+` »ñÈ¡µÚ${ckList.length}¸öjrttjsbHeader³É¹¦: ${userCK}`)
+                $.msg($.name+` è·å–ç¬¬${ckList.length}ä¸ªjrttjsbHeaderæˆåŠŸ: ${userCK}`)
             }
         } else {
             $.setdata(userCK, 'jrttjsbHeader');
-            $.msg($.name+` »ñÈ¡µÚ1¸öjrttjsbHeader³É¹¦: ${userCK}`)
+            $.msg($.name+` è·å–ç¬¬1ä¸ªjrttjsbHeaderæˆåŠŸ: ${userCK}`)
         }
     }
 }
@@ -115,23 +115,23 @@ async function checkEnv() {
     if(userHeader) {
         userHeaderArr = userHeader.split('@')
     } else {
-        console.log('Î´ÕÒµ½jrttjsbHeader')
+        console.log('æœªæ‰¾åˆ°jrttjsbHeader')
         return false
     }
     if(userHeaderArr.length == 0) {
-        console.log('Î´ÕÒµ½ÓĞĞ§µÄjrttjsbHeader')
+        console.log('æœªæ‰¾åˆ°æœ‰æ•ˆçš„jrttjsbHeader')
         return false
     }
 
     if(userAgent) {
         userAgentArr = userAgent.split('@')
     } else {
-        console.log('Î´ÕÒµ½userAgent')
+        console.log('æœªæ‰¾åˆ°userAgent')
         return false
     }
     UAcount = userAgentArr.length
 
-    console.log(`¹²ÕÒµ½${userHeaderArr.length}¸öÓÃ»§£¬${UAcount}¸öUA`)
+    console.log(`å…±æ‰¾åˆ°${userHeaderArr.length}ä¸ªç”¨æˆ·ï¼Œ${UAcount}ä¸ªUA`)
     return true
 }
 
@@ -143,15 +143,15 @@ async function initAccountInfo() {
 
 async function RunMultiUser() {
     for(userIdx=0; userIdx<userHeaderArr.length; userIdx++) {
-        //ÈÎÎñÒ³
+        //ä»»åŠ¡é¡µ
         await QueryUserInfo(1)
         if(userStatus[userIdx]==true) {
             await GetNewTabs()
-            //await QuerySleepStatus() //xzfË¯¾õ
-           // await QueryWalkInfo() //xzf×ßÂ·
-            //await DoneEat()  //xzf³Ô·¹
+            //await QuerySleepStatus() //xzfç¡è§‰
+           // await QueryWalkInfo() //xzfèµ°è·¯
+            //await DoneEat()  //xzfåƒé¥­
 
-           // for(let adId of adIdList) await ExcitationAd(adId) //¿´ÊÓÆµ£¬Áì±¦Ïä
+           // for(let adId of adIdList) await ExcitationAd(adId) //çœ‹è§†é¢‘ï¼Œé¢†å®ç®±
             //console.log(validList)
 
         }
@@ -166,7 +166,7 @@ async function RunMultiUser() {
     if(jrttjsbFarm) {
         for(userIdx=0; userIdx<userHeaderArr.length; userIdx++) {
             if(userStatus[userIdx]==true) {
-                //Å©³¡
+                //å†œåœº
                 //await EnterFarm()
                 //await $.wait(1500)
                 await QueryFarmThreeGift()
@@ -175,7 +175,7 @@ async function RunMultiUser() {
                 await QueryFarmSignStatus()
                 await QueryFarmTask()
 
-                //ÖÖÊ÷
+                //ç§æ ‘
                 await QueryTreeChallenge()
                 await QueryTreeSignStatus()
                 await QueryTreeThreeGift()
@@ -187,7 +187,7 @@ async function RunMultiUser() {
 
 }
 
-//ÔÄ¶ÁÁĞ±í
+//é˜…è¯»åˆ—è¡¨
 async function ListArts() {
     let caller = printCaller()
     let url = `${hostname}/api/news/feed/v64/?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -204,17 +204,17 @@ async function ListArts() {
             }
         }
     } else {
-        console.log(`»ñÈ¡ÔÄ¶ÁÁĞ±íÊ§°Ü£º${result.message}`)
+        console.log(`è·å–é˜…è¯»åˆ—è¡¨å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÔÄ¶ÁÎÄÕÂ
+//é˜…è¯»æ–‡ç« 
 async function ReadArticles() {
-    console.log(`\n¿ªÊ¼ÔÄ¶Á£¬½«»áÔÄ¶Á${maxReadPerRun}ÆªÎÄÕÂ`)
+    console.log(`\nå¼€å§‹é˜…è¯»ï¼Œå°†ä¼šé˜…è¯»${maxReadPerRun}ç¯‡æ–‡ç« `)
     for(userIdx=0; userIdx<userHeaderArr.length; userIdx++) {
         if(userStatus[userIdx]==true) {
-            await ReadDouble()   //xzfÔÄ¶Á·­±¶
-            await DailyArtsReward() //xzfÃ¿ÈÕÔÄ¶Á½±Àø
+            await ReadDouble()   //xzfé˜…è¯»ç¿»å€
+            await DailyArtsReward() //xzfæ¯æ—¥é˜…è¯»å¥–åŠ±
             await DailyPushReward()
         }
     }
@@ -222,18 +222,18 @@ async function ReadArticles() {
         let readFlag = 0
         for(userIdx=0; userIdx<userHeaderArr.length; userIdx++) {
             if(userStatus[userIdx]==true) {
-               // await ReadArtsReward() //xzfÔÄ¶ÁÎÄÕÂ½±Àø
+               // await ReadArtsReward() //xzfé˜…è¯»æ–‡ç« å¥–åŠ±
                 readFlag = 1
             }
         }
         if(readFlag ==1 && i<maxReadPerRun-1) {
-            console.log('µÈ´ı15ÃëÔÄ¶ÁÏÂÒ»Æª...')
+            console.log('ç­‰å¾…15ç§’é˜…è¯»ä¸‹ä¸€ç¯‡...')
             await $.wait(15100)
         }
     }
 }
 
-//ÔÄ¶ÁÎÄÕÂ½±Àø
+//é˜…è¯»æ–‡ç« å¥–åŠ±
 async function ReadArtsReward() {
     let caller = printCaller()
     let rndGroupId = Math.floor(Math.random()*7000000000000000000)
@@ -245,13 +245,13 @@ async function ReadArtsReward() {
     if(!result) return
     //console.log(result)
     if(result.err_no==0) {
-        console.log(`ÓÃ»§${userIdx+1}ÔÄ¶ÁÎÄÕÂ»ñµÃ${result.data.score_amount}½ğ±Ò£¬½ñÈÕÔÄ¶Á×ÜÊÕÈë£º${result.data.total_score_amount}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}é˜…è¯»æ–‡ç« è·å¾—${result.data.score_amount}é‡‘å¸ï¼Œä»Šæ—¥é˜…è¯»æ€»æ”¶å…¥ï¼š${result.data.total_score_amount}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÔÄ¶ÁÎÄÕÂÊ§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é˜…è¯»æ–‡ç« å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//Ã¿ÈÕÔÄ¶Á½±Àø
+//æ¯æ—¥é˜…è¯»å¥–åŠ±
 async function DailyArtsReward() {
     let caller = printCaller()
     let rndGroupId = Math.floor(Math.random()*7000000000000000000)
@@ -262,13 +262,13 @@ async function DailyArtsReward() {
     if(!result) return
     //console.log(result)
     if(result.err_no==0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Ã¿ÈÕÔÄ¶Á½±Àø»ñµÃ${result.data.score_amount}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–æ¯æ—¥é˜…è¯»å¥–åŠ±è·å¾—${result.data.score_amount}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Ã¿ÈÕÔÄ¶Á½±ÀøÊ§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–æ¯æ—¥é˜…è¯»å¥–åŠ±å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//Ã¿ÈÕÍÆËÍ½±Àø
+//æ¯æ—¥æ¨é€å¥–åŠ±
 async function DailyPushReward() {
     let caller = printCaller()
     let timeInMS = Math.round(new Date().getTime())
@@ -280,13 +280,13 @@ async function DailyPushReward() {
     if(!result) return
     //console.log(result)
     if(result.err_no==0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Ã¿ÈÕÍÆËÍ½±Àø»ñµÃ${result.data.score_amount}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–æ¯æ—¥æ¨é€å¥–åŠ±è·å¾—${result.data.score_amount}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Ã¿ÈÕÍÆËÍ½±ÀøÊ§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–æ¯æ—¥æ¨é€å¥–åŠ±å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//ÔÄ¶Á·­±¶
+//é˜…è¯»ç¿»å€
 async function ReadDouble() {
     let caller = printCaller()
     let url = `${hostname}/luckycat/lite/v1/activity/double_whole_scene_task/?aid=35&update_version_code=85221&os_version=15.0&device_platform=iphone`
@@ -297,9 +297,9 @@ async function ReadDouble() {
     if(!result) return
     //console.log(result)
     if(result.err_no==0) {
-        console.log(`ÓÃ»§${userIdx+1}ÔÄ¶Á·­±¶³É¹¦`)
+        console.log(`ç”¨æˆ·${userIdx+1}é˜…è¯»ç¿»å€æˆåŠŸ`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÔÄ¶Á·­±¶£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é˜…è¯»ç¿»å€ï¼š${result.err_tips}`)
     }
 }
 
@@ -332,7 +332,7 @@ async function PostInviteCode() {
     //console.log(result)
 }
 
-//½ğ±ÒÊÕÈë
+//é‡‘å¸æ”¶å…¥
 async function QueryCoinInfo() {
     let caller = printCaller()
     let url = `${hostname}/luckycat/lite/v1/user/profit_detail/?offset=0&num=100&income_type=2&aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -344,11 +344,11 @@ async function QueryCoinInfo() {
     if(result.err_no == 0) {
         console.log(result.data.score_income_list)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯½ğ±ÒÊÕÈëÊ§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢é‡‘å¸æ”¶å…¥å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//²éÑ¯ÓÃ»§ĞÅÏ¢,ÈÎÎñ×´Ì¬
+//æŸ¥è¯¢ç”¨æˆ·ä¿¡æ¯,ä»»åŠ¡çŠ¶æ€
 async function QueryUserInfo(doTask) {
     let caller = printCaller()
     let url = `${hostname}/luckycat/lite/v1/task/page_data/?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -360,32 +360,32 @@ async function QueryUserInfo(doTask) {
     if(result.err_no == 0) {
         if(!result.data.treasure) {
             userStatus[userIdx] = false
-            console.log(`ÓÃ»§${userIdx+1}²éÑ¯×´Ì¬Ê§°Ü£¬CKÊ§Ğ§`)
+            console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢çŠ¶æ€å¤±è´¥ï¼ŒCKå¤±æ•ˆ`)
             return;
         }
         if(doTask==0) {
-            console.log(`\nÕË»§ĞÅÏ¢£º`)
-            console.log(`½ğ±Ò£º${result.data.user_income.score_balance}`)
-            console.log(`ÏÖ½ğ£º${result.data.user_income.cash_balance/100}Ôª`)
+            console.log(`\nè´¦æˆ·ä¿¡æ¯ï¼š`)
+            console.log(`é‡‘å¸ï¼š${result.data.user_income.score_balance}`)
+            console.log(`ç°é‡‘ï¼š${result.data.user_income.cash_balance/100}å…ƒ`)
         } else {
             if(result.data.treasure.next_treasure_time == result.data.treasure.current_time) {
-               // await OpenTreasureBox()//¹Ø±Õ¿ª±¦Ïä
+               // await OpenTreasureBox()//å…³é—­å¼€å®ç®±
             } else {
                 let cdTime = result.data.treasure.next_treasure_time - result.data.treasure.current_time
-                console.log(`ÓÃ»§${userIdx+1}¿ª±¦ÏäÀäÈ´Ê±¼ä»¹ÓĞ${cdTime}Ãë`)
+                console.log(`ç”¨æˆ·${userIdx+1}å¼€å®ç®±å†·å´æ—¶é—´è¿˜æœ‰${cdTime}ç§’`)
             }
             if(result.data.signin_detail.today_signed == false) {
                 await SignIn()
             } else {
-                console.log(`ÓÃ»§${userIdx+1}½ñÌìÒÑÇ©µ½`)
+                console.log(`ç”¨æˆ·${userIdx+1}ä»Šå¤©å·²ç­¾åˆ°`)
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯×´Ì¬Ê§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢çŠ¶æ€å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//Ç©µ½
+//ç­¾åˆ°
 async function SignIn() {
     let caller = printCaller()
     let url = `${hostname}/luckycat/lite/v1/sign_in/action?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -395,13 +395,13 @@ async function SignIn() {
     if(!result) return
     //console.log(result)
     if(result.err_no==0) {
-        console.log(`ÓÃ»§${userIdx+1}Ç©µ½³É¹¦£¬»ñµÃ${result.data.score_amount}½ğ±Ò£¬ÒÑÁ¬ĞøÇ©µ½${result.data.sign_times}Ìì`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç­¾åˆ°æˆåŠŸï¼Œè·å¾—${result.data.score_amount}é‡‘å¸ï¼Œå·²è¿ç»­ç­¾åˆ°${result.data.sign_times}å¤©`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}Ç©µ½Ê§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç­¾åˆ°å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//¿ª±¦Ïä
+//å¼€å®ç®±
 async function OpenTreasureBox() {
     let caller = printCaller()
     let timeInMS = Math.round(new Date().getTime())
@@ -413,13 +413,13 @@ async function OpenTreasureBox() {
     if(!result) return
     //console.log(result)
     if(result.err_no == 0) {
-        console.log(`ÓÃ»§${userIdx+1}¿ª±¦Ïä»ñµÃ${result.data.score_amount}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}å¼€å®ç®±è·å¾—${result.data.score_amount}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}¿ª±¦ÏäÊ§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}å¼€å®ç®±å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//±¦ÏäÊÓÆµ½±Àø
+//å®ç®±è§†é¢‘å¥–åŠ±
 async function ExcitationAd(task_id) {
     let caller = printCaller()
     let timeInMS = Math.round(new Date().getTime())
@@ -431,15 +431,15 @@ async function ExcitationAd(task_id) {
     if(!result) return
     //console.log(result)
     if(result.err_no == 0) {
-        console.log(`ÓÃ»§${userIdx+1}¿´ÊÓÆµÈÎÎñ[${task_id}]»ñµÃ${result.data.score_amount}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}çœ‹è§†é¢‘ä»»åŠ¡[${task_id}]è·å¾—${result.data.score_amount}é‡‘å¸`)
         //validList.push(task_id)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}¿´ÊÓÆµÈÎÎñ[${task_id}]Ê§°Ü£º${result.err_tips}`)
-        //if(result.err_tips != 'ÍøÂç´íÎó') validList.push(task_id)
+        console.log(`ç”¨æˆ·${userIdx+1}çœ‹è§†é¢‘ä»»åŠ¡[${task_id}]å¤±è´¥ï¼š${result.err_tips}`)
+        //if(result.err_tips != 'ç½‘ç»œé”™è¯¯') validList.push(task_id)
     }
 }
 
-//²éÑ¯×ßÂ·×´Ì¬
+//æŸ¥è¯¢èµ°è·¯çŠ¶æ€
 async function QueryWalkInfo() {
     let caller = printCaller()
     let url = `${hostname}/luckycat/lite/v1/walk/page_data/?aid=35&update_version_code=85221&os_version=15.0&device_platform=iphone`
@@ -451,11 +451,11 @@ async function QueryWalkInfo() {
     if(result.err_no == 0) {
         if(result.data.can_get_amount > 0) await GetWalkBonus()
     } else {
-        console.log(`ÓÃ»§${userIdx+1}×ßÂ·×´Ì¬Ê§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}èµ°è·¯çŠ¶æ€å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//×ßÂ·½±Àø
+//èµ°è·¯å¥–åŠ±
 async function GetWalkBonus() {
     let caller = printCaller()
     let nowtime = Math.round(new Date().getTime()/1000)
@@ -467,13 +467,13 @@ async function GetWalkBonus() {
     if(!result) return
     //console.log(result)
     if(result.err_no == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡×ßÂ·½±Àø»ñµÃ${result.data.score_amount}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–èµ°è·¯å¥–åŠ±è·å¾—${result.data.score_amount}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡×ßÂ·½±ÀøÊ§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–èµ°è·¯å¥–åŠ±å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//³Ô·¹²¹Ìù
+//åƒé¥­è¡¥è´´
 async function DoneEat() {
     let caller = printCaller()
     let url = `${hostname}/luckycat/lite/v1/eat/done_eat/?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -483,13 +483,13 @@ async function DoneEat() {
     if(!result) return
     //console.log(result)
     if(result.err_no == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡³Ô·¹²¹Ìù»ñµÃ${result.data.score_amount}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–åƒé¥­è¡¥è´´è·å¾—${result.data.score_amount}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡³Ô·¹²¹ÌùÊ§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–åƒé¥­è¡¥è´´å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//Ë¯¾õ×´Ì¬
+//ç¡è§‰çŠ¶æ€
 async function QuerySleepStatus() {
     let caller = printCaller()
     let curTime = new Date()
@@ -510,10 +510,10 @@ async function QuerySleepStatus() {
                 if(rnd>0.95) {
                     await SleepStop()
                 } else {
-                    console.log(`ÓÃ»§${userIdx+1}Ëæ»úĞÑÀ´Ê±¼ä£¬±¾´Î²»½øĞĞĞÑÀ´£¬ÒÑ¾­Ë¯ÁË${sleepHour}Ğ¡Ê±£¬¿ÉÒÔ»ñµÃ${result.data.sleep_unexchanged_score}½ğ±Ò`)
+                    console.log(`ç”¨æˆ·${userIdx+1}éšæœºé†’æ¥æ—¶é—´ï¼Œæœ¬æ¬¡ä¸è¿›è¡Œé†’æ¥ï¼Œå·²ç»ç¡äº†${sleepHour}å°æ—¶ï¼Œå¯ä»¥è·å¾—${result.data.sleep_unexchanged_score}é‡‘å¸`)
                 }
             } else {
-                console.log(`ÓÃ»§${userIdx+1}Ë¯ÃßÖĞ£¬ÒÑ¾­Ë¯ÁË${sleepHour}Ğ¡Ê±£¬¿ÉÒÔ»ñµÃ${result.data.sleep_unexchanged_score}½ğ±Ò£¬ÉÏÏŞ${result.data.max_coin}½ğ±Ò`)
+                console.log(`ç”¨æˆ·${userIdx+1}ç¡çœ ä¸­ï¼Œå·²ç»ç¡äº†${sleepHour}å°æ—¶ï¼Œå¯ä»¥è·å¾—${result.data.sleep_unexchanged_score}é‡‘å¸ï¼Œä¸Šé™${result.data.max_coin}é‡‘å¸`)
             }
         } else {
             if(result.data.history_amount > 0) {
@@ -526,18 +526,18 @@ async function QuerySleepStatus() {
                 if(rnd>0.95) {
                     await SleepStart()
                 } else {
-                    console.log(`ÓÃ»§${userIdx+1}Ëæ»úË¯ÃßÊ±¼ä£¬±¾´Î²»½øĞĞË¯Ãß`)
+                    console.log(`ç”¨æˆ·${userIdx+1}éšæœºç¡çœ æ—¶é—´ï¼Œæœ¬æ¬¡ä¸è¿›è¡Œç¡çœ `)
                 }
             } else {
-                console.log(`ÓÃ»§${userIdx+1}Î´µ½Ë¯¾õÊ±¼ä`)
+                console.log(`ç”¨æˆ·${userIdx+1}æœªåˆ°ç¡è§‰æ—¶é—´`)
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯Ë¯¾õ×´Ì¬Ê§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢ç¡è§‰çŠ¶æ€å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//Ë¯¾õĞÑÀ´
+//ç¡è§‰é†’æ¥
 async function SleepStop() {
     let caller = printCaller()
     let url = `${hostname}/luckycat/lite/v1/sleep/stop/?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -548,14 +548,14 @@ async function SleepStop() {
     //console.log(result)
     if(result.err_no == 0) {
         let sleepHour = result.data.sleep_last_time/3600
-        console.log(`ÓÃ»§${userIdx+1}½áÊøË¯Ãß£¬±¾´ÎË¯ÁË${sleepHour}Ğ¡Ê±£¬¿ÉÒÔÁìÈ¡${result.data.history_amount}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç»“æŸç¡çœ ï¼Œæœ¬æ¬¡ç¡äº†${sleepHour}å°æ—¶ï¼Œå¯ä»¥é¢†å–${result.data.history_amount}é‡‘å¸`)
         await SleepDone(result.data.history_amount)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}½áÊøË¯ÃßÊ§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç»“æŸç¡çœ å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//Ë¯¾õÊÕ½ğ±Ò
+//ç¡è§‰æ”¶é‡‘å¸
 async function SleepDone(amount) {
     let caller = printCaller()
     let timeInMS = Math.round(new Date().getTime())
@@ -567,13 +567,13 @@ async function SleepDone(amount) {
     if(!result) return
     //console.log(result)
     if(result.err_no == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Ë¯¾õ½ğ±Ò½±Àø${amount}½ğ±Ò³É¹¦`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–ç¡è§‰é‡‘å¸å¥–åŠ±${amount}é‡‘å¸æˆåŠŸ`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Ë¯¾õ½ğ±Ò½±ÀøÊ§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–ç¡è§‰é‡‘å¸å¥–åŠ±å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//¿ªÊ¼Ë¯¾õ
+//å¼€å§‹ç¡è§‰
 async function SleepStart() {
     let caller = printCaller()
     let url = `${hostname}/luckycat/lite/v1/sleep/start/?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -583,14 +583,14 @@ async function SleepStart() {
     if(!result) return
     //console.log(result)
     if(result.err_no == 0) {
-        console.log(`ÓÃ»§${userIdx+1}¿ªÊ¼Ë¯¾õ£¬ZZZzzz...`)
+        console.log(`ç”¨æˆ·${userIdx+1}å¼€å§‹ç¡è§‰ï¼ŒZZZzzz...`)
         await SleepDone(result.data.history_amount)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}¿ªÊ¼Ë¯¾õÊ§°Ü£º${result.err_tips}`)
+        console.log(`ç”¨æˆ·${userIdx+1}å¼€å§‹ç¡è§‰å¤±è´¥ï¼š${result.err_tips}`)
     }
 }
 
-//²éÑ¯Å©³¡×´Ì¬
+//æŸ¥è¯¢å†œåœºçŠ¶æ€
 async function QueryFarmInfo() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/polling_info?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -610,11 +610,11 @@ async function QueryFarmInfo() {
             await FarmOpenBox()
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯Å©³¡×´Ì¬Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢å†œåœºçŠ¶æ€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//½øÈëÅ©³¡
+//è¿›å…¥å†œåœº
 async function EnterFarm() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/home_info?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -626,11 +626,11 @@ async function EnterFarm() {
     if(result.status_code == 0) {
 
     } else {
-        console.log(`ÓÃ»§${userIdx+1}½øÈëÅ©³¡Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}è¿›å…¥å†œåœºå¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-ÀëÏß½±Àø·­±¶
+//å†œåœº-ç¦»çº¿å¥–åŠ±ç¿»å€
 async function FarmOfflineDouble() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/double_reward?watch_ad=1&aid=35`
@@ -640,13 +640,13 @@ async function FarmOfflineDouble() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}Å©³¡ÀëÏß²úÁ¿·­±¶³É¹¦`)
+        console.log(`ç”¨æˆ·${userIdx+1}å†œåœºç¦»çº¿äº§é‡ç¿»å€æˆåŠŸ`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}Å©³¡ÀëÏß²úÁ¿·­±¶Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}å†œåœºç¦»çº¿äº§é‡ç¿»å€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-ÁìÈ¡Èı²ÍÀñ°ü
+//å†œåœº-é¢†å–ä¸‰é¤ç¤¼åŒ…
 async function RewardFarmThreeGift(gift_id) {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/reward/gift?game_client_version_code=2&gift_id=${gift_id}&watch_ad=0&double=0&aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -656,13 +656,13 @@ async function RewardFarmThreeGift(gift_id) {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Å©³¡Èı²ÍÀñ°ü»ñµÃ${result.data.reward_num}Ë®µÎ`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–å†œåœºä¸‰é¤ç¤¼åŒ…è·å¾—${result.data.reward_num}æ°´æ»´`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Å©³¡Èı²ÍÀñ°üÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–å†œåœºä¸‰é¤ç¤¼åŒ…å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-Èı²ÍÀñ°ü×´Ì¬
+//å†œåœº-ä¸‰é¤ç¤¼åŒ…çŠ¶æ€
 async function QueryFarmThreeGift() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/gift/list?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -678,11 +678,11 @@ async function QueryFarmThreeGift() {
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯Å©³¡Èı²ÍÀñ°ü×´Ì¬Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢å†œåœºä¸‰é¤ç¤¼åŒ…çŠ¶æ€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//²éÑ¯Å©³¡ÈÎÎñÁĞ±í
+//æŸ¥è¯¢å†œåœºä»»åŠ¡åˆ—è¡¨
 async function QueryFarmTask() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/daily_task/list?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -698,11 +698,11 @@ async function QueryFarmTask() {
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯Å©³¡ÈÎÎñÁĞ±íÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢å†œåœºä»»åŠ¡åˆ—è¡¨å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-ÁìÈ¡ÈÎÎñ½±Àø
+//å†œåœº-é¢†å–ä»»åŠ¡å¥–åŠ±
 async function RewardFarmTask(id) {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/reward/task?task_id=${id}&aid=35`
@@ -712,14 +712,14 @@ async function RewardFarmTask(id) {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        let typeStr = (result.data.reward_type==1) ? 'Ë®µÎ' : '»¯·Ê'
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Å©³¡ÈÎÎñ½±Àø[task_id=${result.data.task_id}]»ñµÃ${result.data.reward_num}${typeStr}£¬Ê£Óà${typeStr}ÊıÁ¿${result.data.current_num}`)
+        let typeStr = (result.data.reward_type==1) ? 'æ°´æ»´' : 'åŒ–è‚¥'
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–å†œåœºä»»åŠ¡å¥–åŠ±[task_id=${result.data.task_id}]è·å¾—${result.data.reward_num}${typeStr}ï¼Œå‰©ä½™${typeStr}æ•°é‡${result.data.current_num}`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Å©³¡ÈÎÎñ½±ÀøÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–å†œåœºä»»åŠ¡å¥–åŠ±å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-½½Ë®
+//å†œåœº-æµ‡æ°´
 async function FarmWater() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/land_water?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -729,17 +729,17 @@ async function FarmWater() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}Å©³¡½½Ë®³É¹¦£¬Ê£ÓàË®µÎ£º${result.data.water}`)
+        console.log(`ç”¨æˆ·${userIdx+1}å†œåœºæµ‡æ°´æˆåŠŸï¼Œå‰©ä½™æ°´æ»´ï¼š${result.data.water}`)
         if(result.data.water>=10) {
             await $.wait(1500) //min time 1000
             await FarmWater()
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}Å©³¡½½Ë®Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}å†œåœºæµ‡æ°´å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-¿ª±¦Ïä
+//å†œåœº-å¼€å®ç®±
 async function FarmOpenBox() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/box/open?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -749,14 +749,14 @@ async function FarmOpenBox() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}¿ªÅ©³¡±¦Ïä»ñµÃ${result.data.incr_coin}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}å¼€å†œåœºå®ç®±è·å¾—${result.data.incr_coin}é‡‘å¸`)
         if(result.data.excitation_ad_score_amount>0) await FarmOpenBoxVideo()
     } else {
-        console.log(`ÓÃ»§${userIdx+1}¿ªÅ©³¡±¦ÏäÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}å¼€å†œåœºå®ç®±å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-±¦ÏäÊÓÆµ
+//å†œåœº-å®ç®±è§†é¢‘
 async function FarmOpenBoxVideo() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/excitation_ad/add?excitation_ad_score_amount=134&device_id=2392172203611735&aid=35&os_version=15.0&update_version_code=85221`
@@ -766,13 +766,13 @@ async function FarmOpenBoxVideo() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}¿´Å©³¡±¦ÏäÊÓÆµ»ñµÃ${result.data.incr_coin}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}çœ‹å†œåœºå®ç®±è§†é¢‘è·å¾—${result.data.incr_coin}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}¿´Å©³¡±¦ÏäÊÓÆµÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}çœ‹å†œåœºå®ç®±è§†é¢‘å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-Ç©µ½×´Ì¬
+//å†œåœº-ç­¾åˆ°çŠ¶æ€
 async function QueryFarmSignStatus() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/sign_in/list?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -789,11 +789,11 @@ async function QueryFarmSignStatus() {
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯Ç©µ½×´Ì¬Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢ç­¾åˆ°çŠ¶æ€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-Ç©µ½
+//å†œåœº-ç­¾åˆ°
 async function FarmSign() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/reward/sign_in?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -803,14 +803,14 @@ async function FarmSign() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        let str = (result.data.reward_type==1)?'Ë®µÎ':'»¯·Ê'
-        console.log(`ÓÃ»§${userIdx+1}Ç©µ½»ñµÃ${result.data.reward_num}${str}£¬Ê£Óà${str}ÊıÁ¿${result.data.cur_reward_num}`)
+        let str = (result.data.reward_type==1)?'æ°´æ»´':'åŒ–è‚¥'
+        console.log(`ç”¨æˆ·${userIdx+1}ç­¾åˆ°è·å¾—${result.data.reward_num}${str}ï¼Œå‰©ä½™${str}æ•°é‡${result.data.cur_reward_num}`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}Ç©µ½Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç­¾åˆ°å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-Ç©µ½ÊÓÆµ·­±¶
+//å†œåœº-ç­¾åˆ°è§†é¢‘ç¿»å€
 async function FarmSignDouble() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/reward/double_sign_in?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -820,14 +820,14 @@ async function FarmSignDouble() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        let str = (result.data.reward_type==1)?'Ë®µÎ':'»¯·Ê'
-        console.log(`ÓÃ»§${userIdx+1}Ç©µ½·­±¶»ñµÃ${result.data.reward_num}{str}£¬Ê£Óà${str}ÊıÁ¿${result.data.cur_reward_num}`)
+        let str = (result.data.reward_type==1)?'æ°´æ»´':'åŒ–è‚¥'
+        console.log(`ç”¨æˆ·${userIdx+1}ç­¾åˆ°ç¿»å€è·å¾—${result.data.reward_num}{str}ï¼Œå‰©ä½™${str}æ•°é‡${result.data.cur_reward_num}`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}Ç©µ½·­±¶Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç­¾åˆ°ç¿»å€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-ÍÁµØ×´Ì¬
+//å†œåœº-åœŸåœ°çŠ¶æ€
 async function QueryFarmLandStatus() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/home_info?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -844,11 +844,11 @@ async function QueryFarmLandStatus() {
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯ÍÁµØ×´Ì¬Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢åœŸåœ°çŠ¶æ€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Å©³¡-ÍÁµØ½âËø
+//å†œåœº-åœŸåœ°è§£é”
 async function FarmUnlock(land_id) {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_farm/land/unlock?land_id=${land_id}&aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -858,13 +858,13 @@ async function FarmUnlock(land_id) {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}½âËø${land_id}ºÅÍÁµØ³É¹¦`)
+        console.log(`ç”¨æˆ·${userIdx+1}è§£é”${land_id}å·åœŸåœ°æˆåŠŸ`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}½âËø${land_id}ºÅÍÁµØÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}è§£é”${land_id}å·åœŸåœ°å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-Ç©µ½×´Ì¬
+//ç§æ ‘-ç­¾åˆ°çŠ¶æ€
 async function QueryTreeSignStatus() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/sign_in/list?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -878,11 +878,11 @@ async function QueryTreeSignStatus() {
             await TreeSign()
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯ÖÖÊ÷Ç©µ½×´Ì¬Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢ç§æ ‘ç­¾åˆ°çŠ¶æ€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-Ç©µ½
+//ç§æ ‘-ç­¾åˆ°
 async function TreeSign() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/sign_in/reward?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -892,13 +892,13 @@ async function TreeSign() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷Ç©µ½»ñµÃ${result.data.reward_item.num}${result.data.reward_item.name}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘ç­¾åˆ°è·å¾—${result.data.reward_item.num}${result.data.reward_item.name}`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷Ç©µ½Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘ç­¾åˆ°å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-¶şÑ¡Ò»-Ñ¡Ïî
+//ç§æ ‘-äºŒé€‰ä¸€-é€‰é¡¹
 async function QueryTreeChallenge() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/challenge/list?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -918,11 +918,11 @@ async function QueryTreeChallenge() {
         }
         if(bestChoice>0) await TreeChallengeChoose(bestChoice)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯ÌôÕ½ÈÎÎñÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢æŒ‘æˆ˜ä»»åŠ¡å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-¶şÑ¡Ò»-Ñ¡Ôñ
+//ç§æ ‘-äºŒé€‰ä¸€-é€‰æ‹©
 async function TreeChallengeChoose(id) {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/challenge/choose?task_id=${id}&aid=35`
@@ -932,13 +932,13 @@ async function TreeChallengeChoose(id) {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}Ñ¡Ôñ½½Ë®${result.data.red_point.times}´ÎÌôÕ½`)
+        console.log(`ç”¨æˆ·${userIdx+1}é€‰æ‹©æµ‡æ°´${result.data.red_point.times}æ¬¡æŒ‘æˆ˜`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}Ñ¡Ôñ½½Ë®ÌôÕ½Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é€‰æ‹©æµ‡æ°´æŒ‘æˆ˜å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-¶şÑ¡Ò»-Áì½±
+//ç§æ ‘-äºŒé€‰ä¸€-é¢†å¥–
 async function TreeChallengeReward() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/challenge/reward?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -948,13 +948,13 @@ async function TreeChallengeReward() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡½½Ë®ÌôÕ½½±Àø»ñµÃ${result.data.reward_item.num}Ë®µÎ`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–æµ‡æ°´æŒ‘æˆ˜å¥–åŠ±è·å¾—${result.data.reward_item.num}æ°´æ»´`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡½½Ë®ÌôÕ½½±ÀøÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–æµ‡æ°´æŒ‘æˆ˜å¥–åŠ±å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-»¯·ÊÇ©µ½
+//ç§æ ‘-åŒ–è‚¥ç­¾åˆ°
 async function TreeNutrientSign() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/nutrient/sign_in?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -965,16 +965,16 @@ async function TreeNutrientSign() {
     //console.log(result)
     if(result.status_code == 0) {
         if(result.data.is_rewarded==true) {
-            console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷»¯·ÊÇ©µ½»ñµÃ${result.data.reward_item.num}{result.data.reward_item.name}`)
+            console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘åŒ–è‚¥ç­¾åˆ°è·å¾—${result.data.reward_item.num}{result.data.reward_item.name}`)
         } else {
-            console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷»¯·ÊÇ©µ½³É¹¦`)
+            console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘åŒ–è‚¥ç­¾åˆ°æˆåŠŸ`)
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷»¯·ÊÇ©µ½Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘åŒ–è‚¥ç­¾åˆ°å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-ÁìÈ¡Èı²ÍÀñ°ü
+//ç§æ ‘-é¢†å–ä¸‰é¤ç¤¼åŒ…
 async function RewardTreeThreeGift(task_id) {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/three_gift/reward?task_id=${task_id}&watch_ad=0&extra_ad_num=0&aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -984,13 +984,13 @@ async function RewardTreeThreeGift(task_id) {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡ÖÖÊ÷Èı²ÍÀñ°ü»ñµÃ${result.data.reward_item.num}${result.data.reward_item.name}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–ç§æ ‘ä¸‰é¤ç¤¼åŒ…è·å¾—${result.data.reward_item.num}${result.data.reward_item.name}`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡ÖÖÊ÷Èı²ÍÀñ°üÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–ç§æ ‘ä¸‰é¤ç¤¼åŒ…å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-Èı²ÍÀñ°ü×´Ì¬
+//ç§æ ‘-ä¸‰é¤ç¤¼åŒ…çŠ¶æ€
 async function QueryTreeThreeGift() {
     let caller = printCaller()
     let curTime = new Date()
@@ -1008,11 +1008,11 @@ async function QueryTreeThreeGift() {
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯ÖÖÊ÷Èı²ÍÀñ°ü×´Ì¬Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢ç§æ ‘ä¸‰é¤ç¤¼åŒ…çŠ¶æ€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-Ë®µÎÈÎÎñÁĞ±í
+//ç§æ ‘-æ°´æ»´ä»»åŠ¡åˆ—è¡¨
 async function QueryTreeWaterTask() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/tasks/list?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -1029,11 +1029,11 @@ async function QueryTreeWaterTask() {
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯ÖÖÊ÷Ë®µÎÈÎÎñÁĞ±íÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢ç§æ ‘æ°´æ»´ä»»åŠ¡åˆ—è¡¨å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-Ë®µÎÁì½±
+//ç§æ ‘-æ°´æ»´é¢†å¥–
 async function TreeWaterReward(task_id) {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/tasks/reward?task_id=${task_id}&do_action=0&aid=35`
@@ -1043,13 +1043,13 @@ async function TreeWaterReward(task_id) {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Ë®µÎÈÎÎñ[id=${task_id}]»ñµÃ${result.data.reward_item.num}${result.data.reward_item.name}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–æ°´æ»´ä»»åŠ¡[id=${task_id}]è·å¾—${result.data.reward_item.num}${result.data.reward_item.name}`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Ë®µÎÈÎÎñ[id=${task_id}]Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–æ°´æ»´ä»»åŠ¡[id=${task_id}]å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-½½Ë®
+//ç§æ ‘-æµ‡æ°´
 async function TreeWater() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/tree/water?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -1059,7 +1059,7 @@ async function TreeWater() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷½½Ë®³É¹¦£¬Ê£ÓàË®µÎ£º${result.data.kettle.water_num}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘æµ‡æ°´æˆåŠŸï¼Œå‰©ä½™æ°´æ»´ï¼š${result.data.kettle.water_num}`)
         if(result.data.kettle.water_num>=100) {
             await $.wait(1500) //min time 1000
             await TreeWaterTenTimes()
@@ -1068,11 +1068,11 @@ async function TreeWater() {
             await TreeWater()
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷½½Ë®Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘æµ‡æ°´å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-½½Ë®10´Î
+//ç§æ ‘-æµ‡æ°´10æ¬¡
 async function TreeWaterTenTimes() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/tree/tenfold_water?times=10&aid=35`
@@ -1082,7 +1082,7 @@ async function TreeWaterTenTimes() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷½½Ë®10´Î³É¹¦£¬Ê£ÓàË®µÎ£º${result.data.kettle.water_num}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘æµ‡æ°´10æ¬¡æˆåŠŸï¼Œå‰©ä½™æ°´æ»´ï¼š${result.data.kettle.water_num}`)
         if(result.data.kettle.water_num>=100) {
             await $.wait(1500) //min time 1000
             await TreeWaterTenTimes()
@@ -1091,11 +1091,11 @@ async function TreeWaterTenTimes() {
             await TreeWater()
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷½½Ë®Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘æµ‡æ°´å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-ĞÅÏ¢
+//ç§æ ‘-ä¿¡æ¯
 async function QueryTreeStatus() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/polling_info?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -1120,11 +1120,11 @@ async function QueryTreeStatus() {
             await TreeWater()
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯ÖÖÊ÷ĞÅÏ¢Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢ç§æ ‘ä¿¡æ¯å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-Ë®Æ¿½±Àø
+//ç§æ ‘-æ°´ç“¶å¥–åŠ±
 async function RewardTreeWaterBottle() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/water_bottle/reward?aid=35&update_version_code=85221&device_platform=iphone&&device_type=iPhone13,2`
@@ -1134,13 +1134,13 @@ async function RewardTreeWaterBottle() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡ÖÖÊ÷Ë®Æ¿½±Àø»ñµÃ${result.data.reward_item.num}Ë®µÎ`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–ç§æ ‘æ°´ç“¶å¥–åŠ±è·å¾—${result.data.reward_item.num}æ°´æ»´`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡ÖÖÊ÷Ë®Æ¿½±ÀøÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–ç§æ ‘æ°´ç“¶å¥–åŠ±å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖÖÊ÷-¿ª±¦Ïä
+//ç§æ ‘-å¼€å®ç®±
 async function TreeOpenBox() {
     let caller = printCaller()
     let url = `${hostname}/ttgame/game_orchard/box2/open?watch_ad=0&aid=35`
@@ -1150,9 +1150,9 @@ async function TreeOpenBox() {
     if(!result) return
     //console.log(result)
     if(result.status_code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷¿ª±¦Ïä»ñµÃ${result.data.incr_coin}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘å¼€å®ç®±è·å¾—${result.data.incr_coin}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÖÖÊ÷¿ª±¦ÏäÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç§æ ‘å¼€å®ç®±å¤±è´¥ï¼š${result.message}`)
     }
 }
 ////////////////////////////////////////////////////////////////////
@@ -1207,7 +1207,7 @@ async function httpPost(url,caller) {
         $.post(url, async (err, resp, data) => {
             try {
                 if (err) {
-                    console.log(caller + ": postÇëÇóÊ§°Ü");
+                    console.log(caller + ": postè¯·æ±‚å¤±è´¥");
                     console.log(JSON.stringify(err));
                     $.logErr(err);
                 } else {
@@ -1231,7 +1231,7 @@ async function httpGet(url,caller) {
         $.get(url, async (err, resp, data) => {
             try {
                 if (err) {
-                    console.log(caller + ": getÇëÇóÊ§°Ü");
+                    console.log(caller + ": getè¯·æ±‚å¤±è´¥");
                     console.log(JSON.stringify(err));
                     $.logErr(err);
                 } else {
@@ -1254,12 +1254,12 @@ function safeGet(data,caller) {
         if (typeof JSON.parse(data) == "object") {
             return true;
         } else {
-            console.log(`Function ${caller}: Î´Öª´íÎó`);
+            console.log(`Function ${caller}: æœªçŸ¥é”™è¯¯`);
             console.log(data)
         }
     } catch (e) {
         console.log(e);
-        console.log(`Function ${caller}: ·şÎñÆ÷·ÃÎÊÊı¾İÎª¿Õ£¬Çë¼ì²é×ÔÉíÉè±¸ÍøÂçÇé¿ö`);
+        console.log(`Function ${caller}: æœåŠ¡å™¨è®¿é—®æ•°æ®ä¸ºç©ºï¼Œè¯·æ£€æŸ¥è‡ªèº«è®¾å¤‡ç½‘ç»œæƒ…å†µ`);
         return false;
     }
 }
