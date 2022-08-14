@@ -1,16 +1,18 @@
 /*
-IOS£ºÔÄ¶à¶à/ÔÃ¿´µã
-ÀíÂÛÉÏ¿ÉÒÔÖ±½ÓÅÜÁ½¸öAPPµÄÕËºÅ£¬Ã¿Ìì½ğ±Ò7Ã«ÒÔÉÏ£¬ÌáÏÖ1ÔªºÍ5ÔªĞèÒª×öÈÎÎñÄÃÌáÏÖÈ¯
-ÔÄ¶à¶àÏÂÔØ×¢²áµØÖ·£ºhttps://yuekandian.yichengw.cn/download?app=3&referrer=729879
-Ä¬ÈÏ²»ÌáÏÖ1¿é£¬¿ÉÒÔÔÚ»·¾³±äÁ¿yddSkipWithdrawÉèÖÃ²»ÏëÌáÏÖµÄ½ğ¶î£¬¶ººÅ¸ô¿ª£¬Ìî0¾Í»á³¢ÊÔÌáÏÖËùÓĞ½ğ¶î
+IOSï¼šé˜…å¤šå¤š/æ‚¦çœ‹ç‚¹
+ç†è®ºä¸Šå¯ä»¥ç›´æ¥è·‘ä¸¤ä¸ªAPPçš„è´¦å·ï¼Œæ¯å¤©é‡‘å¸7æ¯›ä»¥ä¸Šï¼Œæç°1å…ƒå’Œ5å…ƒéœ€è¦åšä»»åŠ¡æ‹¿æç°åˆ¸
+é˜…å¤šå¤šä¸‹è½½æ³¨å†Œåœ°å€ï¼šhttps://yuekandian.yichengw.cn/download?app=3&referrer=729879
+é»˜è®¤ä¸æç°1å—ï¼Œå¯ä»¥åœ¨ç¯å¢ƒå˜é‡yddSkipWithdrawè®¾ç½®ä¸æƒ³æç°çš„é‡‘é¢ï¼Œé€—å·éš”å¼€ï¼Œå¡«0å°±ä¼šå°è¯•æç°æ‰€æœ‰é‡‘é¢
 export yddSkipWithdraw='1,5'
-ÇàÁú£º
-×½È¡ https://yuekandian.yichengw.cn/api/v1/member/profile µÄ°üÀïµÄAuthorization(°ÑÇ°ÃæµÄBearerÉ¾µô)£¬deviceºÍUser-Agent£¬°´Ë³ĞòÓÃ#Á¬ÆğÀ´Ğ´µ½yddCookieÀï£¬¶àÕË»§ÓÃ@¸ô¿ª
-export yddCookie='ÕËºÅ1µÄAuthorization#device#UA@ÕËºÅ2µÄAuthorization#device#UA'
-V2PÖØĞ´£º´ò¿ªAPP¼´¿É»ñÈ¡CK£¬Ã»ÓĞµÄ»°µãÒ»ÏÂÎÒµÄÒ³Ãæ»òÕß×¬Ç®Ò³Ãæ
+é’é¾™ï¼š
+æ‰å– https://yuekandian.yichengw.cn/api/v1/member/profile çš„åŒ…é‡Œçš„Authorization(æŠŠå‰é¢çš„Beareråˆ æ‰)ï¼Œdeviceå’ŒUser-Agentï¼ŒæŒ‰é¡ºåºç”¨#è¿èµ·æ¥å†™åˆ°yddCookie
+
+é‡Œï¼Œå¤šè´¦æˆ·ç”¨@éš”å¼€
+export yddCookie='è´¦å·1çš„Authorization#device#UA@è´¦å·2çš„Authorization#device#UA'
+V2Pé‡å†™ï¼šæ‰“å¼€APPå³å¯è·å–CKï¼Œæ²¡æœ‰çš„è¯ç‚¹ä¸€ä¸‹æˆ‘çš„é¡µé¢æˆ–è€…èµšé’±é¡µé¢
 [task_local]
-#ÔÄ¶à¶à
-cron: 0-59/15 8-23 * * * https://raw.githubusercontent.com/leafxcy/JavaScript/main/ydd.js, tag=ÔÄ¶à¶à, enabled=true
+#é˜…å¤šå¤š
+cron: 0-59/15 8-23 * * * https://raw.githubusercontent.com/leafxcy/JavaScript/main/ydd.js, tag=é˜…å¤šå¤š, enabled=true
 [rewrite_local]
 https://yuekandian.yichengw.cn/api/v1/member/profile url script-request-header https://raw.githubusercontent.com/leafxcy/JavaScript/main/ydd.js
 [MITM]
@@ -18,14 +20,14 @@ hostname = yuekandian.yichengw.cn
 */
 
 
-const $ = Env('ÔÄ¶à¶à')
-const notifyFlag = 1; //0Îª¹Ø±ÕÍ¨Öª£¬1Îª´ò¿ªÍ¨Öª,Ä¬ÈÏÎª1
+const $ = Env('é˜…å¤šå¤š')
+const notifyFlag = 1; //0ä¸ºå…³é—­é€šçŸ¥ï¼Œ1ä¸ºæ‰“å¼€é€šçŸ¥,é»˜è®¤ä¸º1
 const logDebug = 0
 
 //const notify = $.isNode() ? require('./sendNotify') : '';
 let notifyStr = ''
 
-let rndtime = "" //ºÁÃë
+let rndtime = "" //æ¯«ç§’
 let httpResult //global buffer
 
 let host = 'yuekandian.yichengw.cn'
@@ -92,10 +94,10 @@ let COIN_TYPE = 14
 .catch((e) => $.logErr(e))
 .finally(() => $.done())
 
-//Í¨Öª
+//é€šçŸ¥
 async function showmsg() {
     
-    notifyBody = jsname + "ÔËĞĞÍ¨Öª\n\n" + notifyStr
+    notifyBody = jsname + "è¿è¡Œé€šçŸ¥\n\n" + notifyStr
     
     if (notifyFlag != 1) {
         console.log(notifyBody);
@@ -124,11 +126,11 @@ async function GetRewrite() {
                 yddCookie = yddCookie + '@' + ck
                 $.setdata(yddCookie, 'yddCookie');
                 ckList = yddCookie.split('@')
-                $.msg(jsname+` »ñÈ¡µÚ${ckList.length}¸öyddCookie³É¹¦: ${yddCookie}`)
+                $.msg(jsname+` è·å–ç¬¬${ckList.length}ä¸ªyddCookieæˆåŠŸ: ${yddCookie}`)
             }
         } else {
             $.setdata(ck, 'yddCookie');
-            $.msg(jsname+` »ñÈ¡µÚ1¸öyddCookie³É¹¦: ${ck}`)
+            $.msg(jsname+` è·å–ç¬¬1ä¸ªyddCookieæˆåŠŸ: ${ck}`)
         }
     }
 }
@@ -145,11 +147,11 @@ async function checkEnv() {
             yddCookieArr.push(yddCookie)
         }
     } else {
-        console.log('Î´ÕÒµ½yddCookie')
+        console.log('æœªæ‰¾åˆ°yddCookie')
         return false
     }
     if(yddCookieArr.length == 0) {
-        console.log('Î´ÕÒµ½ÓĞĞ§µÄyddCookie')
+        console.log('æœªæ‰¾åˆ°æœ‰æ•ˆçš„yddCookie')
         return false
     }
     
@@ -168,7 +170,7 @@ async function checkEnv() {
         }
     }
     
-    console.log(`¹²ÕÒµ½${yddCookieArr.length}¸öÓÃ»§`)
+    console.log(`å…±æ‰¾åˆ°${yddCookieArr.length}ä¸ªç”¨æˆ·`)
     return true
 }
 
@@ -207,8 +209,8 @@ async function RunMultiUser() {
     let needBarrier = 0
     let maxDoneTask = 0
     
-    //============= Ê×Ò³ÆøÅİºì°ü =============
-    console.log('\n²éÑ¯Ê×Ò³ÆøÅİºì°ü...')
+    //============= é¦–é¡µæ°”æ³¡çº¢åŒ… =============
+    console.log('\næŸ¥è¯¢é¦–é¡µæ°”æ³¡çº¢åŒ…...')
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
         await QueryCoinInfo()
         maxCoinNum = getMax(maxCoinNum,coinList[userIdx].length)
@@ -216,7 +218,7 @@ async function RunMultiUser() {
     await $.wait(100)
     
     if(maxCoinNum > 0) {
-        console.log('\n¿ªÊ¼ÁìÈ¡Ê×Ò³ÆøÅİºì°ü...')
+        console.log('\nå¼€å§‹é¢†å–é¦–é¡µæ°”æ³¡çº¢åŒ…...')
         for(let i=0; i<maxCoinNum; i++) {
             for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
                 if(i < coinList[userIdx].length) await GetCoin(coinList[userIdx][i].id)
@@ -233,8 +235,8 @@ async function RunMultiUser() {
         }
     }
     
-    //============= Ç©µ½ =============
-    console.log('\n²éÑ¯Ç©µ½×´Ì¬...')
+    //============= ç­¾åˆ° =============
+    console.log('\næŸ¥è¯¢ç­¾åˆ°çŠ¶æ€...')
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
         await QuerySignInfo()
         if(signFlag[userIdx]==1) needSign=1
@@ -243,7 +245,7 @@ async function RunMultiUser() {
     await $.wait(100)
     
     if(needSign > 0) {
-        console.log('\n¿ªÊ¼Ç©µ½...')
+        console.log('\nå¼€å§‹ç­¾åˆ°...')
         for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
             if(signFlag[userIdx]==1) await DoSign()
         }
@@ -251,15 +253,15 @@ async function RunMultiUser() {
     }
     
     if(needContSign > 0) {
-        console.log('\n¿ªÊ¼ÁìÈ¡Á¬ĞøÇ©µ½½±Àø...')
+        console.log('\nå¼€å§‹é¢†å–è¿ç»­ç­¾åˆ°å¥–åŠ±...')
         for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
             if(needContSign[userIdx]==1) await RewardContinuesSign()
         }
         await $.wait(100)
     }
     
-    //============= ³é½± =============
-    console.log('\n²éÑ¯³é½±×´Ì¬...')
+    //============= æŠ½å¥– =============
+    console.log('\næŸ¥è¯¢æŠ½å¥–çŠ¶æ€...')
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
         await QueryLotteryInfo()
         if(lotteryTicket[userIdx]) needLottery=1
@@ -267,7 +269,7 @@ async function RunMultiUser() {
     await $.wait(100)
     
     if(needLottery > 0) {
-        console.log('\n¿ªÊ¼³é½±...')
+        console.log('\nå¼€å§‹æŠ½å¥–...')
         for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
             if(lotteryTicket[userIdx]) await DoLottery(lotteryTicket[userIdx])
         }
@@ -282,8 +284,8 @@ async function RunMultiUser() {
         await $.wait(100)
     }
     
-    //============= ÖúÁ¦ÁìÏÖ½ğ =============
-    console.log('\n×¼±¸¿´ÖúÁ¦ÁìÏÖ½ğÊÓÆµ...')
+    //============= åŠ©åŠ›é¢†ç°é‡‘ =============
+    console.log('\nå‡†å¤‡çœ‹åŠ©åŠ›é¢†ç°é‡‘è§†é¢‘...')
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
         await HelpClick()
         if(helpTicket[userIdx]) needHelpVideo=1
@@ -301,14 +303,14 @@ async function RunMultiUser() {
         await $.wait(100)
     }
     
-    console.log('\n²éÑ¯ÖúÁ¦ÁìÏÖ½ğ×´Ì¬...')
+    console.log('\næŸ¥è¯¢åŠ©åŠ›é¢†ç°é‡‘çŠ¶æ€...')
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
         await HelpInfo()
     }
     await $.wait(100)
     
-    //============= ´³¹Ø»»ÊÖ»ú =============
-    console.log('\n²éÑ¯´³¹Ø×´Ì¬...')
+    //============= é—¯å…³æ¢æ‰‹æœº =============
+    console.log('\næŸ¥è¯¢é—¯å…³çŠ¶æ€...')
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
         await QueryBarrierInfo()
         if(barrierFlag[userIdx]>0) needBarrier=1
@@ -322,8 +324,8 @@ async function RunMultiUser() {
         await $.wait(100)
     }
     
-    //============= ÈÎÎñ×´Ì¬ =============
-    console.log('\n²éÑ¯ÈÎÎñ×´Ì¬...')
+    //============= ä»»åŠ¡çŠ¶æ€ =============
+    console.log('\næŸ¥è¯¢ä»»åŠ¡çŠ¶æ€...')
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
         await QueryTaskList()
         if(adVideoFlag[userIdx]) needAdVideo=1
@@ -332,9 +334,9 @@ async function RunMultiUser() {
     }
     await $.wait(100)
     
-    //============= ÁìÈ¡ÈÎÎñ½±Àø =============
+    //============= é¢†å–ä»»åŠ¡å¥–åŠ± =============
     if(maxDoneTask > 0) {
-        console.log('\n¿ªÊ¼ÁìÈ¡ÈÎÎñ½±Àø...')
+        console.log('\nå¼€å§‹é¢†å–ä»»åŠ¡å¥–åŠ±...')
         for(taskIdx=0; taskIdx<maxDoneTask; taskIdx++) {
             for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
                 if(taskIdx<doneTaskList[userIdx].length) await doneTaskReward(doneTaskList[userIdx][taskIdx])
@@ -355,18 +357,18 @@ async function RunMultiUser() {
         }
     }
     
-    //============= Ìø×ªÖ§¸¶±¦ÈÎÎñ =============
+    //============= è·³è½¬æ”¯ä»˜å®ä»»åŠ¡ =============
     if(needAliFlag > 0) {
-        console.log('\n¿ªÊ¼×öÌø×ªÖ§¸¶±¦ÈÎÎñ...')
+        console.log('\nå¼€å§‹åšè·³è½¬æ”¯ä»˜å®ä»»åŠ¡...')
         for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
             if(doAliFlag[userIdx]==1) await DoAliTask()
         }
         await $.wait(100)
     }
     
-    //============= ¿´¹ã¸æÈÎÎñ =============
+    //============= çœ‹å¹¿å‘Šä»»åŠ¡ =============
     if(needAdVideo > 0) {
-        console.log('\n¿ªÊ¼¿´¹ã¸æ...')
+        console.log('\nå¼€å§‹çœ‹å¹¿å‘Š...')
         for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
             if(adVideoFlag[userIdx]==1) await DoAdVideo()
         }
@@ -385,8 +387,8 @@ async function RunMultiUser() {
         await $.wait(100)
     }
     
-    //============= ¿´Ğ¡ÊÓÆµ =============
-    console.log(`\n×¼±¸Ë¢Ğ¡ÊÓÆµ${NUM_PER_ROUND}´Î...`)
+    //============= çœ‹å°è§†é¢‘ =============
+    console.log(`\nå‡†å¤‡åˆ·å°è§†é¢‘${NUM_PER_ROUND}æ¬¡...`)
     haveTicket = 0
     maxWaitTime = 0
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
@@ -403,10 +405,10 @@ async function RunMultiUser() {
         await $.wait(100)
         for(let i=0; i<NUM_PER_ROUND && haveTicket > 0; i++) {
             haveTicket = 0
-            console.log(`--- ¿ªÊ¼Ë¢µÚ${i+1}ÂÖ ---`)
+            console.log(`--- å¼€å§‹åˆ·ç¬¬${i+1}è½® ---`)
             
             let waitTime = Math.floor(Math.random()*1000) + maxWaitTime*1000
-            console.log(`Ëæ»úµÈ´ı${waitTime/1000}Ãë...`)
+            console.log(`éšæœºç­‰å¾…${waitTime/1000}ç§’...`)
             await $.wait(waitTime)
             for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
                 if(userTicket[userIdx]) await Reward('video?',userTicket[userIdx],'short=1&')
@@ -424,8 +426,8 @@ async function RunMultiUser() {
         await $.wait(100)
     }
     
-    //============= ¿´×ÊÑ¶ =============
-    console.log(`\n×¼±¸Ë¢×ÊÑ¶${NUM_PER_ROUND}´Î...`)
+    //============= çœ‹èµ„è®¯ =============
+    console.log(`\nå‡†å¤‡åˆ·èµ„è®¯${NUM_PER_ROUND}æ¬¡...`)
     haveTicket = 0
     maxWaitTime = 0
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
@@ -442,10 +444,10 @@ async function RunMultiUser() {
         await $.wait(100)
         for(let i=0; i<NUM_PER_ROUND && haveTicket > 0; i++) {
             haveTicket = 0
-            console.log(`--- ¿ªÊ¼Ë¢µÚ${i+1}ÂÖ ---`)
+            console.log(`--- å¼€å§‹åˆ·ç¬¬${i+1}è½® ---`)
             
             let waitTime = Math.floor(Math.random()*1000) + maxWaitTime*1000
-            console.log(`Ëæ»úµÈ´ı${waitTime/1000}Ãë...`)
+            console.log(`éšæœºç­‰å¾…${waitTime/1000}ç§’...`)
             await $.wait(waitTime)
             for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
                 if(userTicket[userIdx]) await Reward('news?',userTicket[userIdx])
@@ -463,20 +465,20 @@ async function RunMultiUser() {
         await $.wait(100)
     }
     
-    //============= ÕË»§ĞÅÏ¢ =============
-    console.log('\n²éÑ¯ÕË»§ĞÅÏ¢...')
+    //============= è´¦æˆ·ä¿¡æ¯ =============
+    console.log('\næŸ¥è¯¢è´¦æˆ·ä¿¡æ¯...')
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
         await QueryUserInfo()
     }
     
-    //============= ÌáÏÖ =============
-    console.log('\n²éÑ¯ÌáÏÖĞÅÏ¢...')
+    //============= æç° =============
+    console.log('\næŸ¥è¯¢æç°ä¿¡æ¯...')
     for(userIdx=0; userIdx<yddCookieArr.length; userIdx++) {
         await QueryWithdrawList()
     }
 }
 
-//²éÑ¯Ç©µ½×´Ì¬
+//æŸ¥è¯¢ç­¾åˆ°çŠ¶æ€
 async function QuerySignInfo() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/sign?`
@@ -487,27 +489,27 @@ async function QuerySignInfo() {
     
     if(result.code == 0) {
         for(let items of result.result.items) {
-            if(items.days=='½ñÌì') {
+            if(items.days=='ä»Šå¤©') {
                 if(items.status==false) {
                     signFlag[userIdx] = 1
-                    console.log(`ÓÃ»§${userIdx+1}½ñÌìÎ´Íê³ÉÇ©µ½`)
+                    console.log(`ç”¨æˆ·${userIdx+1}ä»Šå¤©æœªå®Œæˆç­¾åˆ°`)
                 } else {
-                    console.log(`ÓÃ»§${userIdx+1}½ñÌìÒÑÇ©µ½`)
+                    console.log(`ç”¨æˆ·${userIdx+1}ä»Šå¤©å·²ç­¾åˆ°`)
                 }
             }
         }
         for(let items of result.result.ext_items) {
             if(result.result.days >= items.days) {
-                console.log(`ÓÃ»§${userIdx+1}¿ÉÁìÈ¡${items.desc}½±Àø`)
+                console.log(`ç”¨æˆ·${userIdx+1}å¯é¢†å–${items.desc}å¥–åŠ±`)
                 contSignFlag[userIdx] = 1
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯Ç©µ½×´Ì¬Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢ç­¾åˆ°çŠ¶æ€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Ç©µ½
+//ç­¾åˆ°
 async function DoSign() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/sign?`
@@ -517,13 +519,13 @@ async function DoSign() {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}Ç©µ½»ñµÃ£º${result.result.coin}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç­¾åˆ°è·å¾—ï¼š${result.result.coin}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}Ç©µ½Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ç­¾åˆ°å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Á¬ĞøÇ©µ½½±Àø
+//è¿ç»­ç­¾åˆ°å¥–åŠ±
 async function RewardContinuesSign() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/sign/red_envelope?`
@@ -533,13 +535,13 @@ async function RewardContinuesSign() {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}»ñµÃÁ¬ĞøÇ©µ½½±Àø£º${result.result.amount}Ôª`)
+        console.log(`ç”¨æˆ·${userIdx+1}è·å¾—è¿ç»­ç­¾åˆ°å¥–åŠ±ï¼š${result.result.amount}å…ƒ`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}»ñµÃÁ¬ĞøÇ©µ½½±ÀøÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}è·å¾—è¿ç»­ç­¾åˆ°å¥–åŠ±å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//²éÑ¯Ê×Ò³½ğ±ÒÆøÅİ
+//æŸ¥è¯¢é¦–é¡µé‡‘å¸æ°”æ³¡
 async function QueryCoinInfo() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/coin?`
@@ -554,13 +556,13 @@ async function QueryCoinInfo() {
                 coinList[userIdx].push(items)
             }
         }
-        console.log(`ÓÃ»§${userIdx+1}ÓĞ${coinList[userIdx].length}¸ö¿ÉÒÔÁìÈ¡µÄÊ×Ò³ÆøÅİ`)
+        console.log(`ç”¨æˆ·${userIdx+1}æœ‰${coinList[userIdx].length}ä¸ªå¯ä»¥é¢†å–çš„é¦–é¡µæ°”æ³¡`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯Ê×Ò³ÆøÅİĞÅÏ¢Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢é¦–é¡µæ°”æ³¡ä¿¡æ¯å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÁìÈ¡Ê×Ò³ÆøÅİ
+//é¢†å–é¦–é¡µæ°”æ³¡
 async function GetCoin(id) {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/coin?`
@@ -571,13 +573,13 @@ async function GetCoin(id) {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Ê×Ò³ÆøÅİ»ñµÃ£º${result.result.coin}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–é¦–é¡µæ°”æ³¡è·å¾—ï¼š${result.result.coin}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡Ê×Ò³ÆøÅİÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–é¦–é¡µæ°”æ³¡å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//²éÑ¯³é½±×´Ì¬
+//æŸ¥è¯¢æŠ½å¥–çŠ¶æ€
 async function QueryLotteryInfo() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/lottery/index?`
@@ -587,16 +589,16 @@ async function QueryLotteryInfo() {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}½ñÌìÊ£Óà³é½±´ÎÊı£º${result.result.lottery_count}`)
+        console.log(`ç”¨æˆ·${userIdx+1}ä»Šå¤©å‰©ä½™æŠ½å¥–æ¬¡æ•°ï¼š${result.result.lottery_count}`)
         if(result.result.lottery_count>0) {
             lotteryTicket[userIdx] = result.result.ticket
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯³é½±×´Ì¬Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢æŠ½å¥–çŠ¶æ€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//³é½±
+//æŠ½å¥–
 async function DoLottery(ticket) {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/lottery/index?`
@@ -609,18 +611,18 @@ async function DoLottery(ticket) {
     if(result.code == 0) {
         if(result.result.type==2) {
             lotteryAdTicket[userIdx] = result.result.ticket
-            console.log(`ÓÃ»§${userIdx+1}³é½±»ñµÃ£º${result.result.num}½ğ±Ò`)
+            console.log(`ç”¨æˆ·${userIdx+1}æŠ½å¥–è·å¾—ï¼š${result.result.num}é‡‘å¸`)
         } else if (result.result.type==1) {
-            console.log(`ÓÃ»§${userIdx+1}³é½±»ñµÃ£º${result.result.num}ÊÖ»úËéÆ¬`)
+            console.log(`ç”¨æˆ·${userIdx+1}æŠ½å¥–è·å¾—ï¼š${result.result.num}æ‰‹æœºç¢ç‰‡`)
         } else {
             console.log(result)
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}³é½±Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŠ½å¥–å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖúÁ¦ÁìÏÖ½ğ-¿´ÊÓÆµ
+//åŠ©åŠ›é¢†ç°é‡‘-çœ‹è§†é¢‘
 async function HelpClick() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/help/click?`
@@ -632,16 +634,16 @@ async function HelpClick() {
     if(result.code == 0) {
         if(result.result && result.result.ticket) {
             helpTicket[userIdx] = result.result.ticket
-            console.log(`ÓÃ»§${userIdx+1}¿´ÖúÁ¦ÁìÏÖ½ğÊÓÆµ½«»ñµÃ${result.result.coin/10000}ÔªÓà¶î`)
+            console.log(`ç”¨æˆ·${userIdx+1}çœ‹åŠ©åŠ›é¢†ç°é‡‘è§†é¢‘å°†è·å¾—${result.result.coin/10000}å…ƒä½™é¢`)
         } else {
-            console.log(`ÓÃ»§${userIdx+1}¿´ÖúÁ¦ÁìÏÖ½ğÊÓÆµÊ§°Ü£º${result.message}`)
+            console.log(`ç”¨æˆ·${userIdx+1}çœ‹åŠ©åŠ›é¢†ç°é‡‘è§†é¢‘å¤±è´¥ï¼š${result.message}`)
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}¿´ÖúÁ¦ÁìÏÖ½ğÊÓÆµÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}çœ‹åŠ©åŠ›é¢†ç°é‡‘è§†é¢‘å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÖúÁ¦ÁìÏÖ½ğĞÅÏ¢
+//åŠ©åŠ›é¢†ç°é‡‘ä¿¡æ¯
 async function HelpInfo() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/help/index?`
@@ -651,13 +653,13 @@ async function HelpInfo() {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}ÖúÁ¦ÁìÏÖ½ğ½ğ¶î£º${result.result.jinbi}Ôª£¬»¹²î${result.result.diff_jinbi}Ôª¿ÉÒÔÌáÏÖ`)
+        console.log(`ç”¨æˆ·${userIdx+1}åŠ©åŠ›é¢†ç°é‡‘é‡‘é¢ï¼š${result.result.jinbi}å…ƒï¼Œè¿˜å·®${result.result.diff_jinbi}å…ƒå¯ä»¥æç°`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}¿´ÖúÁ¦ÁìÏÖ½ğÊÓÆµÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}çœ‹åŠ©åŠ›é¢†ç°é‡‘è§†é¢‘å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//¿ªÊ¼¹ã¸æ
+//å¼€å§‹å¹¿å‘Š
 async function WatchAd(type) {
     let caller = printCaller()
     let url = `${hostname}/api/v1/ad/topon/placement/id?type=${type}&`
@@ -667,13 +669,13 @@ async function WatchAd(type) {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}¿ªÊ¼¿´¹ã¸æ`)
+        console.log(`ç”¨æˆ·${userIdx+1}å¼€å§‹çœ‹å¹¿å‘Š`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}¿´¹ã¸æÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}çœ‹å¹¿å‘Šå¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Íê³É¹ã¸æ
+//å®Œæˆå¹¿å‘Š
 async function LogAd(type,ticket='') {
     let caller = printCaller()
     let ticketStr = ''
@@ -685,13 +687,13 @@ async function LogAd(type,ticket='') {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}Íê³É¿´¹ã¸æ`)
+        console.log(`ç”¨æˆ·${userIdx+1}å®Œæˆçœ‹å¹¿å‘Š`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}Íê³É¿´¹ã¸æÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}å®Œæˆçœ‹å¹¿å‘Šå¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//»ñÈ¡ticket
+//è·å–ticket
 async function GetTicket(suburl) {
     userTicket[userIdx] = ''
     userWaitTime[userIdx] = 0
@@ -707,26 +709,26 @@ async function GetTicket(suburl) {
             if(result.result.ticket) {
                 userTicket[userIdx] = result.result.ticket
                 userWaitTime[userIdx] = result.result.time
-                console.log(`ÓÃ»§${userIdx+1}»ñÈ¡µ½ticket`)
+                console.log(`ç”¨æˆ·${userIdx+1}è·å–åˆ°ticket`)
             } else {
-                console.log(`ÓÃ»§${userIdx+1}»ñÈ¡ticketÊ§°Ü£º${result.message}`)
+                console.log(`ç”¨æˆ·${userIdx+1}è·å–ticketå¤±è´¥ï¼š${result.message}`)
             }
         } else {
-            console.log(`ÓÃ»§${userIdx+1}ÒÑÎŞ·¨»ñµÃ¸ü¶à½ğ±Ò`)
+            console.log(`ç”¨æˆ·${userIdx+1}å·²æ— æ³•è·å¾—æ›´å¤šé‡‘å¸`)
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}»ñÈ¡ticketÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}è·å–ticketå¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//¼ÇÂ¼Ê±¼ä
+//è®°å½•æ—¶é—´
 async function TimeRecord(suburl,isEnd=false) {
     let caller = printCaller()
     let endStr = ''
-    let desc = '¿ªÊ¼'
+    let desc = 'å¼€å§‹'
     if(isEnd) {
         endStr = 'end=1&'
-        desc = '½áÊø'
+        desc = 'ç»“æŸ'
     }
     let url = `${hostname}/api/v1/reward/${suburl}/interval?${endStr}`
     let urlObject = populateGetUrl(url)
@@ -735,13 +737,13 @@ async function TimeRecord(suburl,isEnd=false) {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}${desc}¼ÇÂ¼Ê±³¤`)
+        console.log(`ç”¨æˆ·${userIdx+1}${desc}è®°å½•æ—¶é•¿`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}${desc}¼ÇÂ¼Ê±³¤Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}${desc}è®°å½•æ—¶é•¿å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//»ñµÃ½±Àø
+//è·å¾—å¥–åŠ±
 async function Reward(suburl,ticket,subbody='') {
     extraRewardFlag[userIdx] = 0
     userTicket[userIdx] = ''
@@ -759,17 +761,17 @@ async function Reward(suburl,ticket,subbody='') {
         if(result.result.ticket) {
             userTicket[userIdx] = result.result.ticket
             userWaitTime[userIdx] = result.result.time
-            console.log(`ÓÃ»§${userIdx+1}»ñÈ¡µ½ÏÂÒ»¸öticket`)
+            console.log(`ç”¨æˆ·${userIdx+1}è·å–åˆ°ä¸‹ä¸€ä¸ªticket`)
         } else {
-            console.log(`ÓÃ»§${userIdx+1}»ñÈ¡ÏÂÒ»¸öticketÊ§°Ü£º${result.message}`)
+            console.log(`ç”¨æˆ·${userIdx+1}è·å–ä¸‹ä¸€ä¸ªticketå¤±è´¥ï¼š${result.message}`)
         }
-        console.log(`ÓÃ»§${userIdx+1}»ñµÃ£º${result.result.reward}½ğ±Ò£¬¶îÍâ½±Àø´ÎÊı${result.result.target}£¬Ä¿Ç°ÒÑË¢${result.result.count}´Î`)
+        console.log(`ç”¨æˆ·${userIdx+1}è·å¾—ï¼š${result.result.reward}é‡‘å¸ï¼Œé¢å¤–å¥–åŠ±æ¬¡æ•°${result.result.target}ï¼Œç›®å‰å·²åˆ·${result.result.count}æ¬¡`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}»ñµÃ½±ÀøÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}è·å¾—å¥–åŠ±å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//¶îÍâ´ÎÊı½±Àø
+//é¢å¤–æ¬¡æ•°å¥–åŠ±
 async function RewardOpen(suburl,body='') {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/${suburl}/open?`
@@ -779,13 +781,13 @@ async function RewardOpen(suburl,body='') {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}»ñµÃ¶îÍâ½±Àø£º${result.result.reward}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}è·å¾—é¢å¤–å¥–åŠ±ï¼š${result.result.reward}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}»ñµÃ¶îÍâ½±ÀøÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}è·å¾—é¢å¤–å¥–åŠ±å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÕËºÅĞÅÏ¢
+//è´¦å·ä¿¡æ¯
 async function QueryUserInfo() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/member/profile?debug=0&`
@@ -795,19 +797,19 @@ async function QueryUserInfo() {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`\n==== ÓÃ»§${userIdx+1}: ${result.result.nickname} ====`)
-        console.log(`½ñÈÕÊÕÒæ: ${result.result.today_point}`)
-        console.log(`ÌáÏÖÈ¯  : ${result.result.ticket}`)
-        console.log(`ÊÖ»úËéÆ¬: ${result.result.fragment}`)
-        console.log(`½ğ±ÒÓà¶î: ${result.result.point}`)
-        console.log(`ÀúÊ·ÊÕÒæ: ${result.result.total_point}`)
+        console.log(`\n==== ç”¨æˆ·${userIdx+1}: ${result.result.nickname} ====`)
+        console.log(`ä»Šæ—¥æ”¶ç›Š: ${result.result.today_point}`)
+        console.log(`æç°åˆ¸  : ${result.result.ticket}`)
+        console.log(`æ‰‹æœºç¢ç‰‡: ${result.result.fragment}`)
+        console.log(`é‡‘å¸ä½™é¢: ${result.result.point}`)
+        console.log(`å†å²æ”¶ç›Š: ${result.result.total_point}`)
         userInfo[userIdx] = result.result
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯ÕËºÅĞÅÏ¢Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢è´¦å·ä¿¡æ¯å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÌáÏÖÁĞ±í
+//æç°åˆ—è¡¨
 async function QueryWithdrawList() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/cash/exchange?`
@@ -835,11 +837,11 @@ async function QueryWithdrawList() {
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}²éÑ¯ÌáÏÖÁĞ±íÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æŸ¥è¯¢æç°åˆ—è¡¨å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÌáÏÖ
+//æç°
 async function Withdraw(amount) {
     let caller = printCaller()
     let url = `${hostname}/api/v1/cash/exchange?`
@@ -851,14 +853,14 @@ async function Withdraw(amount) {
     
     if(result.code == 0) {
         withdrawFlag[userIdx] = 1
-        console.log(`ÓÃ»§${userIdx+1}ÌáÏÖ${amount}£º${result.result.title}, ${result.result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æç°${amount}ï¼š${result.result.title}, ${result.result.message}`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÌáÏÖ${amount}Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}æç°${amount}å¤±è´¥ï¼š${result.message}`)
     }
     return false
 }
 
-//»ñÈ¡ÈÎÎñÁĞ±í×´Ì¬
+//è·å–ä»»åŠ¡åˆ—è¡¨çŠ¶æ€
 async function QueryTaskList() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/zhuan/index?`
@@ -869,21 +871,21 @@ async function QueryTaskList() {
     
     if(result.code == 0) {
         for(let item of result.result.items) {
-            let str = (item.st==0) ? 'Î´Íê³É' : 'ÒÑÍê³É'
-            if(item.title.indexOf('¹Û¿´¹ã¸æÊÓÆµ') > -1) {
+            let str = (item.st==0) ? 'æœªå®Œæˆ' : 'å·²å®Œæˆ'
+            if(item.title.indexOf('è§‚çœ‹å¹¿å‘Šè§†é¢‘') > -1) {
                 let matchItem = item.title.match(/"red">(\w+)<\/font>\/(\w+)/)
-                str = (parseInt(matchItem[2]) > parseInt(matchItem[1])) ? 'Î´Íê³É' : 'ÒÑÍê³É'
+                str = (parseInt(matchItem[2]) > parseInt(matchItem[1])) ? 'æœªå®Œæˆ' : 'å·²å®Œæˆ'
                 if(item.st==0) adVideoFlag[userIdx] = 1
-                console.log(`ÓÃ»§${userIdx+1}${str}¿´¹ã¸æÈÎÎñ£¬×Ü´ÎÊı${matchItem[2]}´Î£¬ÒÑÍê³É${matchItem[1]}´Î`)
-            } else if(item.title.indexOf('Ö§¸¶±¦ºì°ü') > -1) {
+                console.log(`ç”¨æˆ·${userIdx+1}${str}çœ‹å¹¿å‘Šä»»åŠ¡ï¼Œæ€»æ¬¡æ•°${matchItem[2]}æ¬¡ï¼Œå·²å®Œæˆ${matchItem[1]}æ¬¡`)
+            } else if(item.title.indexOf('æ”¯ä»˜å®çº¢åŒ…') > -1) {
                 if(item.st==0) doAliFlag[userIdx] = 1
-                console.log(`ÓÃ»§${userIdx+1}${str}Ìø×ªÖ§¸¶±¦ÈÎÎñ`)
-            } else if(item.title.indexOf('¿´×ÊÑ¶') > -1) {
+                console.log(`ç”¨æˆ·${userIdx+1}${str}è·³è½¬æ”¯ä»˜å®ä»»åŠ¡`)
+            } else if(item.title.indexOf('çœ‹èµ„è®¯') > -1) {
                 let matchItem = item.rate.split('$')
-                console.log(`ÓÃ»§${userIdx+1}${str}¿´×ÊÑ¶ÈÎÎñ£¬×Ü´ÎÊı${matchItem[1]}´Î£¬ÒÑÍê³É${matchItem[0]}´Î`)
-            } else if(item.title.indexOf('Ë¢ÊÓÆµ') > -1) {
+                console.log(`ç”¨æˆ·${userIdx+1}${str}çœ‹èµ„è®¯ä»»åŠ¡ï¼Œæ€»æ¬¡æ•°${matchItem[1]}æ¬¡ï¼Œå·²å®Œæˆ${matchItem[0]}æ¬¡`)
+            } else if(item.title.indexOf('åˆ·è§†é¢‘') > -1) {
                 let matchItem = item.rate.split('$')
-                console.log(`ÓÃ»§${userIdx+1}${str}Ë¢ÊÓÆµÈÎÎñ£¬×Ü´ÎÊı${matchItem[1]}´Î£¬ÒÑÍê³É${matchItem[0]}´Î`)
+                console.log(`ç”¨æˆ·${userIdx+1}${str}åˆ·è§†é¢‘ä»»åŠ¡ï¼Œæ€»æ¬¡æ•°${matchItem[1]}æ¬¡ï¼Œå·²å®Œæˆ${matchItem[0]}æ¬¡`)
             }
             if(item.st==1) {
                 if(item.id != 10 && item.time <= 0) {
@@ -893,11 +895,11 @@ async function QueryTaskList() {
             }
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}»ñÈ¡ÈÎÎñÁĞ±í×´Ì¬Ê§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}è·å–ä»»åŠ¡åˆ—è¡¨çŠ¶æ€å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//»ñÈ¡¿´¹ã¸æÊÓÆµÈÎÎñticket
+//è·å–çœ‹å¹¿å‘Šè§†é¢‘ä»»åŠ¡ticket
 async function DoAdVideo() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/zhuan/video?`
@@ -909,16 +911,16 @@ async function DoAdVideo() {
     if(result.code == 0) {
         if(result.result.ticket) {
             adVideoTicket[userIdx] = result.result.ticket
-            console.log(`ÓÃ»§${userIdx+1}»ñÈ¡¿´¹ã¸æÊÓÆµticket³É¹¦£¬½«»ñµÃ£º${result.result.coin}½ğ±Ò£¬${result.result.coupon}ÌáÏÖÈ¯`)
+            console.log(`ç”¨æˆ·${userIdx+1}è·å–çœ‹å¹¿å‘Šè§†é¢‘ticketæˆåŠŸï¼Œå°†è·å¾—ï¼š${result.result.coin}é‡‘å¸ï¼Œ${result.result.coupon}æç°åˆ¸`)
         } else {
-            console.log(`ÓÃ»§${userIdx+1}»ñÈ¡¿´¹ã¸æÊÓÆµticketÊ§°Ü`)
+            console.log(`ç”¨æˆ·${userIdx+1}è·å–çœ‹å¹¿å‘Šè§†é¢‘ticketå¤±è´¥`)
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}»ñÈ¡¿´¹ã¸æÊÓÆµticketÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}è·å–çœ‹å¹¿å‘Šè§†é¢‘ticketå¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//Ìø×ªÖ§¸¶±¦
+//è·³è½¬æ”¯ä»˜å®
 async function DoAliTask() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/zhuan/aliaaa?`
@@ -928,13 +930,13 @@ async function DoAliTask() {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}Íê³ÉÌø×ªÖ§¸¶±¦ÈÎÎñ`)
+        console.log(`ç”¨æˆ·${userIdx+1}å®Œæˆè·³è½¬æ”¯ä»˜å®ä»»åŠ¡`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}Íê³ÉÌø×ªÖ§¸¶±¦ÈÎÎñÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}å®Œæˆè·³è½¬æ”¯ä»˜å®ä»»åŠ¡å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//´³¹Ø»»ÊÖ»ú×´Ì¬
+//é—¯å…³æ¢æ‰‹æœºçŠ¶æ€
 async function QueryBarrierInfo() {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/barrier/index?`
@@ -944,16 +946,16 @@ async function QueryBarrierInfo() {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}½ñÌìÒÑ´³¹Ø${result.result.current_barrier}´Î`)
+        console.log(`ç”¨æˆ·${userIdx+1}ä»Šå¤©å·²é—¯å…³${result.result.current_barrier}æ¬¡`)
         if(result.result.current_barrier<7) {
             barrierFlag[userIdx] = parseInt(result.result.current_barrier) + 1
         }
     } else {
-        console.log(`ÓÃ»§${userIdx+1}»ñÈ¡¿´¹ã¸æÊÓÆµticketÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}è·å–çœ‹å¹¿å‘Šè§†é¢‘ticketå¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//´³¹Ø
+//é—¯å…³
 async function DoBarrier(num) {
     let caller = printCaller()
     let url = `${hostname}/api/v1/reward/barrier/index?`
@@ -964,13 +966,13 @@ async function DoBarrier(num) {
     if(!result) return
     
     if(result.code == 0) {
-        console.log(`ÓÃ»§${userIdx+1}´³¹Ø»ñµÃ£º${result.result.coin}½ğ±Ò£¬${result.result.fragment}ÊÖ»úËéÆ¬`)
+        console.log(`ç”¨æˆ·${userIdx+1}é—¯å…³è·å¾—ï¼š${result.result.coin}é‡‘å¸ï¼Œ${result.result.fragment}æ‰‹æœºç¢ç‰‡`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}´³¹ØÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é—¯å…³å¤±è´¥ï¼š${result.message}`)
     }
 }
 
-//ÁìÈÎÎñ½±Àø
+//é¢†ä»»åŠ¡å¥–åŠ±
 async function doneTaskReward(id) {
     let caller = printCaller()
     let url = `${hostname}/api/v1/zhuan/done?`
@@ -982,9 +984,9 @@ async function doneTaskReward(id) {
     
     if(result.code == 0) {
         if(result.result.ticket) doneTaskTicket[userIdx][taskIdx] = result.result.ticket
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡ÈÎÎñ[id=${id}]½±Àø»ñµÃ£º${result.result.coin}½ğ±Ò`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–ä»»åŠ¡[id=${id}]å¥–åŠ±è·å¾—ï¼š${result.result.coin}é‡‘å¸`)
     } else {
-        console.log(`ÓÃ»§${userIdx+1}ÁìÈ¡ÈÎÎñ[id=${id}]½±ÀøÊ§°Ü£º${result.message}`)
+        console.log(`ç”¨æˆ·${userIdx+1}é¢†å–ä»»åŠ¡[id=${id}]å¥–åŠ±å¤±è´¥ï¼š${result.message}`)
     }
 }
 ////////////////////////////////////////////////////////////////////
@@ -1043,7 +1045,7 @@ async function httpPost(url,caller) {
         $.post(url, async (err, resp, data) => {
             try {
                 if (err) {
-                    console.log(caller + ": postÇëÇóÊ§°Ü");
+                    console.log(caller + ": postè¯·æ±‚å¤±è´¥");
                     console.log(JSON.stringify(err));
                     $.logErr(err);
                 } else {
@@ -1067,7 +1069,7 @@ async function httpGet(url,caller) {
         $.get(url, async (err, resp, data) => {
             try {
                 if (err) {
-                    console.log(caller + ": getÇëÇóÊ§°Ü");
+                    console.log(caller + ": getè¯·æ±‚å¤±è´¥");
                     console.log(JSON.stringify(err));
                     $.logErr(err);
                 } else {
@@ -1090,12 +1092,12 @@ function safeGet(data,caller) {
         if (typeof JSON.parse(data) == "object") {
             return true;
         } else {
-            console.log(`Function ${caller}: Î´Öª´íÎó`);
+            console.log(`Function ${caller}: æœªçŸ¥é”™è¯¯`);
             console.log(data)
         }
     } catch (e) {
         console.log(e);
-        console.log(`Function ${caller}: ·şÎñÆ÷·ÃÎÊÊı¾İÎª¿Õ£¬Çë¼ì²é×ÔÉíÉè±¸ÍøÂçÇé¿ö`);
+        console.log(`Function ${caller}: æœåŠ¡å™¨è®¿é—®æ•°æ®ä¸ºç©ºï¼Œè¯·æ£€æŸ¥è‡ªèº«è®¾å¤‡ç½‘ç»œæƒ…å†µ`);
         return false;
     }
 }
@@ -1112,4 +1114,124 @@ function getMax(a,b){
     return ((a<b) ? b : a)
 }
 
-function Env(t, e) { class s { constructor(t) { this.env = t } send(t, e = "GET") { t = "string" == typeof t ? { url: t } : t; let s = this.get; return "POST" === e && (s = this.post), new Promise((e, i) => { s.call(this, t, (t, s, r) => { t ? i(t) : e(s) }) }) } get(t) { return this.send.call(this.env, t) } post(t) { return this.send.call(this.env, t, "POST") } } return new class { constructor(t, e) { this.name = t, this.http = new s(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", this.startTime = (new Date).getTime(), Object.assign(this, e), this.log("", `\ud83d\udd14${this.name}, \u5f00\u59cb!`) } isNode() { return "undefined" != typeof module && !!module.exports } isQuanX() { return "undefined" != typeof $task } isSurge() { return "undefined" != typeof $httpClient && "undefined" == typeof $loon } isLoon() { return "undefined" != typeof $loon } toObj(t, e = null) { try { return JSON.parse(t) } catch { return e } } toStr(t, e = null) { try { return JSON.stringify(t) } catch { return e } } getjson(t, e) { let s = e; const i = this.getdata(t); if (i) try { s = JSON.parse(this.getdata(t)) } catch { } return s } setjson(t, e) { try { return this.setdata(JSON.stringify(t), e) } catch { return !1 } } getScript(t) { return new Promise(e => { this.get({ url: t }, (t, s, i) => e(i)) }) } runScript(t, e) { return new Promise(s => { let i = this.getdata("@chavy_boxjs_userCfgs.httpapi"); i = i ? i.replace(/\n/g, "").trim() : i; let r = this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout"); r = r ? 1 * r : 20, r = e && e.timeout ? e.timeout : r; const [o, h] = i.split("@"), a = { url: `http://${h}/v1/scripting/evaluate`, body: { script_text: t, mock_type: "cron", timeout: r }, headers: { "X-Key": o, Accept: "*/*" } }; this.post(a, (t, e, i) => s(i)) }).catch(t => this.logErr(t)) } loaddata() { if (!this.isNode()) return {}; { this.fs = this.fs ? this.fs : require("fs"), this.path = this.path ? this.path : require("path"); const t = this.path.resolve(this.dataFile), e = this.path.resolve(process.cwd(), this.dataFile), s = this.fs.existsSync(t), i = !s && this.fs.existsSync(e); if (!s && !i) return {}; { const i = s ? t : e; try { return JSON.parse(this.fs.readFileSync(i)) } catch (t) { return {} } } } } writedata() { if (this.isNode()) { this.fs = this.fs ? this.fs : require("fs"), this.path = this.path ? this.path : require("path"); const t = this.path.resolve(this.dataFile), e = this.path.resolve(process.cwd(), this.dataFile), s = this.fs.existsSync(t), i = !s && this.fs.existsSync(e), r = JSON.stringify(this.data); s ? this.fs.writeFileSync(t, r) : i ? this.fs.writeFileSync(e, r) : this.fs.writeFileSync(t, r) } } lodash_get(t, e, s) { const i = e.replace(/\[(\d+)\]/g, ".$1").split("."); let r = t; for (const t of i) if (r = Object(r)[t], void 0 === r) return s; return r } lodash_set(t, e, s) { return Object(t) !== t ? t : (Array.isArray(e) || (e = e.toString().match(/[^.[\]]+/g) || []), e.slice(0, -1).reduce((t, s, i) => Object(t[s]) === t[s] ? t[s] : t[s] = Math.abs(e[i + 1]) >> 0 == +e[i + 1] ? [] : {}, t)[e[e.length - 1]] = s, t) } getdata(t) { let e = this.getval(t); if (/^@/.test(t)) { const [, s, i] = /^@(.*?)\.(.*?)$/.exec(t), r = s ? this.getval(s) : ""; if (r) try { const t = JSON.parse(r); e = t ? this.lodash_get(t, i, "") : e } catch (t) { e = "" } } return e } setdata(t, e) { let s = !1; if (/^@/.test(e)) { const [, i, r] = /^@(.*?)\.(.*?)$/.exec(e), o = this.getval(i), h = i ? "null" === o ? null : o || "{}" : "{}"; try { const e = JSON.parse(h); this.lodash_set(e, r, t), s = this.setval(JSON.stringify(e), i) } catch (e) { const o = {}; this.lodash_set(o, r, t), s = this.setval(JSON.stringify(o), i) } } else s = this.setval(t, e); return s } getval(t) { return this.isSurge() || this.isLoon() ? $persistentStore.read(t) : this.isQuanX() ? $prefs.valueForKey(t) : this.isNode() ? (this.data = this.loaddata(), this.data[t]) : this.data && this.data[t] || null } setval(t, e) { return this.isSurge() || this.isLoon() ? $persistentStore.write(t, e) : this.isQuanX() ? $prefs.setValueForKey(t, e) : this.isNode() ? (this.data = this.loaddata(), this.data[e] = t, this.writedata(), !0) : this.data && this.data[e] || null } initGotEnv(t) { this.got = this.got ? this.got : require("got"), this.cktough = this.cktough ? this.cktough : require("tough-cookie"), this.ckjar = this.ckjar ? this.ckjar : new this.cktough.CookieJar, t && (t.headers = t.headers ? t.headers : {}, void 0 === t.headers.Cookie && void 0 === t.cookieJar && (t.cookieJar = this.ckjar)) } get(t, e = (() => { })) { t.headers && (delete t.headers["Content-Type"], delete t.headers["Content-Length"]), this.isSurge() || this.isLoon() ? (this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, { "X-Surge-Skip-Scripting": !1 })), $httpClient.get(t, (t, s, i) => { !t && s && (s.body = i, s.statusCode = s.status), e(t, s, i) })) : this.isQuanX() ? (this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, { hints: !1 })), $task.fetch(t).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: o }, o) }, t => e(t))) : this.isNode() && (this.initGotEnv(t), this.got(t).on("redirect", (t, e) => { try { if (t.headers["set-cookie"]) { const s = t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString(); this.ckjar.setCookieSync(s, null), e.cookieJar = this.ckjar } } catch (t) { this.logErr(t) } }).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: o }, o) }, t => { const { message: s, response: i } = t; e(s, i, i && i.body) })) } post(t, e = (() => { })) { if (t.body && t.headers && !t.headers["Content-Type"] && (t.headers["Content-Type"] = "application/x-www-form-urlencoded"), t.headers && delete t.headers["Content-Length"], this.isSurge() || this.isLoon()) this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, { "X-Surge-Skip-Scripting": !1 })), $httpClient.post(t, (t, s, i) => { !t && s && (s.body = i, s.statusCode = s.status), e(t, s, i) }); else if (this.isQuanX()) t.method = "POST", this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, { hints: !1 })), $task.fetch(t).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: o }, o) }, t => e(t)); else if (this.isNode()) { this.initGotEnv(t); const { url: s, ...i } = t; this.got.post(s, i).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: o }, o) }, t => { const { message: s, response: i } = t; e(s, i, i && i.body) }) } } time(t) { let e = { "M+": (new Date).getMonth() + 1, "d+": (new Date).getDate(), "H+": (new Date).getHours(), "m+": (new Date).getMinutes(), "s+": (new Date).getSeconds(), "q+": Math.floor(((new Date).getMonth() + 3) / 3), S: (new Date).getMilliseconds() }; /(y+)/.test(t) && (t = t.replace(RegExp.$1, ((new Date).getFullYear() + "").substr(4 - RegExp.$1.length))); for (let s in e) new RegExp("(" + s + ")").test(t) && (t = t.replace(RegExp.$1, 1 == RegExp.$1.length ? e[s] : ("00" + e[s]).substr(("" + e[s]).length))); return t } msg(e = t, s = "", i = "", r) { const o = t => { if (!t) return t; if ("string" == typeof t) return this.isLoon() ? t : this.isQuanX() ? { "open-url": t } : this.isSurge() ? { url: t } : void 0; if ("object" == typeof t) { if (this.isLoon()) { let e = t.openUrl || t.url || t["open-url"], s = t.mediaUrl || t["media-url"]; return { openUrl: e, mediaUrl: s } } if (this.isQuanX()) { let e = t["open-url"] || t.url || t.openUrl, s = t["media-url"] || t.mediaUrl; return { "open-url": e, "media-url": s } } if (this.isSurge()) { let e = t.url || t.openUrl || t["open-url"]; return { url: e } } } }; this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : this.isQuanX() && $notify(e, s, i, o(r))); let h = ["", "==============\ud83d\udce3\u7cfb\u7edf\u901a\u77e5\ud83d\udce3=============="]; h.push(e), s && h.push(s), i && h.push(i), console.log(h.join("\n")), this.logs = this.logs.concat(h) } log(...t) { t.length > 0 && (this.logs = [...this.logs, ...t]), console.log(t.join(this.logSeparator)) } logErr(t, e) { const s = !this.isSurge() && !this.isQuanX() && !this.isLoon(); s ? this.log("", `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t.stack) : this.log("", `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t) } wait(t) { return new Promise(e => setTimeout(e, t)) } done(t = {}) { const e = (new Date).getTime(), s = (e - this.startTime) / 1e3; this.log("", `\ud83d\udd14${this.name}, \u7ed3\u675f! \ud83d\udd5b ${s} \u79d2`), this.log(), (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t) } }(t, e) }
+function Env(t, e) { class s { constructor(t) { this.env = t } send(t, e = "GET") { t = "string" == typeof t ? { url: t } : t; let s = this.get; 
+
+return "POST" === e && (s = this.post), new Promise((e, i) => { s.call(this, t, (t, s, r) => { t ? i(t) : e(s) }) }) } get(t) { return this.send.call
+
+(this.env, t) } post(t) { return this.send.call(this.env, t, "POST") } } return new class { constructor(t, e) { this.name = t, this.http = new s
+
+(this), this.data = null, this.dataFile = "box.dat", this.logs = [], this.isMute = !1, this.isNeedRewrite = !1, this.logSeparator = "\n", 
+
+this.startTime = (new Date).getTime(), Object.assign(this, e), this.log("", `\ud83d\udd14${this.name}, \u5f00\u59cb!`) } isNode() { return "undefined" 
+
+!= typeof module && !!module.exports } isQuanX() { return "undefined" != typeof $task } isSurge() { return "undefined" != typeof $httpClient && 
+
+"undefined" == typeof $loon } isLoon() { return "undefined" != typeof $loon } toObj(t, e = null) { try { return JSON.parse(t) } catch { return e } } 
+
+toStr(t, e = null) { try { return JSON.stringify(t) } catch { return e } } getjson(t, e) { let s = e; const i = this.getdata(t); if (i) try { s = 
+
+JSON.parse(this.getdata(t)) } catch { } return s } setjson(t, e) { try { return this.setdata(JSON.stringify(t), e) } catch { return !1 } } getScript
+
+(t) { return new Promise(e => { this.get({ url: t }, (t, s, i) => e(i)) }) } runScript(t, e) { return new Promise(s => { let i = this.getdata
+
+("@chavy_boxjs_userCfgs.httpapi"); i = i ? i.replace(/\n/g, "").trim() : i; let r = this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout"); r = r ? 1 * 
+
+r : 20, r = e && e.timeout ? e.timeout : r; const [o, h] = i.split("@"), a = { url: `http://${h}/v1/scripting/evaluate`, body: { script_text: t, 
+
+mock_type: "cron", timeout: r }, headers: { "X-Key": o, Accept: "*/*" } }; this.post(a, (t, e, i) => s(i)) }).catch(t => this.logErr(t)) } loaddata() 
+
+{ if (!this.isNode()) return {}; { this.fs = this.fs ? this.fs : require("fs"), this.path = this.path ? this.path : require("path"); const t = 
+
+this.path.resolve(this.dataFile), e = this.path.resolve(process.cwd(), this.dataFile), s = this.fs.existsSync(t), i = !s && this.fs.existsSync(e); if 
+
+(!s && !i) return {}; { const i = s ? t : e; try { return JSON.parse(this.fs.readFileSync(i)) } catch (t) { return {} } } } } writedata() { if 
+
+(this.isNode()) { this.fs = this.fs ? this.fs : require("fs"), this.path = this.path ? this.path : require("path"); const t = this.path.resolve
+
+(this.dataFile), e = this.path.resolve(process.cwd(), this.dataFile), s = this.fs.existsSync(t), i = !s && this.fs.existsSync(e), r = JSON.stringify
+
+(this.data); s ? this.fs.writeFileSync(t, r) : i ? this.fs.writeFileSync(e, r) : this.fs.writeFileSync(t, r) } } lodash_get(t, e, s) { const i = 
+
+e.replace(/\[(\d+)\]/g, ".$1").split("."); let r = t; for (const t of i) if (r = Object(r)[t], void 0 === r) return s; return r } lodash_set(t, e, s) 
+
+{ return Object(t) !== t ? t : (Array.isArray(e) || (e = e.toString().match(/[^.[\]]+/g) || []), e.slice(0, -1).reduce((t, s, i) => Object(t[s]) === 
+
+t[s] ? t[s] : t[s] = Math.abs(e[i + 1]) >> 0 == +e[i + 1] ? [] : {}, t)[e[e.length - 1]] = s, t) } getdata(t) { let e = this.getval(t); if (/^@/.test
+
+(t)) { const [, s, i] = /^@(.*?)\.(.*?)$/.exec(t), r = s ? this.getval(s) : ""; if (r) try { const t = JSON.parse(r); e = t ? this.lodash_get(t, i, 
+
+"") : e } catch (t) { e = "" } } return e } setdata(t, e) { let s = !1; if (/^@/.test(e)) { const [, i, r] = /^@(.*?)\.(.*?)$/.exec(e), o = 
+
+this.getval(i), h = i ? "null" === o ? null : o || "{}" : "{}"; try { const e = JSON.parse(h); this.lodash_set(e, r, t), s = this.setval
+
+(JSON.stringify(e), i) } catch (e) { const o = {}; this.lodash_set(o, r, t), s = this.setval(JSON.stringify(o), i) } } else s = this.setval(t, e); 
+
+return s } getval(t) { return this.isSurge() || this.isLoon() ? $persistentStore.read(t) : this.isQuanX() ? $prefs.valueForKey(t) : this.isNode() ? 
+
+(this.data = this.loaddata(), this.data[t]) : this.data && this.data[t] || null } setval(t, e) { return this.isSurge() || this.isLoon() ? 
+
+$persistentStore.write(t, e) : this.isQuanX() ? $prefs.setValueForKey(t, e) : this.isNode() ? (this.data = this.loaddata(), this.data[e] = t, 
+
+this.writedata(), !0) : this.data && this.data[e] || null } initGotEnv(t) { this.got = this.got ? this.got : require("got"), this.cktough = 
+
+this.cktough ? this.cktough : require("tough-cookie"), this.ckjar = this.ckjar ? this.ckjar : new this.cktough.CookieJar, t && (t.headers = t.headers 
+
+? t.headers : {}, void 0 === t.headers.Cookie && void 0 === t.cookieJar && (t.cookieJar = this.ckjar)) } get(t, e = (() => { })) { t.headers && 
+
+(delete t.headers["Content-Type"], delete t.headers["Content-Length"]), this.isSurge() || this.isLoon() ? (this.isSurge() && this.isNeedRewrite && 
+
+(t.headers = t.headers || {}, Object.assign(t.headers, { "X-Surge-Skip-Scripting": !1 })), $httpClient.get(t, (t, s, i) => { !t && s && (s.body = i, 
+
+s.statusCode = s.status), e(t, s, i) })) : this.isQuanX() ? (this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, { hints: !1 })), 
+
+$task.fetch(t).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: o }, 
+
+o) }, t => e(t))) : this.isNode() && (this.initGotEnv(t), this.got(t).on("redirect", (t, e) => { try { if (t.headers["set-cookie"]) { const s = 
+
+t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString(); this.ckjar.setCookieSync(s, null), e.cookieJar = this.ckjar } } catch (t) { 
+
+this.logErr(t) } }).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: 
+
+o }, o) }, t => { const { message: s, response: i } = t; e(s, i, i && i.body) })) } post(t, e = (() => { })) { if (t.body && t.headers && !t.headers
+
+["Content-Type"] && (t.headers["Content-Type"] = "application/x-www-form-urlencoded"), t.headers && delete t.headers["Content-Length"], this.isSurge() 
+
+|| this.isLoon()) this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, { "X-Surge-Skip-Scripting": !1 })), 
+
+$httpClient.post(t, (t, s, i) => { !t && s && (s.body = i, s.statusCode = s.status), e(t, s, i) }); else if (this.isQuanX()) t.method = "POST", 
+
+this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, { hints: !1 })), $task.fetch(t).then(t => { const { statusCode: s, statusCode: i, 
+
+headers: r, body: o } = t; e(null, { status: s, statusCode: i, headers: r, body: o }, o) }, t => e(t)); else if (this.isNode()) { this.initGotEnv(t); 
+
+const { url: s, ...i } = t; this.got.post(s, i).then(t => { const { statusCode: s, statusCode: i, headers: r, body: o } = t; e(null, { status: s, 
+
+statusCode: i, headers: r, body: o }, o) }, t => { const { message: s, response: i } = t; e(s, i, i && i.body) }) } } time(t) { let e = { "M+": (new 
+
+Date).getMonth() + 1, "d+": (new Date).getDate(), "H+": (new Date).getHours(), "m+": (new Date).getMinutes(), "s+": (new Date).getSeconds(), "q+": 
+
+Math.floor(((new Date).getMonth() + 3) / 3), S: (new Date).getMilliseconds() }; /(y+)/.test(t) && (t = t.replace(RegExp.$1, ((new Date).getFullYear() 
+
++ "").substr(4 - RegExp.$1.length))); for (let s in e) new RegExp("(" + s + ")").test(t) && (t = t.replace(RegExp.$1, 1 == RegExp.$1.length ? e[s] : 
+
+("00" + e[s]).substr(("" + e[s]).length))); return t } msg(e = t, s = "", i = "", r) { const o = t => { if (!t) return t; if ("string" == typeof t) 
+
+return this.isLoon() ? t : this.isQuanX() ? { "open-url": t } : this.isSurge() ? { url: t } : void 0; if ("object" == typeof t) { if (this.isLoon()) { 
+
+let e = t.openUrl || t.url || t["open-url"], s = t.mediaUrl || t["media-url"]; return { openUrl: e, mediaUrl: s } } if (this.isQuanX()) { let e = t
+
+["open-url"] || t.url || t.openUrl, s = t["media-url"] || t.mediaUrl; return { "open-url": e, "media-url": s } } if (this.isSurge()) { let e = t.url 
+
+|| t.openUrl || t["open-url"]; return { url: e } } } }; this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : 
+
+this.isQuanX() && $notify(e, s, i, o(r))); let h = ["", "==============\ud83d\udce3\u7cfb\u7edf\u901a\u77e5\ud83d\udce3=============="]; h.push(e), s 
+
+&& h.push(s), i && h.push(i), console.log(h.join("\n")), this.logs = this.logs.concat(h) } log(...t) { t.length > 0 && (this.logs = [...this.logs, 
+
+...t]), console.log(t.join(this.logSeparator)) } logErr(t, e) { const s = !this.isSurge() && !this.isQuanX() && !this.isLoon(); s ? this.log("", `
+
+\u2757\ufe0f${this.name}, \u9519\u8bef!`, t.stack) : this.log("", `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t) } wait(t) { return new Promise(e => 
+
+setTimeout(e, t)) } done(t = {}) { const e = (new Date).getTime(), s = (e - this.startTime) / 1e3; this.log("", `\ud83d\udd14${this.name}, 
+
+\u7ed3\u675f! \ud83d\udd5b ${s} \u79d2`), this.log(), (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t) } }(t, e) }
