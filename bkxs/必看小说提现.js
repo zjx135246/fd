@@ -12,7 +12,7 @@ withdraws='' 1为1元 2为5元 3为10元 4为30元 5为50元 6为100元
 cron: 40 59 9 * * *
 */
 
-const $ = new Env('必看小说-提现');
+const $ = new Env('必看小说提现');
 var crypto = require("crypto");
 let status;
 status = (status = ($.getval("bkxsstatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
