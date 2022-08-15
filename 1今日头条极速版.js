@@ -25,7 +25,7 @@ cron "1-59/15 6-23 * * *" script-path=https://github.com/JDWXX/ql_all/blob/maste
 今日头条极速版 = type=cron,script-path=https://github.com/JDWXX/ql_all/blob/master/qt/aqc/jrttjsb.js, cronexpr="1-59/15 6-23 * * *", timeout=3600, enable=true
 cron: 26 1/32 8,11,18-23 * * *
 */
-const $ = new Env("今日头条极速版g");
+const $ = new Env("今日头条极速版");
 const notifyFlag = 1; //0为关闭通知，1为打开通知,默认为1
 const logDebug = 0
 //const notify = $.isNode() ? require('./sendNotify') : '';
@@ -99,9 +99,9 @@ async function GetRewrite() {
 
         if(userHeader) {
             if(userHeader.indexOf(userCK) == -1) {
-                userHeader = userHeader + '@' + userCK
+                userHeader = userHeader + '\n' + userCK
                 $.setdata(userHeader, 'jrttjsbHeader');
-                ckList = userHeader.split('@')
+                ckList = userHeader.split('\n')
                 $.msg($.name+` 获取第${ckList.length}个jrttjsbHeader成功: ${userCK}`)
             }
         } else {
@@ -113,7 +113,7 @@ async function GetRewrite() {
 
 async function checkEnv() {
     if(userHeader) {
-        userHeaderArr = userHeader.split('@')
+        userHeaderArr = userHeader.split('\n')
     } else {
         console.log('未找到jrttjsbHeader')
         return false
@@ -124,7 +124,7 @@ async function checkEnv() {
     }
 
     if(userAgent) {
-        userAgentArr = userAgent.split('@')
+        userAgentArr = userAgent.split('\n')
     } else {
         console.log('未找到userAgent')
         return false
