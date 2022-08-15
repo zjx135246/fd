@@ -3,6 +3,7 @@
  * 下载地址: http://jzkg.jmsfx.top/download/1dc7c27b64c47fad?user=68738
  * 
  * cron: 2 6-23/1 * * *
+ *yml2213_javascript_master/jzkg.js
  *
  * 金砖旷工 app (这个没有小程序,ios无缘了呀,自己虚拟机玩下吧)
  * 
@@ -21,7 +22,6 @@
  * 还是不会的请百度或者群里求助: tg: https://t.me/yml_tg  通知: https://t.me/yml2213_tg
 
  */
-cron: 20 15 8-23 * * *
 const $ = new Env("金砖旷工");
 const notify = $.isNode() ? require("./sendNotify") : "";
 const Notify = 1; 		//0为关闭通知，1为打开通知,默认为1
