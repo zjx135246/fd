@@ -8,7 +8,7 @@
  
  
  * 7/5     初步完成签到 几个浏览任务
- cron: 0 0 8 * * ?
+
  
  * 抓包任意url https://mcs-mimp-web.sf-express.com/mcs-mimp/ 里的cookie只需要 sessionId=xxxxxxxxx这条
  
@@ -24,7 +24,7 @@
  * === 青龙--配置文件 ===
  * 变量格式: export sfsdcookie="cookie@cookie"多个账号换行 或用 @ 分割
  *
-cron: 12 12 12 * * *
+cron: 12 12 12 * * *	
  */
 
 const $ = new Env("顺丰速递");
