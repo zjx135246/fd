@@ -1,24 +1,24 @@
 /*
-½Å±¾¼æÈİ: QuantumultX, Surge, Loon, JSBox, Node.js
-Èí¼şÃû£ºÔÃ¿´µã
-ÏÂÔØÁ´½Ó£ºhttps://yuekandian.yichengw.cn/download?app=1&referrer=465331
-¡¾REWRITE¡¿
-Æ¥ÅäÁ´½Ó https://yuekandian.yichengw.cn/api/v1/reward/coin?
-¶ÔÓ¦ÖØĞ´Ä¿±ê https://raw.fastgit.org/byxiaopeng/myscripts/main/ykd.js
+è„šæœ¬å…¼å®¹: QuantumultX, Surge, Loon, JSBox, Node.js
+è½¯ä»¶åï¼šæ‚¦çœ‹ç‚¹
+ä¸‹è½½é“¾æ¥ï¼šhttps://yuekandian.yichengw.cn/download?app=1&referrer=465331
+ã€REWRITEã€‘
+åŒ¹é…é“¾æ¥ https://yuekandian.yichengw.cn/api/v1/reward/coin?
+å¯¹åº”é‡å†™ç›®æ ‡ https://raw.fastgit.org/byxiaopeng/myscripts/main/ykd.js
 [MITM]
 hostname = yuekandian.yichengw.cn
-boxjsµØÖ· : https://raw.fastgit.org/byxiaopeng/myscripts/main/byxiaopeng.boxjs.json
-Ê³ÓÃ·½·¨£ºµã»÷Ê×Ò³ÆøÅİ¼´¿É»ñÈ¡
+boxjsåœ°å€ : https://raw.fastgit.org/byxiaopeng/myscripts/main/byxiaopeng.boxjs.json
+é£Ÿç”¨æ–¹æ³•ï¼šç‚¹å‡»é¦–é¡µæ°”æ³¡å³å¯è·å–
 cron: 10 9 * * * ykd.js
 //nodejs
 export ykdhd='{"Host":"yuekandian.yichengw.cn".......}'
-×¥°üheadµÄÍ·È«²¿¸´ÖÆÈ»ºó×ª³Éjson¸ñÊ½Ìîµ½ÉÏÃæ,https://tooltt.com/header2json/
+æŠ“åŒ…headçš„å¤´å…¨éƒ¨å¤åˆ¶ç„¶åè½¬æˆjsonæ ¼å¼å¡«åˆ°ä¸Šé¢,https://tooltt.com/header2json/
 /////////////////////////////////////////////////////////////////////////////
 */
 
-const $ = new Env('ÔÃ¿´µã');
+const $ = new Env('æ‚¦çœ‹ç‚¹ä¸€æ¬¡å®Œæˆ');
 let status;
-status = (status = ($.getval("ykdstatus") || "1")) > 1 ? `${status}` : ""; // ÕËºÅÀ©Õ¹×Ö·û
+status = (status = ($.getval("ykdstatus") || "1")) > 1 ? `${status}` : ""; // è´¦å·æ‰©å±•å­—ç¬¦
 const ykdhdArr = [],
     ykdcount = ''
 let ykdhd = $.isNode() ? (process.env.ykdhd ? process.env.ykdhd : "") : ($.getdata('ykdhd') ? $.getdata('ykdhd') : "")
@@ -40,19 +40,19 @@ $.message = ''
       for (let i = 2; i <= ykdcount; i++) {
         ykdhdArr.push($.getdata(`ykdhd${i}`))
       }
-      console.log(`-------------¹²${ykdhdArr.length}¸öÕËºÅ-------------\n`)
+      console.log(`-------------å…±${ykdhdArr.length}ä¸ªè´¦å·-------------\n`)
       for (let i = 0; i < ykdhdArr.length; i++) {
         if (ykdhdArr[i]) {
             ykdhd = ykdhdArr[i];
             $.index = i + 1;
-            console.log(`\n¡¾ÔÃ¿´µã ÕËºÅ${$.index} ¡¿`)
+            console.log(`\nã€æ‚¦çœ‹ç‚¹ è´¦å·${$.index} ã€‘`)
             await sign() 
         }
       }
     } else {
       if (process.env.ykdhd && process.env.ykdhd.indexOf('@') > -1) {
         ykdhdArr = process.env.ykdhd.split('@');
-        console.log(`ÄúÑ¡ÔñµÄÊÇÓÃ"@"¸ô¿ª\n`)
+        console.log(`æ‚¨é€‰æ‹©çš„æ˜¯ç”¨"@"éš”å¼€\n`)
       } else {
         ykdhds = [process.env.ykdhd]
       };
@@ -61,12 +61,12 @@ $.message = ''
             ykdhdArr.push(ykdhds[item])
         }
       })
-      console.log(`¹²${ykdhdArr.length}¸öÕËºÅ`)
+      console.log(`å…±${ykdhdArr.length}ä¸ªè´¦å·`)
       for (let k = 0; k < ykdhdArr.length; k++) {
         $.message = ""
         ykdhd = ykdhdArr[k]
         $.index = k + 1;
-        console.log(`\n¡¾ÔÃ¿´µã ÕËºÅ${$.index} ¡¿`)
+        console.log(`\nã€æ‚¦çœ‹ç‚¹ è´¦å·${$.index} ã€‘`)
         await sign() 
       }
     }
@@ -82,13 +82,13 @@ function ykdck() {
         const ykdhd = JSON.stringify($request.headers)
         if (ykdhd) $.setdata(ykdhd, `ykdhd${status}`)
         $.log(ykdhd)
-        $.msg($.name, "", `ÔÃ¿´µã${status}headers»ñÈ¡³É¹¦`)
+        $.msg($.name, "", `æ‚¦çœ‹ç‚¹${status}headersè·å–æˆåŠŸ`)
     }
 }
 
 
 
-//¸öÈËĞÅÏ¢
+//ä¸ªäººä¿¡æ¯
 function profile(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -99,15 +99,15 @@ function profile(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.message += `\n¡¾10.22¡¿£ºĞŞ¸´×Ô¶¯ÌáÏÖÔö¼Ó´³¹Ø»»ÊÖ»ú`
-                    $.message += `\n¡¾»¶Ó­µõÃ«ÓÃ»§¡¿£º${result.result.nickname}`
-                    $.message += `\n¡¾µ±Ç°ÕË»§½ğ±Ò¡¿£º${result.result.point}`
-                    $.message += `\n¡¾ÌáÏÖÈ¯¡¿£º${result.result.ticket}`
-                    $.message += `\n¡¾ÊÖ»úËéÆ¬¡¿£º${result.result.fragment}`
-                    $.message += `\n¡¾ÕË»§ÑûÇëÂë¡¿£º${result.result.pin}`
-                    $.message += `\n¡¾½ñÈÕÊÕÒæ½ğ±Ò¡¿£º${result.result['today_point']}`
+                    $.message += `\nã€10.22ã€‘ï¼šä¿®å¤è‡ªåŠ¨æç°å¢åŠ é—¯å…³æ¢æ‰‹æœº`
+                    $.message += `\nã€æ¬¢è¿åŠæ¯›ç”¨æˆ·ã€‘ï¼š${result.result.nickname}`
+                    $.message += `\nã€å½“å‰è´¦æˆ·é‡‘å¸ã€‘ï¼š${result.result.point}`
+                    $.message += `\nã€æç°åˆ¸ã€‘ï¼š${result.result.ticket}`
+                    $.message += `\nã€æ‰‹æœºç¢ç‰‡ã€‘ï¼š${result.result.fragment}`
+                    $.message += `\nã€è´¦æˆ·é‚€è¯·ç ã€‘ï¼š${result.result.pin}`
+                    $.message += `\nã€ä»Šæ—¥æ”¶ç›Šé‡‘å¸ã€‘ï¼š${result.result['today_point']}`
                 } else {
-                    $.log(`\nÄú²Ù×÷Ì«¿ìÁË~`)
+                    $.log(`\næ‚¨æ“ä½œå¤ªå¿«äº†~`)
                 }
             } catch (e) {
 
@@ -118,7 +118,7 @@ function profile(timeout = 0) {
         }, timeout)
     })
 }
-//Ç©µ½ĞÅÏ¢
+//ç­¾åˆ°ä¿¡æ¯
 function sign(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -129,36 +129,36 @@ function sign(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.log(`\n¡¾Ç©µ½×´Ì¬¡¿£º${result.result.message}`)
-                    $.log(`\n¡¾Ç©µ½»ñµÃ½ğ±Ò¡¿£º${result.result.coin}`)
-                    $.log(`\n¡¾Ç©µ½»ñµÃÌáÏÖÈ¯¡¿£º${result.result.coupon}`)
+                    $.log(`\nã€ç­¾åˆ°çŠ¶æ€ã€‘ï¼š${result.result.message}`)
+                    $.log(`\nã€ç­¾åˆ°è·å¾—é‡‘å¸ã€‘ï¼š${result.result.coin}`)
+                    $.log(`\nã€ç­¾åˆ°è·å¾—æç°åˆ¸ã€‘ï¼š${result.result.coupon}`)
                     await $.wait(2000)
-                    await allcoin(arr) //Ê×Ò³ÆøÅİ
+                    await allcoin(arr) //é¦–é¡µæ°”æ³¡
                     await $.wait(2000)
                     for (let p = 0; p < 10; p++) {
                         $.index = p + 1
-                        $.log(`\n¡¾¿ªÊ¼µÚ${p + 1}¸ö¿´ÊÓÆµÈÎÎñ¡¿`)
+                        $.log(`\nã€å¼€å§‹ç¬¬${p + 1}ä¸ªçœ‹è§†é¢‘ä»»åŠ¡ã€‘`)
                         await video()
                         await $.wait(10000)
                     }
                     for (let t = 0; t < 10; t++) {
                         $.index = t + 1
-                        $.log(`\n¡¾¿ªÊ¼µÚ${t + 1}´Î³é½±¡¿`)
+                        $.log(`\nã€å¼€å§‹ç¬¬${t + 1}æ¬¡æŠ½å¥–ã€‘`)
                         await lottery()
                         await $.wait(20000)
                     }
                     await $.wait(2000)
-                    await news()  //Ë¢ĞÂÎÅ
+                    await news()  //åˆ·æ–°é—»
                     await $.wait(2000)
-                    await short()  //Ë¢Ğ¡ÊÓÆµ
+                    await short()  //åˆ·å°è§†é¢‘
                     await $.wait(5000)
-                    await allbarrier(cgarr) //´³¹Ø
+                    await allbarrier(cgarr) //é—¯å…³
                     await $.wait(5000)
                     await profile()
                     await $.wait(5000)
-                    await exchange() //¿ªÊ¼ÌáÏÖ
+                    await exchange() //å¼€å§‹æç°
                 } else {
-                    $.log(`\n¡¾Ç©µ½×´Ì¬¡¿£º${result.message}`)
+                    $.log(`\nã€ç­¾åˆ°çŠ¶æ€ã€‘ï¼š${result.message}`)
                     await $.wait(2000)
                     await allcoin(arr)
                 }
@@ -171,7 +171,7 @@ function sign(timeout = 0) {
         }, timeout)
     })
 }
-//²éÑ¯ÊÇ·ñ·ûºÏÌáÏÖÒªÇó
+//æŸ¥è¯¢æ˜¯å¦ç¬¦åˆæç°è¦æ±‚
 function exchange(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -182,11 +182,11 @@ function exchange(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.result.items[0]['is_ok'] == 1) {
-                    $.log(`\n¡¾ÌáÏÖÒªÇó¡¿£º${result.result.items[0]['tixian_tip']}`)
+                    $.log(`\nã€æç°è¦æ±‚ã€‘ï¼š${result.result.items[0]['tixian_tip']}`)
                     await $.wait(2000)
-                    await exchangetx() //¿ªÊ¼ÌáÏÖ
+                    await exchangetx() //å¼€å§‹æç°
                 } else {
-                    $.log(`\n¡¾²»·ûºÏÌáÏÖÒªÇó È¥×ÊÑ¶Ò³Ãæ¹Û¿´2·ÖÖÓ¡¿`)
+                    $.log(`\nã€ä¸ç¬¦åˆæç°è¦æ±‚ å»èµ„è®¯é¡µé¢è§‚çœ‹2åˆ†é’Ÿã€‘`)
                 }
             } catch (e) {
             } finally {
@@ -195,7 +195,7 @@ function exchange(timeout = 0) {
         }, timeout)
     })
 }
-//ÉêÇë»î¶¯ÌáÏÖ
+//ç”³è¯·æ´»åŠ¨æç°
 function exchangetx(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -207,12 +207,12 @@ function exchangetx(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.log(`\n¡¾ÌáÏÖ×´Ì¬¡¿£º${result.result.message}`)
-                    $.log(`\n¡¾ÌáÏÖ½ø¶È¡¿£º${result.result.title}`)
-                    $.message += `\n¡¾ÌáÏÖ×´Ì¬¡¿£º${result.result.message}`
-                    $.message += `\n¡¾ÌáÏÖ½ø¶È¡¿£º${result.result.title}`
+                    $.log(`\nã€æç°çŠ¶æ€ã€‘ï¼š${result.result.message}`)
+                    $.log(`\nã€æç°è¿›åº¦ã€‘ï¼š${result.result.title}`)
+                    $.message += `\nã€æç°çŠ¶æ€ã€‘ï¼š${result.result.message}`
+                    $.message += `\nã€æç°è¿›åº¦ã€‘ï¼š${result.result.title}`
                 } else {
-                    $.log(`\n¡¾ÌáÏÖ×´Ì¬¡¿£º${result.message}`)
+                    $.log(`\nã€æç°çŠ¶æ€ã€‘ï¼š${result.message}`)
                 }
             } catch (e) {
             } finally {
@@ -221,7 +221,7 @@ function exchangetx(timeout = 0) {
         }, timeout)
     })
 }
-//¿´ĞÂÎÅ×¼±¸
+//çœ‹æ–°é—»å‡†å¤‡
 function news(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -232,14 +232,14 @@ function news(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    console.log(`¡¾×¼±¸¿ªÊ¼¿´×ÊÑ¶¡¿\n`)
+                    console.log(`ã€å‡†å¤‡å¼€å§‹çœ‹èµ„è®¯ã€‘\n`)
                     newstime1 = result.result.time * 1000
                     newstck1 = result.result.ticket
-                    await interval() //¿ªÊ¼¼ÇÂ¼ÔÄ¶ÁÊ±¼ä
+                    await interval() //å¼€å§‹è®°å½•é˜…è¯»æ—¶é—´
                     await $.wait(newstime1)
                     await rewardnews(newstck1)
                 } else {
-                    console.log(`¡¾»ñÈ¡¿´×ÊÑ¶Ê§°Ü¡¿`)
+                    console.log(`ã€è·å–çœ‹èµ„è®¯å¤±è´¥ã€‘`)
 
                 }
             } catch (e) {
@@ -252,7 +252,7 @@ function news(timeout = 0) {
     })
 }
 
-//¿ªÊ¼¼ÇÂ¼ÔÄ¶ÁÊ±¼ä
+//å¼€å§‹è®°å½•é˜…è¯»æ—¶é—´
 function interval(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -263,9 +263,9 @@ function interval(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    console.log(`¡¾¿´×ÊÑ¶Ê±³¤¼ÇÂ¼¿ªÊ¼¡¿\n`)
+                    console.log(`ã€çœ‹èµ„è®¯æ—¶é•¿è®°å½•å¼€å§‹ã€‘\n`)
                 } else {
-                    console.log(`¡¾¿´×ÊÑ¶Ê±³¤¼ÇÂ¼Ê§°Ü¡¿`)
+                    console.log(`ã€çœ‹èµ„è®¯æ—¶é•¿è®°å½•å¤±è´¥ã€‘`)
 
                 }
             } catch (e) {
@@ -278,7 +278,7 @@ function interval(timeout = 0) {
     })
 }
 
-//½áÊø¼ÇÂ¼ÔÄ¶ÁÊ±¼ä
+//ç»“æŸè®°å½•é˜…è¯»æ—¶é—´
 function intervalend(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -289,9 +289,9 @@ function intervalend(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    console.log(`¡¾¿´×ÊÑ¶Ê±³¤¼ÇÂ¼Íê±Ï¡¿\n`)
+                    console.log(`ã€çœ‹èµ„è®¯æ—¶é•¿è®°å½•å®Œæ¯•ã€‘\n`)
                 } else {
-                    console.log(`¡¾¿´×ÊÑ¶Ê±³¤¼ÇÂ¼Ê§°Ü¡¿`)
+                    console.log(`ã€çœ‹èµ„è®¯æ—¶é•¿è®°å½•å¤±è´¥ã€‘`)
 
                 }
             } catch (e) {
@@ -303,7 +303,7 @@ function intervalend(timeout = 0) {
         }, timeout)
     })
 }
-//¿´ĞÂÎÅ15´Î
+//çœ‹æ–°é—»15æ¬¡
 function rewardnews(newstck) {
     return new Promise((resolve) => {
         let url = {
@@ -316,18 +316,18 @@ function rewardnews(newstck) {
                 result = JSON.parse(data)
                 if (result.code == 0) {
                     if (result.result['today_count'] >= 15) {
-                        console.log(`¡¾ÒÑË¢×ÊÑ¶15´Î¡¿\n`)
-                        await intervalend() //½áÊø¼ÇÂ¼ÔÄ¶ÁÊ±¼ä
+                        console.log(`ã€å·²åˆ·èµ„è®¯15æ¬¡ã€‘\n`)
+                        await intervalend() //ç»“æŸè®°å½•é˜…è¯»æ—¶é—´
                     } else {
-                        console.log(`¡¾¿´×ÊÑ¶»ñµÃ½ğ±Ò¡¿£º${result.result.reward}\n`)
-                        console.log(`¡¾ÒÑË¢×ÊÑ¶${result.result['today_count']}´Î¡¿`)
+                        console.log(`ã€çœ‹èµ„è®¯è·å¾—é‡‘å¸ã€‘ï¼š${result.result.reward}\n`)
+                        console.log(`ã€å·²åˆ·èµ„è®¯${result.result['today_count']}æ¬¡ã€‘`)
                         newtime2 = result.result.time * 1000
                         newstck2 = result.result.ticket
                         await $.wait(newtime2)
                         await rewardnews(newstck2)
                     }
                 } else {
-                    console.log(`¡¾¿´×ÊÑ¶Ê§°Ü¡¿£º${result.message}\n`)
+                    console.log(`ã€çœ‹èµ„è®¯å¤±è´¥ã€‘ï¼š${result.message}\n`)
 
                 }
             } catch (e) {
@@ -339,7 +339,7 @@ function rewardnews(newstck) {
         }, 0)
     })
 }
-//»ñÈ¡Ğ¡ÊÓÆµtck
+//è·å–å°è§†é¢‘tck
 function short(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -352,11 +352,11 @@ function short(timeout = 0) {
                 if (result.code == 0) {
                     sptime1 = result.result.time * 1000
                     sptck1 = result.result.ticket
-                    console.log(`¡¾×¼±¸¿ªÊ¼Ë¢Ğ¡ÊÓÆµ¡¿\n`)
+                    console.log(`ã€å‡†å¤‡å¼€å§‹åˆ·å°è§†é¢‘ã€‘\n`)
                     await $.wait(sptime1)
                     await spvideo(sptck1)
                 } else {
-                    console.log(`¡¾Ë¢ÊÓÆµÈÎÎñ»ñÈ¡Ê§°Ü¡¿£º${result.message}\n`)
+                    console.log(`ã€åˆ·è§†é¢‘ä»»åŠ¡è·å–å¤±è´¥ã€‘ï¼š${result.message}\n`)
                 }
             } catch (e) {
 
@@ -367,7 +367,7 @@ function short(timeout = 0) {
         }, timeout)
     })
 }
-//Ë¢ÊÓÆµ15´Î
+//åˆ·è§†é¢‘15æ¬¡
 function spvideo(sptck) {
     return new Promise((resolve) => {
         let url = {
@@ -380,17 +380,17 @@ function spvideo(sptck) {
                 result = JSON.parse(data)
                 if (result.code == 0) {
                     if (result.result['today_count'] >= 15) {
-                        console.log(`¡¾ÒÑË¢ÊÓÆµ15´Î¡¿`)
+                        console.log(`ã€å·²åˆ·è§†é¢‘15æ¬¡ã€‘`)
                     } else {
-                        console.log(`¡¾Ë¢ÊÓÆµ»ñµÃ½ğ±Ò¡¿£º${result.result.reward}\n`)
-                        console.log(`¡¾ÒÑË¢ÊÓÆµ${result.result['today_count']}´Î¡¿`)
+                        console.log(`ã€åˆ·è§†é¢‘è·å¾—é‡‘å¸ã€‘ï¼š${result.result.reward}\n`)
+                        console.log(`ã€å·²åˆ·è§†é¢‘${result.result['today_count']}æ¬¡ã€‘`)
                         sptime2 = result.result.time * 1000
                         sptck2 = result.result.ticket
                         await $.wait(sptime2)
                         await spvideo(sptck2)
                     }
                 } else {
-                    console.log(`¡¾Ë¢ÊÓÆµÊ§°Ü¡¿£º${result.message}\n`)
+                    console.log(`ã€åˆ·è§†é¢‘å¤±è´¥ã€‘ï¼š${result.message}\n`)
                 }
             } catch (e) {
 
@@ -401,14 +401,14 @@ function spvideo(sptck) {
         }, 0)
     })
 }
-//Ê×Ò³½ğ±Ò 4´Î
+//é¦–é¡µé‡‘å¸ 4æ¬¡
 async function allcoin(Array) {
     for (const i of Array) {
         await coin(i)
         await $.wait(5000)
     }
 }
-//Ê×Ò³½ğ±Ò
+//é¦–é¡µé‡‘å¸
 function coin(qpnum) {
     return new Promise((resolve) => {
         let url = {
@@ -423,16 +423,16 @@ function coin(qpnum) {
                     if (result.result.coins[i].num > 0) {
                         if (result.result.coins[i].ad == 1) {
                             await $.wait(2000)
-                            await placement14() //¿ªÊ¼ÆøÅİ¹ã¸æ
+                            await placement14() //å¼€å§‹æ°”æ³¡å¹¿å‘Š
                             await $.wait(2000)
-                            await coinlq(qpnum)  //»ñµÃÆøÅİ½±Àø
+                            await coinlq(qpnum)  //è·å¾—æ°”æ³¡å¥–åŠ±
                         } else {
                             await $.wait(2000)
                             await coinlq(qpnum)
                         }
                     }
                 } else {
-                    $.log(`\n»ñÈ¡ÆøÅİ×ÊÁÏÊ§°Ü~`)
+                    $.log(`\nè·å–æ°”æ³¡èµ„æ–™å¤±è´¥~`)
                 }
             } catch (e) {
 
@@ -444,7 +444,7 @@ function coin(qpnum) {
     })
 }
 
-//¿ªÊ¼ÆøÅİ¹ã¸æ
+//å¼€å§‹æ°”æ³¡å¹¿å‘Š
 function placement14(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -455,11 +455,11 @@ function placement14(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.log(`\n¿ªÊ¼Ö´ĞĞÆøÅİ¹ã¸æ`)
+                    $.log(`\nå¼€å§‹æ‰§è¡Œæ°”æ³¡å¹¿å‘Š`)
                     await $.wait(20000)
-                    await log14() //½áÊøÆøÅİ¹ã¸æ
+                    await log14() //ç»“æŸæ°”æ³¡å¹¿å‘Š
                 } else {
-                    $.log(`\n¿ªÊ¼Ö´ĞĞÆøÅİ¹ã¸æÊ§°Ü`)
+                    $.log(`\nå¼€å§‹æ‰§è¡Œæ°”æ³¡å¹¿å‘Šå¤±è´¥`)
                 }
             } catch (e) {
 
@@ -470,7 +470,7 @@ function placement14(timeout = 0) {
         }, timeout)
     })
 }
-//½áÊøÆøÅİ¹ã¸æ
+//ç»“æŸæ°”æ³¡å¹¿å‘Š
 function log14(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -481,9 +481,9 @@ function log14(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.log(`\nÖ´ĞĞÆøÅİ¹ã¸æÍê³É`)
+                    $.log(`\næ‰§è¡Œæ°”æ³¡å¹¿å‘Šå®Œæˆ`)
                 } else {
-                    $.log(`\nÖ´ĞĞÆøÅİ¹ã¸æÍê³É`)
+                    $.log(`\næ‰§è¡Œæ°”æ³¡å¹¿å‘Šå®Œæˆ`)
                 }
             } catch (e) {
 
@@ -494,7 +494,7 @@ function log14(timeout = 0) {
         }, timeout)
     })
 }
-//Ê×Ò³½ğ±Ò
+//é¦–é¡µé‡‘å¸
 function coinlq(num) {
     return new Promise((resolve) => {
         let url = {
@@ -506,10 +506,10 @@ function coinlq(num) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.log(`\nÁìÈ¡³É¹¦½ğ±Ò£º${result.result.coin}`)
+                    $.log(`\né¢†å–æˆåŠŸé‡‘å¸ï¼š${result.result.coin}`)
                     await $.wait(2000)
                 } else {
-                    $.log(`\nÄú²Ù×÷Ì«¿ìÁË~`)
+                    $.log(`\næ‚¨æ“ä½œå¤ªå¿«äº†~`)
                 }
             } catch (e) {
 
@@ -521,7 +521,7 @@ function coinlq(num) {
     })
 }
 
-//ÊÓÆµÈÎÎñ
+//è§†é¢‘ä»»åŠ¡
 function video(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -533,13 +533,13 @@ function video(timeout = 0) {
                 result = JSON.parse(data)
                 if (result.code == 0) {
                     tick = result.result.ticket
-                    $.log(`\nÈÎÎñÃû³Æ£º${result.result.tip}`)
-                    $.log(`\n»ñµÃ½ğ±Ò£º${result.result.coin}`)
-                    $.log(`\n»ñµÃÌáÏÖÈ¯£º${result.result.coupon}`)
+                    $.log(`\nä»»åŠ¡åç§°ï¼š${result.result.tip}`)
+                    $.log(`\nè·å¾—é‡‘å¸ï¼š${result.result.coin}`)
+                    $.log(`\nè·å¾—æç°åˆ¸ï¼š${result.result.coupon}`)
                     await $.wait(37000)
                     await ticket(tick)
                 } else {
-                    $.log(`\nÄú²Ù×÷Ì«¿ìÁË~`)
+                    $.log(`\næ‚¨æ“ä½œå¤ªå¿«äº†~`)
                 }
             } catch (e) {
 
@@ -560,11 +560,11 @@ function ticket(num) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.log(`\n¹Û¿´¹ã¸æ³É¹¦£º${result.result.status}`)
+                    $.log(`\nè§‚çœ‹å¹¿å‘ŠæˆåŠŸï¼š${result.result.status}`)
                     await $.wait(2000)
                     await coupon()
                 } else {
-                    $.log(`\n¹Û¿´¹ã¸æÊ§°Ü`)
+                    $.log(`\nè§‚çœ‹å¹¿å‘Šå¤±è´¥`)
                 }
             } catch (e) {
 
@@ -575,7 +575,7 @@ function ticket(num) {
         }, 0)
     })
 }
-//ÈÎÎñµ¹¼ÆÊ±
+//ä»»åŠ¡å€’è®¡æ—¶
 function coupon(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -587,10 +587,10 @@ function coupon(timeout = 0) {
                 result = JSON.parse(data)
                 if (result.code == 0) {
                     time = result.result.items[1].time * 1000
-                    $.log(`\nÖ´ĞĞÏÂ¸öÊÓÆµÈÎÎñÊ±¼ä£º${time}ºÁÃë`)
+                    $.log(`\næ‰§è¡Œä¸‹ä¸ªè§†é¢‘ä»»åŠ¡æ—¶é—´ï¼š${time}æ¯«ç§’`)
                     await $.wait(time)
                 } else {
-                    $.log(`\n»ñÈ¡Ê±¼äÊ§°Ü`)
+                    $.log(`\nè·å–æ—¶é—´å¤±è´¥`)
                 }
             } catch (e) {
 
@@ -601,7 +601,7 @@ function coupon(timeout = 0) {
         }, timeout)
     })
 }
-//»ñÈ¡³é½±²ÎÊı
+//è·å–æŠ½å¥–å‚æ•°
 function lottery(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -613,11 +613,11 @@ function lottery(timeout = 0) {
                 result = JSON.parse(data)
                 if (result.code == 0) {
                     lotteryid = result.result.ticket
-                    $.log(`\n¿ªÊ¼³é½±`)
+                    $.log(`\nå¼€å§‹æŠ½å¥–`)
                     await $.wait(200)
                     await lotterycj(lotteryid)
                 } else {
-                    $.log(`\nÃ»ÓĞ»ñÈ¡µ½³é½±²ÎÊı`)
+                    $.log(`\næ²¡æœ‰è·å–åˆ°æŠ½å¥–å‚æ•°`)
                 }
             } catch (e) {
 
@@ -628,7 +628,7 @@ function lottery(timeout = 0) {
         }, timeout)
     })
 }
-//¿ªÊ¼³é½±
+//å¼€å§‹æŠ½å¥–
 function lotterycj(num) {
     return new Promise((resolve) => {
         let url = {
@@ -640,9 +640,9 @@ function lotterycj(num) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.log(`\n³é½±³É¹¦`)
+                    $.log(`\næŠ½å¥–æˆåŠŸ`)
                 } else {
-                    $.log(`\n³é½±Ê§°Ü`)
+                    $.log(`\næŠ½å¥–å¤±è´¥`)
                 }
             } catch (e) {
 
@@ -653,7 +653,7 @@ function lotterycj(num) {
         }, 0)
     })
 }
-//³é½±ÁìÈ¡
+//æŠ½å¥–é¢†å–
 function done(timeout = 0) {
     return new Promise((resolve) => {
         let url = {
@@ -665,9 +665,9 @@ function done(timeout = 0) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.log(`\n»ñµÃ½ğ±Ò£º${result.result.coin}`)
+                    $.log(`\nè·å¾—é‡‘å¸ï¼š${result.result.coin}`)
                 } else {
-                    $.log(`\nÁìÈ¡Ê§°Ü`)
+                    $.log(`\né¢†å–å¤±è´¥`)
                 }
             } catch (e) {
 
@@ -680,14 +680,14 @@ function done(timeout = 0) {
 }
 
 
-//´³¹Ø7´Î
+//é—¯å…³7æ¬¡
 async function allbarrier(Array) {
     for (const i of Array) {
         await barrier(i)
         await $.wait(5000)
     }
 }
-//´³¹Ø»»ÊÖ»ú
+//é—¯å…³æ¢æ‰‹æœº
 function barrier(num) {
     return new Promise((resolve) => {
         let url = {
@@ -698,9 +698,9 @@ function barrier(num) {
             try {
                 result = JSON.parse(data)
                 if (result.result['current_barrier'] == 7) {
-                    $.log(`\n´³¹ØÈÎÎñÒÚÍê³É7¹Ø`)
+                    $.log(`\né—¯å…³ä»»åŠ¡äº¿å®Œæˆ7å…³`)
                 } else {
-                    $.log(`\n¿ªÊ¼´³¹ØÈÎÎñ`)
+                    $.log(`\nå¼€å§‹é—¯å…³ä»»åŠ¡`)
                     await $.wait(5000)
                     await barrierlq(num)
                 }
@@ -713,7 +713,7 @@ function barrier(num) {
         }, 0)
     })
 }
-//´³¹Ø»»ÊÖ»ú
+//é—¯å…³æ¢æ‰‹æœº
 function barrierlq(num) {
     return new Promise((resolve) => {
         let url = {
@@ -725,9 +725,9 @@ function barrierlq(num) {
             try {
                 result = JSON.parse(data)
                 if (result.code == 0) {
-                    $.log(`\n´³¹Ø»ñµÃ½ğ±Ò£º${result.result.coin}`)
+                    $.log(`\né—¯å…³è·å¾—é‡‘å¸ï¼š${result.result.coin}`)
                 } else {
-                    $.log(`\n´³¹ØÁìÈ¡Ê§°Ü`)
+                    $.log(`\né—¯å…³é¢†å–å¤±è´¥`)
                 }
             } catch (e) {
 
@@ -738,7 +738,7 @@ function barrierlq(num) {
         }, 0)
     })
 }
-//ÁìÏÖ½ğ¿´¹ã¸æ
+//é¢†ç°é‡‘çœ‹å¹¿å‘Š
 //https://yuekandian.yichengw.cn/api/v1/reward/help/click?
 //https://yuekandian.yichengw.cn/api/v1/ad/log?ticket=xxx&type=5&
 //https://yuekandian.yichengw.cn/api/v1/reward/help/index?
@@ -751,5 +751,5 @@ function RT(X, Y) {
     while (rt < X)
     return rt;
 }
-//Env.min.js  À´Ô´https://raw.fastgit.org/chavyleung/scripts/master/Env.min.js
+//Env.min.js  æ¥æºhttps://raw.fastgit.org/chavyleung/scripts/master/Env.min.js
 function Env(t,e){class s{constructor(t){this.env=t}send(t,e="GET"){t="string"==typeof t?{url:t}:t;let s=this.get;return"POST"===e&&(s=this.post),new Promise((e,i)=>{s.call(this,t,(t,s,r)=>{t?i(t):e(s)})})}get(t){return this.send.call(this.env,t)}post(t){return this.send.call(this.env,t,"POST")}}return new class{constructor(t,e){this.name=t,this.http=new s(this),this.data=null,this.dataFile="box.dat",this.logs=[],this.isMute=!1,this.isNeedRewrite=!1,this.logSeparator="\n",this.encoding="utf-8",this.startTime=(new Date).getTime(),Object.assign(this,e),this.log("",`\ud83d\udd14${this.name}, \u5f00\u59cb!`)}isNode(){return"undefined"!=typeof module&&!!module.exports}isQuanX(){return"undefined"!=typeof $task}isSurge(){return"undefined"!=typeof $httpClient&&"undefined"==typeof $loon}isLoon(){return"undefined"!=typeof $loon}isShadowrocket(){return"undefined"!=typeof $rocket}toObj(t,e=null){try{return JSON.parse(t)}catch{return e}}toStr(t,e=null){try{return JSON.stringify(t)}catch{return e}}getjson(t,e){let s=e;const i=this.getdata(t);if(i)try{s=JSON.parse(this.getdata(t))}catch{}return s}setjson(t,e){try{return this.setdata(JSON.stringify(t),e)}catch{return!1}}getScript(t){return new Promise(e=>{this.get({url:t},(t,s,i)=>e(i))})}runScript(t,e){return new Promise(s=>{let i=this.getdata("@chavy_boxjs_userCfgs.httpapi");i=i?i.replace(/\n/g,"").trim():i;let r=this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");r=r?1*r:20,r=e&&e.timeout?e.timeout:r;const[o,h]=i.split("@"),n={url:`http://${h}/v1/scripting/evaluate`,body:{script_text:t,mock_type:"cron",timeout:r},headers:{"X-Key":o,Accept:"*/*"}};this.post(n,(t,e,i)=>s(i))}).catch(t=>this.logErr(t))}loaddata(){if(!this.isNode())return{};{this.fs=this.fs?this.fs:require("fs"),this.path=this.path?this.path:require("path");const t=this.path.resolve(this.dataFile),e=this.path.resolve(process.cwd(),this.dataFile),s=this.fs.existsSync(t),i=!s&&this.fs.existsSync(e);if(!s&&!i)return{};{const i=s?t:e;try{return JSON.parse(this.fs.readFileSync(i))}catch(t){return{}}}}}writedata(){if(this.isNode()){this.fs=this.fs?this.fs:require("fs"),this.path=this.path?this.path:require("path");const t=this.path.resolve(this.dataFile),e=this.path.resolve(process.cwd(),this.dataFile),s=this.fs.existsSync(t),i=!s&&this.fs.existsSync(e),r=JSON.stringify(this.data);s?this.fs.writeFileSync(t,r):i?this.fs.writeFileSync(e,r):this.fs.writeFileSync(t,r)}}lodash_get(t,e,s){const i=e.replace(/\[(\d+)\]/g,".$1").split(".");let r=t;for(const t of i)if(r=Object(r)[t],void 0===r)return s;return r}lodash_set(t,e,s){return Object(t)!==t?t:(Array.isArray(e)||(e=e.toString().match(/[^.[\]]+/g)||[]),e.slice(0,-1).reduce((t,s,i)=>Object(t[s])===t[s]?t[s]:t[s]=Math.abs(e[i+1])>>0==+e[i+1]?[]:{},t)[e[e.length-1]]=s,t)}getdata(t){let e=this.getval(t);if(/^@/.test(t)){const[,s,i]=/^@(.*?)\.(.*?)$/.exec(t),r=s?this.getval(s):"";if(r)try{const t=JSON.parse(r);e=t?this.lodash_get(t,i,""):e}catch(t){e=""}}return e}setdata(t,e){let s=!1;if(/^@/.test(e)){const[,i,r]=/^@(.*?)\.(.*?)$/.exec(e),o=this.getval(i),h=i?"null"===o?null:o||"{}":"{}";try{const e=JSON.parse(h);this.lodash_set(e,r,t),s=this.setval(JSON.stringify(e),i)}catch(e){const o={};this.lodash_set(o,r,t),s=this.setval(JSON.stringify(o),i)}}else s=this.setval(t,e);return s}getval(t){return this.isSurge()||this.isLoon()?$persistentStore.read(t):this.isQuanX()?$prefs.valueForKey(t):this.isNode()?(this.data=this.loaddata(),this.data[t]):this.data&&this.data[t]||null}setval(t,e){return this.isSurge()||this.isLoon()?$persistentStore.write(t,e):this.isQuanX()?$prefs.setValueForKey(t,e):this.isNode()?(this.data=this.loaddata(),this.data[e]=t,this.writedata(),!0):this.data&&this.data[e]||null}initGotEnv(t){this.got=this.got?this.got:require("got"),this.cktough=this.cktough?this.cktough:require("tough-cookie"),this.ckjar=this.ckjar?this.ckjar:new this.cktough.CookieJar,t&&(t.headers=t.headers?t.headers:{},void 0===t.headers.Cookie&&void 0===t.cookieJar&&(t.cookieJar=this.ckjar))}get(t,e=(()=>{})){if(t.headers&&(delete t.headers["Content-Type"],delete t.headers["Content-Length"]),this.isSurge()||this.isLoon())this.isSurge()&&this.isNeedRewrite&&(t.headers=t.headers||{},Object.assign(t.headers,{"X-Surge-Skip-Scripting":!1})),$httpClient.get(t,(t,s,i)=>{!t&&s&&(s.body=i,s.statusCode=s.status),e(t,s,i)});else if(this.isQuanX())this.isNeedRewrite&&(t.opts=t.opts||{},Object.assign(t.opts,{hints:!1})),$task.fetch(t).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>e(t));else if(this.isNode()){let s=require("iconv-lite");this.initGotEnv(t),this.got(t).on("redirect",(t,e)=>{try{if(t.headers["set-cookie"]){const s=t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();s&&this.ckjar.setCookieSync(s,null),e.cookieJar=this.ckjar}}catch(t){this.logErr(t)}}).then(t=>{const{statusCode:i,statusCode:r,headers:o,rawBody:h}=t;e(null,{status:i,statusCode:r,headers:o,rawBody:h},s.decode(h,this.encoding))},t=>{const{message:i,response:r}=t;e(i,r,r&&s.decode(r.rawBody,this.encoding))})}}post(t,e=(()=>{})){const s=t.method?t.method.toLocaleLowerCase():"post";if(t.body&&t.headers&&!t.headers["Content-Type"]&&(t.headers["Content-Type"]="application/x-www-form-urlencoded"),t.headers&&delete t.headers["Content-Length"],this.isSurge()||this.isLoon())this.isSurge()&&this.isNeedRewrite&&(t.headers=t.headers||{},Object.assign(t.headers,{"X-Surge-Skip-Scripting":!1})),$httpClient[s](t,(t,s,i)=>{!t&&s&&(s.body=i,s.statusCode=s.status),e(t,s,i)});else if(this.isQuanX())t.method=s,this.isNeedRewrite&&(t.opts=t.opts||{},Object.assign(t.opts,{hints:!1})),$task.fetch(t).then(t=>{const{statusCode:s,statusCode:i,headers:r,body:o}=t;e(null,{status:s,statusCode:i,headers:r,body:o},o)},t=>e(t));else if(this.isNode()){let i=require("iconv-lite");this.initGotEnv(t);const{url:r,...o}=t;this.got[s](r,o).then(t=>{const{statusCode:s,statusCode:r,headers:o,rawBody:h}=t;e(null,{status:s,statusCode:r,headers:o,rawBody:h},i.decode(h,this.encoding))},t=>{const{message:s,response:r}=t;e(s,r,r&&i.decode(r.rawBody,this.encoding))})}}time(t,e=null){const s=e?new Date(e):new Date;let i={"M+":s.getMonth()+1,"d+":s.getDate(),"H+":s.getHours(),"m+":s.getMinutes(),"s+":s.getSeconds(),"q+":Math.floor((s.getMonth()+3)/3),S:s.getMilliseconds()};/(y+)/.test(t)&&(t=t.replace(RegExp.$1,(s.getFullYear()+"").substr(4-RegExp.$1.length)));for(let e in i)new RegExp("("+e+")").test(t)&&(t=t.replace(RegExp.$1,1==RegExp.$1.length?i[e]:("00"+i[e]).substr((""+i[e]).length)));return t}msg(e=t,s="",i="",r){const o=t=>{if(!t)return t;if("string"==typeof t)return this.isLoon()?t:this.isQuanX()?{"open-url":t}:this.isSurge()?{url:t}:void 0;if("object"==typeof t){if(this.isLoon()){let e=t.openUrl||t.url||t["open-url"],s=t.mediaUrl||t["media-url"];return{openUrl:e,mediaUrl:s}}if(this.isQuanX()){let e=t["open-url"]||t.url||t.openUrl,s=t["media-url"]||t.mediaUrl;return{"open-url":e,"media-url":s}}if(this.isSurge()){let e=t.url||t.openUrl||t["open-url"];return{url:e}}}};if(this.isMute||(this.isSurge()||this.isLoon()?$notification.post(e,s,i,o(r)):this.isQuanX()&&$notify(e,s,i,o(r))),!this.isMuteLog){let t=["","==============\ud83d\udce3\u7cfb\u7edf\u901a\u77e5\ud83d\udce3=============="];t.push(e),s&&t.push(s),i&&t.push(i),console.log(t.join("\n")),this.logs=this.logs.concat(t)}}log(...t){t.length>0&&(this.logs=[...this.logs,...t]),console.log(t.join(this.logSeparator))}logErr(t,e){const s=!this.isSurge()&&!this.isQuanX()&&!this.isLoon();s?this.log("",`\u2757\ufe0f${this.name}, \u9519\u8bef!`,t.stack):this.log("",`\u2757\ufe0f${this.name}, \u9519\u8bef!`,t)}wait(t){return new Promise(e=>setTimeout(e,t))}done(t={}){const e=(new Date).getTime(),s=(e-this.startTime)/1e3;this.log("",`\ud83d\udd14${this.name}, \u7ed3\u675f! \ud83d\udd5b ${s} \u79d2`),this.log(),(this.isSurge()||this.isQuanX()||this.isLoon())&&$done(t)}}(t,e)}
