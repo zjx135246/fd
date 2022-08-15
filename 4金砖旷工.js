@@ -19,8 +19,9 @@
  * userid   app 页面兑换界面--左上角 有 id , 找不到的可以告别羊毛了  在问自杀
  *
  * 还是不会的请百度或者群里求助: tg: https://t.me/yml_tg  通知: https://t.me/yml2213_tg
-cron: 13 13 8-23 * * *
+
  */
+cron: 20 15 8-23 * * *
 const $ = new Env("金砖旷工");
 const notify = $.isNode() ? require("./sendNotify") : "";
 const Notify = 1; 		//0为关闭通知，1为打开通知,默认为1
