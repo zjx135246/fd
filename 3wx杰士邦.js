@@ -2,7 +2,7 @@
  *
  * 杰士邦安心福利社  小程序
  *
- * cron 0 0,7 * * *  yml2213_javascript_master/jsb.js
+ cron: 10 0,7 * * *  yml2213_javascript_master/jsb.js
  *
  * 7-12 签到
  * 7-16 增加积分查询
