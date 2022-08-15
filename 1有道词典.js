@@ -1,6 +1,6 @@
 /*
  * 有道词典 
- cron: 12 7 12 * * *
+
  * 
  * 有道词典 app  
  * 4-23  完成 开红包 幸运礼盒 功能
@@ -13,7 +13,7 @@
  * 抓包： 抓dict.youdao.com , 抓签到包  , 找到有 cookie 的包就行了   ck中 不能有 @
  * 神秘代码: aHR0cHM6Ly90Lm1lL3ltbF90Zw==
  */
-
+cron: 12 7 12 * * *
 const $ = new Env("有道词典");
 const notify = $.isNode() ? require('./sendNotify') : '';
 const Notify = 1; //0为关闭通知，1为打开通知,默认为1
