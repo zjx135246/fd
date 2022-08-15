@@ -28,10 +28,10 @@ export flhsCookie='抓取的Cookie1@抓取的Cookie2'
 https://api.uutequan.com/v1/welfare/page url script-request-header https://raw.githubusercontent.com/YaphetS0903/JStest/main/flhs.js
 [MITM]
 hostname = api.uutequan.com
-cron: 26 1/14 8,9 * * *
+
 */
 
-
+cron: 26 1/14 8,9 * * *
 const $ = new Env('返利好省');
 let status;
 
