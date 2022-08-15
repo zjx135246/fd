@@ -1,4 +1,4 @@
-﻿/*
+/*
  作者：临渊
  日期：6-20
  软件：河姆渡
@@ -6,14 +6,14 @@
  抓包：账号和密码就行，不用抓
  变量格式：export hmdAccount='账号1&密码1@账号2&密码2'  多个账号用 @ 或者 换行 分割
  定时：一天两到三次吧，有时候会刷新任务好像
-
+ cron：5 7,12,18 * * *
 
  第一步：下载河姆渡APP
  第二步：复制我的六位邀请码：【O08WFQ】
  第三步：登录APP输入邀请码即可获得APP抽奖机会1次【https://dwz.cn/DPo7b225】
 
  */
-cron: 26 7,12,18 * * *
+
 const $ = new Env('河姆渡');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const {log} = console;
