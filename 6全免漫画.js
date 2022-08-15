@@ -41,7 +41,7 @@ export mhcookie='v1_0w5Ctr0000000000000000000000000000000000000'
 
 */
 
-const $ = new Env("漫画");
+const $ = new Env("全免漫画");
 
 let envSplitor = ['\n']
 let httpResult, httpReq, httpResp
