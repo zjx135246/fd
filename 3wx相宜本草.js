@@ -2,7 +2,7 @@
  *
  * 相宜会员  小程序
  *
-cron: 0 0,7 * * *  yml2213_javascript_master/xybc.js
+cron: 0 0,7 * * *
  *
  * 7-15		签到兑换实物
  *
