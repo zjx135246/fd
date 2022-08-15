@@ -2,7 +2,7 @@
  *
  * 乐事心动社会员专区  小程序
  *
- cron: 0 0,7 * * *  yml2213_javascript_master/ls.js
+ cron: 0 0,7 * * *
  *
  * 7-30		签到兑换实物
  *
