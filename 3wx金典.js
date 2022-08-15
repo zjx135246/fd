@@ -2,7 +2,7 @@
  *
  *金典SATINE  小程序
  *
- * cron 0 0,7 * * *  yml2213_javascript_master/jdsatine.js
+ cron 0 0,7 * * *
  *
  * 7-25		签到，积分查询
  *
