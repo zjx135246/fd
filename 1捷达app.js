@@ -17,11 +17,11 @@ hostname = service-yy.jconnect.faw-vw.com
  变量  JETTA_token
  多账号@分割
  多账号只测试青龙 
-cron: 12 32 12 * * *
+
 */
  
  
-
+cron: 12 32 12 * * *
 const $ = new Env("捷达 APP签到");
 const notify = $.isNode() ? require("./sendNotify") : "";
 const qs = $.isNode() ? require("qs") : "";
