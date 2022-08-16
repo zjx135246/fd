@@ -6,7 +6,7 @@
  抓包：tysc.tuoketech.com/unit-one/login/wx/login  这个登录包里 body 部分的 全部
  变量：tyshj='body@xxxx '  多个账号用 @ 或者 换行 分割 
  定时一天一次
- cron: 11 11 * * *
+ cron: 11 21 12* * *
 
  [task_local]
  #统一山海经
