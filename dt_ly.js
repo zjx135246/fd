@@ -8,7 +8,6 @@
  变量格式：export dt='body1@body2'  多个账号用 @ 或者 换行 分割
  定时：一天一次
  cron：32 10 12 * * *
-
  [task_local]
  #读特
  32 10 * * * https://raw.githubusercontent.com/LinYuanovo/scripts/main/dt.js, tag=读特, enabled=false
@@ -16,7 +15,6 @@
  https://api.dutenews.com/api-uaa/client/token url script-request-header https://raw.githubusercontent.com/LinYuanovo/scripts/main/dt.js
  [MITM]
  hostname = api.dutenews.com
-
  */
 
  const $ = new Env('读特LY');
