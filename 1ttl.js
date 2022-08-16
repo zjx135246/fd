@@ -1,3 +1,8 @@
+const jobname = '天天乐赚钱'
+
+const $ = Env(jobname)
+
+let token = ($.isNode() ? process.env.ttlcookie : $.getdata('ttlcookie')) || '';
 /*
 早起打卡
 需要两条变量
@@ -12,10 +17,7 @@ https://miniapi.tianwensk.com/miniapp/user/clockin/pay/5
 多账号@  或者回车分割
 export ttlcookie='userid&openid'  
 export day='1' 
-cron: 27 12 * * *
 */
-let token = ($.isNode() ? process.env.ttlcookie : $.getdata('ttlcookie')) || '';
-const $ = new Env("天天乐赚钱");
 let open = ($.isNode() ? process.env.day : $.getdata('day')) || '1';
 let tokenArr = []
 
