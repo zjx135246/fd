@@ -7,7 +7,7 @@
  抓包：api.xiaoyisz.com/qiehuang/ga/public/api/login  这个登录包里 body 部分的 全部
  变量：tyhz='body@xxxx '  多个账号用 @ 或者 换行 分割
  定时两个小时一次
- cron: 3 8 1-23/2 * * *
+ cron: 3 2 1-23/2 * * *
 
  6-14 更新了AU获取方式，理论上不会过期了
  6-18 更新了收取植物、种新的植物和推送加上昵称，方便辨认（可能）
