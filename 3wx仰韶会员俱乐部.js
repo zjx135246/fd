@@ -2,7 +2,7 @@
  *
  * 仰韶会员俱乐部  小程序
  *
- cron: 0 0,7 * * *  
+ cron: 0 15 6 * * *  
  * 
  * 需要自行安装silly-datetime依赖！！！
  * 需要自行安装silly-datetime依赖！！！
