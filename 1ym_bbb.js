@@ -1,4 +1,4 @@
-﻿const { unescape, escape } = require("querystring");
+const { unescape, escape } = require("querystring");
 
 /**
  * 步步宝 app  (链接带邀请) 感谢您走我的邀请链接,谢谢,谢谢,谢谢
@@ -6,7 +6,7 @@
  * 转载请留信息
  * 
  */
-cron: 18 */2 * * * *
+// 
 /**
 * 由于主页金币两分钟刷一次，建议两分钟跑一次
 * 
@@ -16,12 +16,12 @@ cron: 18 */2 * * * *
 * 变量格式: export bububao='tokenstr1 @ tokenstr2'  多个账号用 @分割
 *
 * tokenstr :  关键词  bububao.duoshoutuan.com  ,headers中的一个参数
-*
+cron：18 */2 * * * ?
 * 还是不会的请百度或者群里求助: https://t.me/zsq_ql, https://t.me/zsq_sofm13 联系群主 @sofm_13 或Q群978963762来一起交流啊
 */
 const $ = new Env("步步宝");
 const notify = $.isNode() ? require("./sendNotify") : "";
-const Notify = 0; //0为关闭通知，1为打开通知,默认为1
+const Notify = 1; //0为关闭通知，1为打开通知,默认为1
 const debug = 0; //0为关闭调试，1为打开调试,默认为0
 //////////////////////
 let ckStr = process.env.bububao;
