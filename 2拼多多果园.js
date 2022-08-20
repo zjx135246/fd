@@ -1,4 +1,5 @@
 /**
+*拼多多果园
  * 环境变量 ddgyck ='accesstoken'
  * 小程序或APP 进果园一圈，，搜索accesstoken,多账号@隔开
  * 实现部分任务，随缘更新.....
