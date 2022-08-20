@@ -21,7 +21,7 @@
 cron：35 8,10,12,18,20 * * *
  */
 
-const $ = new Env('抖抖果园');
+const $ = new Env('抖音果园');
 const notify = $.isNode() ? require('./sendNotify') : '';
 const {log} = console;
 const Notify = 1; //0为关闭通知，1为打开通知,默认为1
