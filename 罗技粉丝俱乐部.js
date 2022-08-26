@@ -3,6 +3,7 @@
 
 自己捉api.wincheers.net包里的Authorization，去掉前面的Bearer之后填到ljfsjlbCookie里
 多账号换行或&隔开
+cron: 15 23 12 * * *
 */
 const $ = new Env("罗技粉丝俱乐部");
 
