@@ -1,4 +1,4 @@
-﻿/*
+/*
 
 cron: 30 7 * * *
 
@@ -34,15 +34,15 @@ const wzheader = {
      });
      $.done()
  }
- else if (jc_timebody.indexOf("@") == -1) {
+ else if (jc_timebody.indexOf("\n") == -1) {
             jc_timebodyArr.push(jc_timebody)
  }
- else if (jc_timebody.indexOf("@") > -1) {
-            jc_timebodys = jc_timebody.split("@")
+ else if (jc_timebody.indexOf("\n") > -1) {
+            jc_timebodys = jc_timebody.split("\n")
  }
- else if (process.env.jc_timebody && process.env.jc_timebody.indexOf('@') > -1) {
-            jc_timebodyArr = process.env.jc_timebody.split('@');
-            console.log(`您选择的是用"@"隔开\n`)
+ else if (process.env.jc_timebody && process.env.jc_timebody.indexOf('\n') > -1) {
+            jc_timebodyArr = process.env.jc_timebody.split('\n');
+            console.log(`您选择的是用"\n"隔开\n`)
  }
  else {
             jc_timebodys = [process.env.jc_timebody]
@@ -59,15 +59,15 @@ const wzheader = {
      });
      $.done()
  }
- else if (wzbody.indexOf("@") == -1) {
+ else if (wzbody.indexOf("\n") == -1) {
             wzbodyArr.push(wzbody)
  }
- else if (wzbody.indexOf("@") > -1) {
-            wzbodys = wzbody.split("@")
+ else if (wzbody.indexOf("\n") > -1) {
+            wzbodys = wzbody.split("\n")
  }
- else if (process.env.wzbody && process.env.wzbody.indexOf('@') > -1) {
-            wzbodyArr = process.env.wzbody.split('@');
-            console.log(`您选择的是用"@"隔开\n`)
+ else if (process.env.wzbody && process.env.wzbody.indexOf('\n') > -1) {
+            wzbodyArr = process.env.wzbody.split('\n');
+            console.log(`您选择的是用"\n"隔开\n`)
  }
  else {
             wzbodys = [process.env.wzbody]
