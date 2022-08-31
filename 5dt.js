@@ -1,4 +1,4 @@
-﻿/*
+/*
 读特
 
 自己捉包把Authorization值(去掉Bearer)填到dtCookie里，不提供重写了
