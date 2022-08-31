@@ -1,5 +1,6 @@
-﻿cron: 19 2 * * *
-
+/*
+cron： 19 2 * * *
+*/
 const $ = new Env('晶彩看点任务宝箱领取');
 let jcboxbody= $.isNode() ? (process.env.jcboxbody ? process.env.jcboxbody : "") : ($.getdata('jcboxbody') ? $.getdata('jcboxbody') : "")
 let jcboxbodyArr = []
@@ -13,15 +14,15 @@ if (!jcboxbody) {
      });
      $.done()
  }
- else if (jcboxbody.indexOf("@") == -1) {
+ else if (jcboxbody.indexOf("\n") == -1) {
             jcboxbodyArr.push(jcboxbody)
  }
- else if (jcboxbody.indexOf("@") > -1) {
-            jcboxbodys = jcboxbody.split("@")
+ else if (jcboxbody.indexOf("\n") > -1) {
+            jcboxbodys = jcboxbody.split("\n")
  }
- else if (process.env.jcboxbody && process.env.jcboxbody.indexOf('@') > -1) {
-            jcboxbodyArr = process.env.jcboxbody.split('@');
-            console.log(`您选择的是用"@"隔开\n`)
+ else if (process.env.jcboxbody && process.env.jcboxbody.indexOf('\n') > -1) {
+            jcboxbodyArr = process.env.jcboxbody.split('\n');
+            console.log(`您选择的是用"\n"隔开\n`)
  }
  else {
             jcboxbodys = [process.env.jcboxbody]
