@@ -8,7 +8,7 @@
  定时一天一次
  cron: 11 28 12 * * *
 
- [task_local]
+[task_local]
  #统一山海经
  11 11 * * * https://raw.githubusercontent.com/LinYuanovo/scripts/main/tyshj.js, tag=统一山海经, enabled=true
  [rewrite_local]
