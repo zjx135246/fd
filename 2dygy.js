@@ -18,7 +18,7 @@
  https://minigame.zijieapi.com/ttgame/game_orchard_ecom/polling_info url script-request-header https://raw.githubusercontent.com/LinYuanovo/scripts/main/dygy.js
  [MITM]
  hostname = minigame.zijieapi.com
-cron：35 8,10,12,18,20 * * *
+ cron：35 8,10,12,18,20 * * *
  */
 
 const $ = new Env('抖音果园');
