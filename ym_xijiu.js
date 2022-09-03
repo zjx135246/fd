@@ -9,7 +9,6 @@
 比如 export xjhd='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.XXXXXX'@'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.XXXXXX'
 cron: 0 */2 * * *
 */
-
 const $ = new Env('习酒会员俱乐部');
 var request = require("request");
 let status;
