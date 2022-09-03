@@ -1,12 +1,12 @@
 /**
  * 高德地图APP    我的 -- 小德果园
  * 抓url   https://sns.amap.com/   下的cookie 复制全部放变量里(仅支持青龙)
- cron：12 34 12 * * *
- * 脚本地址 https://raw.githubusercontent.com/kristallsi/JavaScript/main/gdgy.js
+  * 脚本地址 https://raw.githubusercontent.com/kristallsi/JavaScript/main/gdgy.js
  * ========= 青龙--配置文件 =========
  * 变量格式: export gdgy_Cookie='cookie@cookie'  多个账号用 换行 或 @分割
  * tg群 https://t.me/+JHc9YrZT1Iw0NDFl
  * 频道 https://t.me/+l-JQvXtZeZU3MTk1
+ cron: 12 34 12 * * *
  */
 ///////////////////////////////////////////////////////////////////
 let VersionCheck = "1.0.2"
