@@ -4,7 +4,7 @@
 数据抓取jk-agw-m.simeitol.com 中myjk-token
 变量: mzjk_token多账号@分割
 export zmjk_token
-cron：44 12 * * *
+cron: 12 44 12 * * *
 */
 const $ = new Env("姿美健康");
 const notify = $.isNode() ? require("./sendNotify") : "";
