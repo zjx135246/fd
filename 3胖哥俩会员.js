@@ -11,7 +11,7 @@
  *   抓 saash5.namek.com.cn//api/v1域名下token
  *   
      by:Sky 夜空
- cron：43 12 * * *
+ cron: 12 43 12 * * *
  */
 
 const { log } = require("console");
