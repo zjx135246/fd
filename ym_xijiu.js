@@ -7,8 +7,8 @@
 比如 export xjhd='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.XXXXXX'
 多账号@隔开
 比如 export xjhd='eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.XXXXXX'@'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.XXXXXX'
-cron: 0 */2 * * *
 */
+//定时 0 */2 * * * 吧
 const $ = new Env('习酒会员俱乐部');
 var request = require("request");
 let status;
