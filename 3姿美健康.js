@@ -31,6 +31,7 @@ let G = `  2022.8.02  随便玩玩`
 console.log(`${G}\n`);
 $.message += `${G}\n`;
  
+
  //开始运行
 !(async () => {
   if (typeof $request !== "undefined") {
