@@ -8,7 +8,7 @@
 红包提现
 1.提现时间：次月18号；
 2.提现方式：用户在活动中发起提现→关注“JETTA捷达品牌官方服务号”→点击领取红包→现金提现至微信钱包。
- 
+
 [rewrite_local]
 https://service-yy.jconnect.faw-vw.com/redpackbank/user url script-request-body https://raw.githubusercontent.com/liuqi6968/-/main/jetta.js
 [mitm]
@@ -17,7 +17,11 @@ hostname = service-yy.jconnect.faw-vw.com
  变量  JETTA_token
  多账号@分割
  多账号只测试青龙 
- 
+
+ xzf修改
+ 1、多账号换行分割
+ 2、提现直接微信扫二维码
+ 3、抓包搜索-authorization 的值去掉 Bearer 
 cron: 12 32 12 * * *
 */
  
@@ -73,9 +77,9 @@ $.message = "";
         }
       }
     } else {
-      if (process.env.JETTA_token && process.env.JETTA_token.indexOf("@") > -1) {
-        JETTA_tokenArr = process.env.JETTA_token.split("@");
-        console.log(`您选择的是用"@"隔开\n`);
+      if (process.env.JETTA_token && process.env.JETTA_token.indexOf("\n") > -1) {
+        JETTA_tokenArr = process.env.JETTA_token.split("\n");
+        console.log(`您选择的是用"\n"隔开\n`);
       } else {
         JETTA_tokens = [process.env.JETTA_token];
       }
