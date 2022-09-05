@@ -1,13 +1,13 @@
-﻿/*
+/*
 海尔智家
-
-活动专区-智慧小屋
+app首页-活动专区-智慧小屋
 自己捉mps.haiersmarthomes.com的包
 把accessToken和clientId填到haierAccount里，多账号换行隔开
 export haierAccount="token#clientId"
-
+同一设备clientId相同，请使用不同设备登陆
+收益：有红包可以提现微信
 一天一两次
-cron: 19 0,18 * * *
+cron: 18 19 0,18 * * *
 */
 const $ = new Env("海尔智家");
 
