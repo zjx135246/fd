@@ -4,10 +4,8 @@ cron: 20 6,8,10,12 * * *
 美团买菜果园任务脚本,支持qx,loon,shadowrocket,surge,nodejs
 抓cookie:进果园点浇水,在抓包记录里搜water,在请求头里找属性t: thKFxxxxxxxxxxxxxxxxxxx_w,复制冒号后面的值
 每天七点之前执行一次获取助力码提交
-
 [task_local]
 30 6,8,10,12 * * * https://raw.githubusercontent.com/passerby-b/mt_fruit/main/mt_fruit.js
-
 cookie环境变量 MTMC_COOKIE
 */
 
