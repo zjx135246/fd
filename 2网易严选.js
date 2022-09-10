@@ -5,7 +5,7 @@
  
  *
  * 6-9		感谢大佬脚本
- *
+ *小程序 抓miniapp.you.163.com   X-WX-3RD-Session 
  * ========= 青龙--配置文件 =========
  * 变量格式: export wyyx_data='X-WX-3RD-Session @ X-WX-3RD-Session '  多个账号用 换行 或 @分割
 cron: 2 13 8,12,16,18,20 * * *
