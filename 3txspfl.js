@@ -1,4 +1,4 @@
-﻿/*
+/*
 腾讯视频-福利中心
 邀请码：9676
 邀请注册：https://fuli.v.qq.com/h5/activity/welfare_center_new/?ptag=cygn&z=1%23/&source=page_id%3Ddefault%26pgid%3Dpage_personal_center%26page_type%3Dpersonal%26is_interactive_flag%3D1%26pg_clck_flag%3D1%26eid%3Dwelfare_center%26mod_id%3Dsp_mycntr_common%26sectiontype%3D2%26styletype%3D202%26flush_num%3D0%26section_idx%3D0%26red_dot%3D0%26mod_title%3D%25E5%25B8%25B8%25E7%2594%25A8%25E5%258A%259F%25E8%2583%25BD%26blocktype%3D6001%26mod_idx%3D5%26item_idx%3D3%26layouttype%3D2%26action_pos%3Djump&hidetitlebar=0&isDarkMode=0&uiType=REGULAR&url_from=share&second_share=0&share_from=wxf#/invite?svuid=ZmTq9w2U7w023AAKuxE_Og&gpid=3&z=1
@@ -12,7 +12,7 @@
 要想CK不过期的话，需要捉小程序[腾讯视频]的refresh_token
 登录后重新进入小程序，搜pbaccess.video.qq.com域名下url含有RpcLogin的这个包
 把返回body里的refresh_token添加到对应账号的ck后面： export txspCookie="原来的ck; refresh_token=xxxxx;"
-
+**app福利兑换抓cookie 小程序（必须是登录包）搜 Rpc 抓refresh token 在响应body里 
 重写：
 [task_local]
 #腾讯视频-福利中心
