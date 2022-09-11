@@ -23,7 +23,7 @@ export flgReferer='抓取的Referer1@抓取的Referer2'
 https://api.flgflg.com/htmmall/api/gold/finishedVideoNum url script-request-body https://raw.githubusercontent.com/YaphetS0903/JStest/main/flg.js
 [MITM]
 hostname = api.flgflg.com
-cron: 0 8 11 * * *
+cron: 8 8 8 * * *
 */
 
 const $ = new Env('返利购');
