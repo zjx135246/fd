@@ -17,7 +17,7 @@ https://raw.githubusercontent.com/YaphetS0903/JStest/main/YaphteS0903.boxjs.json
 青龙环境抓取链接https://api.uutequan.com/v1/welfare/page
 随便哪一个Cookie应该都行
 环境配置(@隔开，json格式)
-export flhsCookie='抓取的Cookie1@抓取的Cookie2'
+export flhsCookie='抓取的Cookie1@抓取的Cookie2'   修改为换行隔开
 圈X配置如下，其他自行测试
 一小时运行一次即可
 [task_local]
@@ -89,9 +89,9 @@ let flhsCookies = ""
             }
         } else {
 
-            if (process.env.flhsCookie && process.env.flhsCookie.indexOf('@') > -1) {
-                flhsCookieArr = process.env.flhsCookie.split('@');
-                console.log(`您选择的是用"@"隔开\n`)
+            if (process.env.flhsCookie && process.env.flhsCookie.indexOf('\n') > -1) {
+                flhsCookieArr = process.env.flhsCookie.split('\n');
+                console.log(`您选择的是用"换行"隔开\n`)
             } else {
                 flhsCookies = [process.env.flhsCookie]
             };
