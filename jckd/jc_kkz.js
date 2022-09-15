@@ -2,7 +2,7 @@
 shaolin-kongfu
 
 软件名称：晶彩看点
-
+cron: 8 7 8 * * *
 
 [rewrite_local]
 
