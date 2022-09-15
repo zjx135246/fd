@@ -1,5 +1,5 @@
 /*
-cron： 13 2 13 * * *
+cron: 13 2 13 * * *
 */
 const $ = new Env('晶彩看点任务宝箱领取');
 let jcboxbody= $.isNode() ? (process.env.jcboxbody ? process.env.jcboxbody : "") : ($.getdata('jcboxbody') ? $.getdata('jcboxbody') : "")
