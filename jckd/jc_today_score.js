@@ -1,7 +1,7 @@
 /*
 shaolin-kongfu
 软件名称：晶彩看点
-
+cron: 16 37 16 * * *
 [rewrite_local]
 #晶彩看点每日收益查询
 https://ant.xunsl.com/v17/NewTask/getTaskList.json 重写目标 https://raw.githubusercontent.com/shaolin-kongfu/js_scripts/main/jc_today_score.js
