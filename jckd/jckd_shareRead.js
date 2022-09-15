@@ -4,8 +4,8 @@
 转发和分享阅读，请勿贪心，小心黑号
 */
 
-const jsname = '晶彩看点分享阅读'
-const $ = Env(jsname)
+
+const $ = Env("晶彩看点分享阅读")
 const notifyFlag = 1; //0为关闭通知，1为打开通知,默认为1
 const logDebug = 0
 
