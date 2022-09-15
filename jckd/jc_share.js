@@ -5,7 +5,7 @@ shaolin-kongfu
 赞赏:邀请码54870223
 
 万分感谢！！
-
+cron: 14 37 14 * * *
 [rewrite_local]
 
 #火爆转发
