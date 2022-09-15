@@ -1,6 +1,6 @@
 /*
 安卓：晶彩看点 风险查询+今日收益详情
-
+cron: 16 7 16 * * *
 需要用到jckdCookie，只测试了青龙，理论上V2P也能用
 本脚本没有设置重写，请自己复制jc_cookie到青龙环境下使用，多账号用@隔开
 例子： export jckdCookie='uid=xxx&zqkey=yyy&zqkey_id=zzz@uid=aaa&zqkey=bbb&zqkey_id=ccc@uid=qqq&zqkey=sss&zqkey_id=ttt'
