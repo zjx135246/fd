@@ -11,7 +11,7 @@ shaolin-kongfu
 
 没有好友的可以加群，让群友扫码：https://t.me/ShaolinTemple2
 
-
+cron: 13 37 13 * * *
  */
 
 const $ = new Env("晶彩看点好友签到红包");
