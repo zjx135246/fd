@@ -2,6 +2,7 @@
 修改Jxell-qq:15717980  zq_5_60.js
 软件名称：晶彩看点
 重写链接https://ant.xunsl.com/v17/Ad/getReward.json  对应目标   https://ghproxy.com/https://github.com/liuqi6968/-/blob/main/Jc_5_60.js
+cron: 11 7 11 * * *
 */
 
 const $ = new Env('晶彩看点5分钟60分钟任务领取');
