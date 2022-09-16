@@ -5,9 +5,9 @@
 变量
 luomu='12345'抓取的user_id
 多账户@隔开
-corn 0 1 * * *
+ cron: 14 17 14 * * *
 */
-const $ = new Env('罗姆');
+const $ = new Env('罗姆积分商城');
 
 let status;
 status = (status = ($.getval("luomustatus") || "1") ) > 1 ? `${status}` : ""; // 账号扩展字符
