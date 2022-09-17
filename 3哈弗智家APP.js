@@ -7,7 +7,7 @@
  * ========= 青龙--配置文件 =========
  * 变量格式: export hafodata=' accessToken & tokenId '   多账号用 换行 或 @ 分割
  * 抓包      /app-api/api/v1.0/userAuth/route/getUserDetail , 找到 accessToken 、 tokenId 即可
- * 
+ * 搜：tokenId  ；tokenId在链接里面 accessToken在下面
  cron: 12 46 12 * * *
  * ====================================
  */
