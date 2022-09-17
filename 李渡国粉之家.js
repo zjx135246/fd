@@ -1,7 +1,8 @@
 /**
  作者：shawn
  日期：9.16
- 李渡小程序
+ 小程序：李渡国粉之家
+ xzf抓包：微信登陆-退出登录-开启抓包-微信登录-抓包搜login-在响应体里面的refreshToken的值
  抓取域名 https://gfzj.lidujiu.com/mobileApi/oauth/wechat/login? 返回body里面的refreshToken
  抓取之后不要再登录了，不然会掉线
  在拉取库外面目录/ql/scripts新增ldgfzj.txt 把token放进去 多个账号@隔开
