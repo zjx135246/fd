@@ -1,10 +1,10 @@
 /*
-海尔智家
+app或者vx：海尔智家
 app首页-活动专区-智慧小屋
 自己捉mps.haiersmarthomes.com的包
 把accessToken和clientId填到haierAccount里，多账号换行隔开
 export haierAccount="token#clientId"
-同一设备clientId相同，请使用不同设备登陆
+特别注意：可以直接微信里面登陆抓包：获取的clientId是不同的
 收益：有红包可以提现微信
 一天一两次
 cron: 18 19 0,18 * * *
