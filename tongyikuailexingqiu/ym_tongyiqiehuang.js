@@ -7,7 +7,7 @@
  抓包：api.xiaoyisz.com/qiehuang/ga/public/api/login  这个登录包里 body 部分的 全部
  变量：tybody='body@xxxx '  多个账号用 @ 或者 换行 分割
  定时一天三次，八个小时一次收取冒险奖励
- cron: 6 40 6-23/8 * * *
+ cron: 3 40 3-23/8 * * *
 
  [task_local]
  #统一茄皇
